@@ -415,6 +415,7 @@ footer a{color:var(--ink-3)}
       <div class="field"><label for="f-size">Размеры изголовья (ширина × высота), см</label><input id="f-size" name="size" type="text" placeholder="например, 180 × 120"></div>
 
       <div class="obj-only">
+        <div class="field"><label for="f-objname">Название объекта</label><input id="f-objname" name="object_name" type="text" placeholder="например, отель «Название», Москва"></div>
         <div class="row">
           <div class="field"><label for="f-objtype">Тип объекта</label>
             <select id="f-objtype" name="object_type"><option>Отель / гостиница</option><option>Апартаменты</option><option>Офис</option><option>Ресторан / HoReCa</option><option>Другое</option></select></div>
@@ -491,7 +492,8 @@ footer a{color:var(--ink-3)}
     var fd = new FormData(form), lines = [];
     fd.forEach(function(v,k){ if (String(v).trim()) lines.push(k + ': ' + v); });
     goal('w1_form_submit_' + t, {type:t});
-    var subject = encodeURIComponent('Заявка: мягкое изголовье (' + t + ')');
+    var objName = (form.object_name && form.object_name.value.trim()) || (form.studio && form.studio.value.trim()) || (t === 'retail' ? 'частный заказчик' : '');
+    var subject = encodeURIComponent('Запрос Изголовье на заказ: ' + name + (objName ? ' - ' + objName : ''));
     var body = encodeURIComponent(lines.join('\n'));
     document.getElementById('formStatus').style.display = 'block';
     window.location.href = 'mailto:info@velvet-pro.ru?subject=' + subject + '&body=' + body;
