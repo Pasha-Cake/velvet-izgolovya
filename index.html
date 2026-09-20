@@ -435,11 +435,11 @@ footer a{color:var(--ink-3)}
 
       <div class="field"><label for="f-msg">Комментарий: ткань, каретная стяжка, ссылка на чертёж</label><textarea id="f-msg" name="message" rows="3"></textarea></div>
 
-      <input type="hidden" name="utm_source"><input type="hidden" name="utm_medium"><input type="hidden" name="utm_campaign"><input type="hidden" name="utm_content"><input type="hidden" name="lead_source" value="landing-izgolovya-test"><input type="hidden" name="page_url">
+      <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off"><input type="hidden" name="utm_source"><input type="hidden" name="utm_medium"><input type="hidden" name="utm_campaign"><input type="hidden" name="utm_content"><input type="hidden" name="lead_source" value="landing-izgolovya-test"><input type="hidden" name="page_url">
 
       <button class="btn btn-primary" type="submit" id="submitBtn">Отправить заявку</button>
-      <p class="consent">Нажимая кнопку, вы соглашаетесь с <a href="https://velvet-pro.ru/soglasie.pdf" target="_blank" rel="noopener">обработкой персональных данных</a>. Тестовая страница: заявка формируется письмом на info@velvet-pro.ru.</p>
-      <p class="status" id="formStatus">Заявка сформирована — откроется письмо на info@velvet-pro.ru. Если почтовый клиент не открылся, напишите нам в Telegram или WhatsApp.</p>
+      <p class="consent">Нажимая кнопку, вы соглашаетесь с <a href="https://velvet-pro.ru/soglasie.pdf" target="_blank" rel="noopener">обработкой персональных данных</a>. </p>
+      <p class="status" id="formStatus"></p>
     </form>
   </div>
 </section>
@@ -484,19 +484,31 @@ footer a{color:var(--ink-3)}
     });
   });
 
+  var FORMSPREE = 'https://formspree.io/f/mdekeerd';
+  var btn = document.getElementById('submitBtn'), status = document.getElementById('formStatus');
   form.addEventListener('submit', function(e){
     e.preventDefault();
     var name = form.name.value.trim(), phone = form.phone.value.trim();
     if (!name || !phone){ (name ? form.phone : form.name).focus(); return; }
     var t = form.getAttribute('data-type');
-    var fd = new FormData(form), lines = [];
-    fd.forEach(function(v,k){ if (String(v).trim()) lines.push(k + ': ' + v); });
-    goal('w1_form_submit_' + t, {type:t});
     var objName = (form.object_name && form.object_name.value.trim()) || (form.studio && form.studio.value.trim()) || (t === 'retail' ? 'частный заказчик' : '');
-    var subject = encodeURIComponent('Запрос Изголовье на заказ: ' + name + (objName ? ' - ' + objName : ''));
-    var body = encodeURIComponent(lines.join('\n'));
-    document.getElementById('formStatus').style.display = 'block';
-    window.location.href = 'mailto:info@velvet-pro.ru?subject=' + subject + '&body=' + body;
+    var subject = 'Запрос Изголовье на заказ: ' + name + (objName ? ' - ' + objName : '');
+    var fd = new FormData(form); fd.append('_subject', subject); fd.append('type', t);
+    btn.disabled = true; btn.textContent = 'Отправляем…';
+    fetch(FORMSPREE, {method:'POST', body: fd, headers:{'Accept':'application/json'}})
+      .then(function(r){ if (!r.ok) throw new Error(r.status); return r.json(); })
+      .then(function(){
+        goal('w1_form_submit_' + t, {type:t});
+        form.reset(); setType('retail');
+        status.textContent = 'Заявка отправлена. Ответим в рабочее время — в будни с 10:00 до 18:00.';
+        status.style.display = 'block'; btn.textContent = 'Отправлено';
+      })
+      .catch(function(){
+        btn.disabled = false; btn.textContent = 'Отправить заявку';
+        status.style.color = '#9C352C';
+        status.textContent = 'Не удалось отправить. Напишите нам в Telegram или WhatsApp либо на info@velvet-pro.ru.';
+        status.style.display = 'block';
+      });
   });
 })();
 </script>
