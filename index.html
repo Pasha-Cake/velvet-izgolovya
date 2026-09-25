@@ -285,6 +285,7 @@ footer .bottom{margin-top:28px; padding-top:18px; border-top:1px solid #4a4a4a; 
   body{padding-bottom:80px}
 }
 @media (prefers-reduced-motion:reduce){ html{scroll-behavior:auto} .btn{transition:none} }
+.send-row{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
 </style>
 </head>
 <body>
@@ -539,7 +540,7 @@ footer .bottom{margin-top:28px; padding-top:18px; border-top:1px solid #4a4a4a; 
     <div class="contacts">
       <p class="eyebrow">Запрос КП</p>
       <h2>Пришлите спецификацию — подготовим КП на серию</h2>
-      <p class="lede" style="margin-top:12px">Работаем в будни с 10:00 до 17:00. Ориентировочную цену видно сразу, точную — в КП после макета.</p>
+      <p class="lede" style="margin-top:12px">Работаем в будни с 10:00 до 17:00. Ориентировочную цену видно сразу, точную — в КП после макета. Приём заявок через сайт временно приостановлен: запрос уходит письмом или в мессенджер.</p>
       <a class="ph" href="tel:+74954806072" data-goal="w1_phone_click">+7 495 480-60-72</a><div class="sub">Москва, ул. Котляковская, 3с1</div>
       <a class="ph" href="tel:+78126700067" data-goal="w1_phone_click">+7 812 670-00-67</a><div class="sub">Санкт-Петербург, ул. Оптиков, 4к3</div>
       <a class="ph" href="tel:+78005555060" data-goal="w1_phone_click">8 800 555-50-60</a><div class="sub">Бесплатно по России</div>
@@ -564,12 +565,6 @@ footer .bottom{margin-top:28px; padding-top:18px; border-top:1px solid #4a4a4a; 
 
       <div class="calc-mini" id="miniCalc"><span>Расчёт из калькулятора</span><b id="m-sum">не заполнен</b></div>
 
-      <div class="row">
-        <div class="field"><label for="f-name">Имя</label><input id="f-name" name="name" type="text" autocomplete="name" required><div class="err">Как к вам обращаться?</div></div>
-        <div class="field"><label for="f-phone">Телефон или мессенджер</label><input id="f-phone" name="phone" type="tel" autocomplete="tel" required><div class="err">Оставьте телефон или ник в мессенджере</div></div>
-      </div>
-      <div class="field"><label for="f-company">Компания</label><input id="f-company" name="company" type="text" autocomplete="organization"></div>
-
       <div class="obj-only">
         <div class="row">
           <div class="field"><label for="f-objtype">Тип объекта</label>
@@ -592,13 +587,11 @@ footer .bottom{margin-top:28px; padding-top:18px; border-top:1px solid #4a4a4a; 
       <label class="check"><input type="checkbox" id="f-samples" name="samples" value="1"><span>Прислать образцы ткани<small>образцы бесплатно, доставка СДЭК за счёт получателя</small></span></label>
       <div class="field"><label for="f-msg">Комментарий: спецификация, ссылка на чертёж, цвет ткани</label><textarea id="f-msg" name="message" rows="3"></textarea></div>
 
-      <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
-      <input type="hidden" name="utm_source"><input type="hidden" name="utm_medium"><input type="hidden" name="utm_campaign"><input type="hidden" name="utm_content">
-      <input type="hidden" name="lead_source" value="landing-izgolovya-b2b"><input type="hidden" name="page_url">
-      <input type="hidden" name="calc_summary"><input type="hidden" name="calc_price_rub">
-
-      <button class="btn btn-primary" type="submit" id="submitBtn">Запросить КП</button>
-      <p class="consent">Нажимая кнопку, вы соглашаетесь с <a href="https://velvet-pro.ru/soglasie.pdf" target="_blank" rel="noopener">обработкой персональных данных</a>.</p>
+      <p class="consent">Форма ничего не отправляет и не хранит: по кнопке откроется ваша почта или WhatsApp с готовым текстом запроса — останется добавить имя и контакт.</p>
+      <div class="send-row">
+        <button class="btn btn-primary" type="submit" id="submitBtn">Отправить запрос письмом</button>
+        <a class="btn btn-light" href="https://wa.me/79253061817" target="_blank" rel="noopener" id="waBtn">Отправить в WhatsApp</a>
+      </div>
       <p class="status" id="formStatus" role="status"></p>
     </form>
   </div>
@@ -672,8 +665,6 @@ footer .bottom{margin-top:28px; padding-top:18px; border-top:1px solid #4a4a4a; 
   }
   function sync(){
     document.getElementById('m-sum').textContent = last ? ('от ' + rub(last.total) + ' · ' + last.w + '×' + last.h + ' см × ' + last.n + ' шт') : 'не заполнен';
-    form.calc_summary.value = last ? (last.w+'×'+last.h+' см, '+last.n+' шт, '+KIND[last.k]+(last.com?', ткань заказчика':'')+', от '+rub(last.total)+' (от '+rub(last.unit)+'/шт), '+last.term+' раб. дн.') : '';
-    form.calc_price_rub.value = last ? Math.round(last.total) : '';
   }
   [cw,ch,cn].forEach(function(el){ el.addEventListener('input', calc); });
   kinds.forEach(function(r){ r.addEventListener('change', calc); });
@@ -694,40 +685,34 @@ footer .bottom{margin-top:28px; padding-top:18px; border-top:1px solid #4a4a4a; 
     tabs.forEach(function(x){ var on = x===b; x.setAttribute('aria-selected', on); document.getElementById(x.getAttribute('aria-controls')).hidden = !on; });
   }); });
 
-  // UTM
-  try{
-    var q = new URLSearchParams(location.search);
-    ['utm_source','utm_medium','utm_campaign','utm_content'].forEach(function(k){ var el = form.querySelector('input[name='+k+']'); if (el) el.value = q.get(k)||''; });
-    form.querySelector('input[name=page_url]').value = location.href;
-  }catch(e){}
-
-  // отправка: Formspree; цель — только после успешного ответа
-  var FORMSPREE = 'https://formspree.io/f/mdekeerd';
-  var btn = document.getElementById('submitBtn'), status = document.getElementById('formStatus');
-  function mark(el, bad){ el.closest('.field').classList.toggle('invalid', bad); }
+  // отправка: Formspree отключён (23-ФЗ) — сайт данные не собирает; текст запроса уходит в почту/WhatsApp пользователя
+  var TYPES = {object:'Отель / объект', designer:'Дизайнер / архитектор', contractor:'Подрядчик / комплектатор', retail:'Частное лицо'};
+  function sel(id){ var el = document.getElementById(id); return el ? el.value.trim() : ''; }
+  function brief(){
+    var t = form.getAttribute('data-type'), L = ['Запрос КП: изголовья', 'Кто: ' + TYPES[t]];
+    if (last) L.push('Расчёт: ' + last.w+'×'+last.h+' см, '+last.n+' шт, '+KIND[last.k]+(last.com?', ткань заказчика':'')+', от '+rub(last.total)+' (от '+rub(last.unit)+'/шт), '+last.term+' раб. дн.');
+    if (t==='object' || t==='contractor'){ L.push('Тип объекта: '+sel('f-objtype')); if (sel('f-objname')) L.push('Объект, город: '+sel('f-objname')); if (sel('f-date')) L.push('Дата открытия: '+sel('f-date')); L.push('Класс пожарной опасности: '+sel('f-km')); }
+    if (t==='contractor') L.push('Роль: '+sel('f-role'));
+    if (t==='designer' && sel('f-studio')) L.push('Студия / проект: '+sel('f-studio'));
+    if (document.getElementById('f-samples').checked) L.push('Нужны образцы ткани');
+    if (sel('f-msg')) L.push('Комментарий: '+sel('f-msg'));
+    L.push('', 'Имя и контакт: ');
+    return {t:t, text:L.join('\n')};
+  }
+  var status = document.getElementById('formStatus');
+  function done(ch, b){
+    goal('w1_lead_' + ch, {type:b.t, price: last ? Math.round(last.total) : 0});
+    if (document.getElementById('f-samples').checked) goal('w1_samples_request');
+    status.textContent = ch==='mailto' ? 'Открыли почтовую программу с текстом запроса. Если она не открылась — напишите на info@velvet-pro.ru.' : 'Открыли WhatsApp с текстом запроса.';
+    status.className = 'status ok';
+  }
   form.addEventListener('submit', function(e){
-    e.preventDefault();
-    var name = form.name.value.trim(), phone = form.phone.value.trim();
-    mark(form.name, !name); mark(form.phone, !phone);
-    if (!name || !phone){ (name ? form.phone : form.name).focus(); return; }
-    var t = form.getAttribute('data-type');
-    var who = form.company.value.trim() || form.object_name.value.trim() || form.studio.value.trim();
-    var fd = new FormData(form); fd.set('type', t);
-    fd.append('_subject', 'КП: изголовья — ' + ({object:'объект',designer:'дизайнер',contractor:'подрядчик',retail:'частное лицо'})[t] + ' — ' + name + (who ? ' — ' + who : '') + (last ? ' · от ' + rub(last.total) : ''));
-    btn.disabled = true; btn.textContent = 'Отправляем…'; status.className = 'status';
-    fetch(FORMSPREE, {method:'POST', body:fd, headers:{'Accept':'application/json'}})
-      .then(function(r){ if (!r.ok) throw new Error(r.status); return r.json(); })
-      .then(function(){
-        goal('w1_form_submit_' + t, {type:t, price: last ? Math.round(last.total) : 0});
-        if (form.samples.checked) goal('w1_samples_request');
-        status.textContent = 'Запрос отправлен' + (last ? ' — ориентировочно от ' + rub(last.total) + ' за серию' : '') + '. Ответим в будни с 10:00 до 17:00 и пришлём КП.';
-        status.className = 'status ok'; btn.textContent = 'Отправлено';
-      })
-      .catch(function(){
-        btn.disabled = false; btn.textContent = 'Запросить КП';
-        status.textContent = 'Не удалось отправить. Напишите в Telegram или WhatsApp либо на info@velvet-pro.ru.';
-        status.className = 'status bad';
-      });
+    e.preventDefault(); var b = brief();
+    location.href = 'mailto:info@velvet-pro.ru?subject=' + encodeURIComponent('КП: изголовья — ' + TYPES[b.t] + (last ? ' · от ' + rub(last.total) : '')) + '&body=' + encodeURIComponent(b.text);
+    done('mailto', b);
+  });
+  document.getElementById('waBtn').addEventListener('click', function(){
+    var b = brief(); this.href = 'https://wa.me/79253061817?text=' + encodeURIComponent(b.text); done('whatsapp', b);
   });
 })();
 </script>
