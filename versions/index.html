@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Эволюция лендинга «Изголовья» — было / стало</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap">
+<style>
+:root{
+  --primary:#F25354; --primary-active:#F22D2E; --primary-clarity:#FDE5E5;
+  --ink:#090E1C; --g900:#343434; --g800:#464646; --g700:#5B5B5B; --g500:#6E6E6E; --g300:#BDBDBD; --g200:#E1E1E1; --g100:#F0F3F4;
+  --success:#17C653;
+  --font:'Montserrat', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif;
+}
+*{box-sizing:border-box}
+body{margin:0; background:#fff; color:var(--g900); font:15px/1.45 var(--font); -webkit-font-smoothing:antialiased}
+a{color:var(--primary)}
+.wrap{max-width:1440px; margin:0 auto; padding-inline:clamp(16px,4vw,56px)}
+h1,h2,h3{margin:0; line-height:1.15; text-wrap:balance}
+h1{font-size:clamp(28px,4vw,52px); font-weight:700; color:var(--ink)}
+h2{font-size:clamp(22px,2.6vw,36px); font-weight:700}
+h3{font-size:18px; font-weight:600}
+p{margin:0 0 10px; max-width:70ch}
+.muted{color:var(--g500)}
+header.top{padding-block:28px 8px}
+.eyebrow{font-size:13px; font-weight:500; color:var(--primary); margin:0 0 10px}
+.lede{font-size:17px; color:var(--g800); margin-top:14px}
+.links{display:flex; flex-wrap:wrap; gap:10px; margin-top:18px}
+.btn{display:inline-flex; align-items:center; height:44px; padding:0 20px; border-radius:12px; font:500 14px var(--font); text-decoration:none; border:1px solid var(--g200); color:var(--g900); background:#fff; cursor:pointer}
+.btn.primary{background:var(--primary); border-color:var(--primary); color:#fff}
+.btn:hover{border-color:var(--g500)} .btn.primary:hover{background:var(--primary-active)}
+.btn:focus-visible{outline:2px solid var(--ink); outline-offset:2px}
+.block{border:1px solid var(--g200); border-radius:40px; padding:clamp(20px,3vw,40px); margin-top:24px}
+.block.grey{background:var(--g100); border-color:var(--g100)}
+@media (max-width:640px){ .block{border-radius:24px; margin-top:12px} }
+
+/* таймлайн версий */
+.versions{display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-top:24px}
+@media (max-width:980px){ .versions{grid-template-columns:1fr} }
+.ver{background:#fff; border-radius:24px; overflow:hidden; display:flex; flex-direction:column}
+.ver .shot{position:relative; background:var(--g100); aspect-ratio:16/10; overflow:hidden}
+.ver .shot img{width:100%; height:100%; object-fit:cover; object-position:top; display:block}
+.badge{position:absolute; left:12px; top:12px; background:#fff; border-radius:8px; padding:5px 10px; font-size:12px; font-weight:600}
+.badge.live{background:var(--success); color:#fff}
+.badge.draft{background:var(--g900); color:#fff}
+.ver .tx{padding:20px 22px 22px; display:flex; flex-direction:column; gap:10px; flex:1}
+.meta{font-size:12px; color:var(--g500)}
+.ver ul{margin:0; padding-left:18px; font-size:14px; color:var(--g800)}
+.ver li{margin-bottom:5px}
+.ver .act{margin-top:auto; display:flex; flex-wrap:wrap; gap:8px; padding-top:6px}
+.ver .act .btn{height:38px; font-size:13px; padding:0 14px}
+
+/* слайдер было/стало */
+.ba{position:relative; margin-top:20px; border-radius:20px; overflow:hidden; border:1px solid var(--g200); user-select:none; touch-action:pan-y; background:var(--g100)}
+.ba img{display:block; width:100%; height:auto}
+.ba .after{position:absolute; inset:0; overflow:hidden; width:50%}
+.ba .after img{width:auto; height:100%; max-width:none}
+.ba .handle{position:absolute; top:0; bottom:0; left:50%; width:3px; background:var(--primary); transform:translateX(-50%); pointer-events:none}
+.ba .knob{position:absolute; top:50%; left:50%; width:44px; height:44px; border-radius:50%; background:var(--primary); color:#fff; display:grid; place-items:center; transform:translate(-50%,-50%); font-weight:700; box-shadow:0 4px 14px rgba(9,14,28,.25); pointer-events:none}
+.ba .lbl{position:absolute; bottom:12px; padding:6px 12px; border-radius:8px; font-size:12px; font-weight:600; background:rgba(255,255,255,.95)}
+.ba .lbl.l{right:12px} .ba .lbl.r{left:12px}
+.ba input[type=range]{position:absolute; inset:0; width:100%; height:100%; opacity:0; cursor:ew-resize; margin:0}
+.seg{display:inline-grid; grid-auto-flow:column; gap:4px; background:var(--g100); padding:4px; border-radius:14px}
+.seg button{all:unset; padding:9px 16px; border-radius:10px; font-size:14px; font-weight:500; color:var(--g700); cursor:pointer}
+.seg button[aria-pressed="true"]{background:#fff; color:var(--g900); box-shadow:0 2px 8px rgba(9,14,28,.06)}
+.seg button:focus-visible{outline:2px solid var(--ink)}
+.ctl{display:flex; flex-wrap:wrap; gap:12px 20px; align-items:center; margin-top:18px}
+.ctl label{font-size:13px; color:var(--g500); display:flex; gap:8px; align-items:center}
+select{height:40px; border:1px solid var(--g200); border-radius:10px; padding:0 12px; font:500 14px var(--font); background:#fff; color:var(--g900)}
+
+/* живое сравнение */
+.live{display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:18px}
+@media (max-width:900px){ .live{grid-template-columns:1fr} }
+.frame{border:1px solid var(--g200); border-radius:20px; overflow:hidden; background:#fff}
+.frame .bar{display:flex; justify-content:space-between; gap:10px; align-items:center; padding:10px 14px; border-bottom:1px solid var(--g200); font-size:13px}
+.frame .bar b{font-weight:600}
+.viewport{position:relative; overflow:hidden; background:var(--g100)}
+.viewport iframe{border:0; transform-origin:0 0; position:absolute; left:0; top:0; background:#fff}
+.viewport.mobile{display:flex; justify-content:center}
+.viewport.mobile iframe{position:relative}
+
+/* v2 скриншоты */
+.shots{display:grid; grid-template-columns:2fr 1fr; gap:16px; margin-top:18px}
+@media (max-width:900px){ .shots{grid-template-columns:1fr} }
+.shots figure{margin:0; border-radius:20px; overflow:hidden; border:1px solid var(--g200); background:#fff}
+.shots img{display:block; width:100%}
+.shots figcaption{padding:10px 14px; font-size:13px; color:var(--g700)}
+.stack{display:grid; gap:16px}
+
+table.chg{border-collapse:collapse; width:100%; font-size:14px; margin-top:18px; min-width:720px}
+.tw{overflow-x:auto}
+table.chg th,table.chg td{padding:12px 14px; border-bottom:1px solid var(--g200); text-align:left; vertical-align:top}
+table.chg th{font-size:12px; font-weight:500; color:var(--g500); background:#fff}
+table.chg td:first-child{font-weight:600; white-space:nowrap}
+footer{padding-block:32px; font-size:13px; color:var(--g500)}
+</style>
+</head>
+<body>
+<header class="wrap top">
+  <p class="eyebrow">Вельвет-ПРО · лендинг «Изголовья кроватей на заказ»</p>
+  <h1>Эволюция лендинга: было / стало</h1>
+  <p class="lede">Все опубликованные версии сохранены и открываются по отдельным ссылкам. Ниже — версии по порядку, быстрый слайдер «было / стало» и живое сравнение двух любых версий рядом.</p>
+  <div class="links">
+    <a class="btn primary" href="../">Текущая версия лендинга</a>
+    <a class="btn" href="https://github.com/Pasha-Cake/velvet-izgolovya/commits/main" target="_blank" rel="noopener">История изменений в GitHub</a>
+  </div>
+</header>
+
+<main class="wrap">
+
+<section class="block grey" aria-labelledby="h-ver">
+  <h2 id="h-ver">Версии</h2>
+  <div class="versions">
+    <article class="ver">
+      <div class="shot"><img src="v1/v1-desktop.jpg" alt="Первый экран версии v1"><span class="badge">v1 · 20.09.2026</span></div>
+      <div class="tx">
+        <h3>Тестовый лендинг</h3>
+        <div class="meta">Коммиты 61211f5 → aaffecb → 8864fb9</div>
+        <ul>
+          <li>Три равных входа: частный заказчик, дизайнер, объект.</li>
+          <li>Собственный стиль: шрифты Cormorant и Manrope, тёмно-синий акцент.</li>
+          <li>Вместо фото — схема-рисунок изголовья.</li>
+          <li>Цена — «от 15 000 ₽/м²», без калькулятора.</li>
+          <li>Заявка: сначала письмом (mailto), затем через Formspree.</li>
+        </ul>
+        <div class="act"><a class="btn" href="v1/">Открыть v1</a><a class="btn" href="v1/v1-full.jpg" target="_blank" rel="noopener">Вся страница</a></div>
+      </div>
+    </article>
+    <article class="ver">
+      <div class="shot"><img src="v2/v2-desktop.jpg" alt="Первый экран промежуточной версии v2"><span class="badge draft">v2 · 24.09 · не публиковалась</span></div>
+      <div class="tx">
+        <h3>Промежуточная: дизайн-кит и калькулятор</h3>
+        <div class="meta">Показывалась в рабочем отчёте, на сайт не выкладывалась. Сохранены снимки экрана — страница снималась без фирменного шрифта.</div>
+        <ul>
+          <li>Дизайн-кит «Velvet 2025»: Montserrat, красный #F25354, скругления.</li>
+          <li>Первые 3D-визуализации изголовий вместо схемы.</li>
+          <li>Калькулятор цены прямо в форме заявки.</li>
+          <li>Фокус ещё на частном заказчике.</li>
+        </ul>
+        <div class="act"><a class="btn" href="#v2">Снимки v2</a></div>
+      </div>
+    </article>
+    <article class="ver">
+      <div class="shot"><img src="v3/v3-desktop.jpg" alt="Первый экран версии v3"><span class="badge live">v3 · 24.09.2026 · сейчас на сайте</span></div>
+      <div class="tx">
+        <h3>B2B для отелей и HoReCa</h3>
+        <div class="meta">Коммиты 997887f + d9c3760 · решение Антона от 24.09</div>
+        <ul>
+          <li>Позиционирование: отели, бутик-отели, апартаменты, коммерческая недвижимость.</li>
+          <li>Работа с дизайнерами, подрядчиками, заказчиками; частные — в виде исключения.</li>
+          <li>Калькулятор серии и прайс по типовым размерам.</li>
+          <li>Стиль основного сайта velvet-pro.ru: шапка, «Сервис», «Преимущества».</li>
+          <li>12 визуализаций, 4 потока заявок.</li>
+        </ul>
+        <div class="act"><a class="btn" href="v3/">Открыть v3</a><a class="btn" href="v3/v3-full.jpg" target="_blank" rel="noopener">Вся страница</a></div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section class="block" aria-labelledby="h-ba">
+  <h2 id="h-ba">Было / стало за 3 секунды</h2>
+  <p class="muted" style="margin-top:8px">Потяните ползунок. Слева — было, справа — стало.</p>
+  <div class="ctl">
+    <div class="seg" role="group" aria-label="Устройство">
+      <button type="button" aria-pressed="true" data-dev="desktop">Десктоп</button>
+      <button type="button" aria-pressed="false" data-dev="mobile">Телефон</button>
+    </div>
+    <label for="ba-pair">Сравнить
+      <select id="ba-pair">
+        <option value="v1|v3">v1 → v3 (сейчас)</option>
+        <option value="v1|v2">v1 → v2</option>
+        <option value="v2|v3">v2 → v3</option>
+      </select>
+    </label>
+  </div>
+  <div class="ba" id="ba" style="max-width:100%">
+    <img id="ba-before" src="v1/v1-desktop.jpg" alt="Было">
+    <div class="after" id="ba-after-wrap"><img id="ba-after" src="v3/v3-desktop.jpg" alt="Стало"></div>
+    <div class="handle" id="ba-handle"></div><div class="knob" id="ba-knob" aria-hidden="true">⇆</div>
+    <span class="lbl r" id="ba-lr">Было · v1</span><span class="lbl l" id="ba-ll">Стало · v3</span>
+    <input type="range" id="ba-range" min="0" max="100" value="50" aria-label="Положение разделителя">
+  </div>
+</section>
+
+<section class="block" aria-labelledby="h-live">
+  <h2 id="h-live">Живое сравнение</h2>
+  <p class="muted" style="margin-top:8px">Обе версии работают прямо в окнах: их можно прокручивать и кликать. Формы в архивных версиях отключены; «Текущая» — это живой сайт с работающей формой и Метрикой.</p>
+  <div class="ctl">
+    <div class="seg" role="group" aria-label="Устройство для сравнения">
+      <button type="button" aria-pressed="true" data-live="desktop">Десктоп</button>
+      <button type="button" aria-pressed="false" data-live="mobile">Телефон</button>
+    </div>
+    <label for="lv-a">Слева <select id="lv-a"><option value="v1/index.html">v1 · 20.09</option><option value="v3/index.html">v3 · 24.09</option><option value="../index.html">Текущая</option></select></label>
+    <label for="lv-b">Справа <select id="lv-b"><option value="v1/index.html">v1 · 20.09</option><option value="v3/index.html" selected>v3 · 24.09</option><option value="../index.html">Текущая</option></select></label>
+  </div>
+  <div class="live">
+    <div class="frame"><div class="bar"><b id="lv-a-t">v1 · 20.09</b><a id="lv-a-o" href="v1/index.html" target="_blank" rel="noopener">Открыть ↗</a></div><div class="viewport" id="vp-a"><iframe id="if-a" title="Версия слева" src="v1/index.html" loading="lazy"></iframe></div></div>
+    <div class="frame"><div class="bar"><b id="lv-b-t">v3 · 24.09</b><a id="lv-b-o" href="v3/index.html" target="_blank" rel="noopener">Открыть ↗</a></div><div class="viewport" id="vp-b"><iframe id="if-b" title="Версия справа" src="v3/index.html" loading="lazy"></iframe></div></div>
+  </div>
+</section>
+
+<section class="block grey" id="v2" aria-labelledby="h-v2">
+  <h2 id="h-v2">v2 — промежуточная версия (снимки)</h2>
+  <div class="shots">
+    <figure><img src="v2/v2-desktop.jpg" alt="v2, первый экран" loading="lazy"><figcaption>Первый экран: дизайн-кит, первая 3D-визуализация</figcaption></figure>
+    <div class="stack">
+      <figure><img src="v2/v2-mobile.jpg" alt="v2, телефон" loading="lazy"><figcaption>Телефон</figcaption></figure>
+    </div>
+    <figure><img src="v2/v2-gallery.jpg" alt="v2, галерея" loading="lazy"><figcaption>Галерея вариантов исполнения</figcaption></figure>
+    <figure><img src="v2/v2-form.jpg" alt="v2, форма с калькулятором" loading="lazy"><figcaption>Форма заявки с калькулятором цены</figcaption></figure>
+  </div>
+</section>
+
+<section class="block" aria-labelledby="h-chg">
+  <h2 id="h-chg">Что менялось</h2>
+  <div class="tw"><table class="chg">
+    <thead><tr><th>Параметр</th><th>v1 · 20.09</th><th>v2 · 24.09 (черновик)</th><th>v3 · 24.09 (сейчас)</th></tr></thead>
+    <tbody>
+      <tr><td>Аудитория</td><td>Частные, дизайнеры, объекты — поровну</td><td>Частные в фокусе</td><td>B2B: отели, бутик-отели, апартаменты, HoReCa; частные — исключение</td></tr>
+      <tr><td>Стиль</td><td>Собственный, Cormorant + Manrope</td><td>Дизайн-кит «Velvet 2025»</td><td>Дизайн-кит + блоки основного сайта</td></tr>
+      <tr><td>Изображения</td><td>Схема-рисунок</td><td>7 визуализаций</td><td>12 визуализаций, сцены отелей</td></tr>
+      <tr><td>Цена</td><td>«от 15 000 ₽/м²»</td><td>Калькулятор в форме</td><td>Калькулятор серии + прайс-таблица</td></tr>
+      <tr><td>Потоки заявок</td><td>3</td><td>3</td><td>4 (добавлен подрядчик)</td></tr>
+      <tr><td>Заявка</td><td>mailto → Formspree</td><td>Formspree + расчёт в заявке</td><td>Formspree + расчёт серии в заявке</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+</main>
+<footer class="wrap">Архив ведётся в репозитории лендинга: каждая выкладка сохраняется как новая версия в папке <code>versions/</code>. Архивные страницы закрыты от поисковиков и не передают данные в Метрику.</footer>
+
+<script>
+(function(){
+  // слайдер было/стало
+  var dev = 'desktop', pair = ['v1','v3'];
+  var names = {v1:'v1', v2:'v2', v3:'v3'};
+  var ba = document.getElementById('ba'), wrap = document.getElementById('ba-after-wrap'), range = document.getElementById('ba-range');
+  var imgB = document.getElementById('ba-before'), imgA = document.getElementById('ba-after');
+  function src(v){ return v + '/' + v + '-' + dev + '.jpg'; }
+  function apply(){
+    imgB.src = src(pair[0]); imgA.src = src(pair[1]);
+    ba.style.maxWidth = dev === 'mobile' ? '390px' : '100%';
+    document.getElementById('ba-lr').textContent = 'Было · ' + names[pair[0]];
+    document.getElementById('ba-ll').textContent = 'Стало · ' + names[pair[1]];
+  }
+  function update(){
+    var p = +range.value;
+    wrap.style.left = p + '%'; wrap.style.width = (100 - p) + '%';
+    imgA.style.width = ba.clientWidth + 'px'; imgA.style.height = imgB.clientHeight + 'px';
+    imgA.style.transform = 'translateX(-' + (ba.clientWidth * p / 100) + 'px)';
+    document.getElementById('ba-handle').style.left = p + '%'; document.getElementById('ba-knob').style.left = p + '%';
+  }
+  range.addEventListener('input', update);
+  imgB.addEventListener('load', update); window.addEventListener('resize', update);
+  document.querySelectorAll('[data-dev]').forEach(function(b){ b.addEventListener('click', function(){
+    dev = b.dataset.dev; document.querySelectorAll('[data-dev]').forEach(function(x){ x.setAttribute('aria-pressed', x === b); }); apply(); }); });
+  document.getElementById('ba-pair').addEventListener('change', function(e){ pair = e.target.value.split('|'); apply(); });
+  apply(); update();
+
+  // живое сравнение
+  var lmode = 'desktop';
+  var labels = {'v1/index.html':'v1 · 20.09', 'v3/index.html':'v3 · 24.09', '../index.html':'Текущая'};
+  function fit(){
+    ['a','b'].forEach(function(k){
+      var vp = document.getElementById('vp-' + k), fr = document.getElementById('if-' + k);
+      if (lmode === 'desktop'){
+        var W = 1440, H = 900, s = vp.parentNode.clientWidth / W;
+        vp.className = 'viewport'; fr.style.width = W + 'px'; fr.style.height = H + 'px'; fr.style.transform = 'scale(' + s + ')';
+        vp.style.height = Math.round(H * s) + 'px';
+      } else {
+        vp.className = 'viewport mobile'; fr.style.width = '390px'; fr.style.height = '760px'; fr.style.transform = 'none'; vp.style.height = '760px';
+      }
+    });
+  }
+  ['a','b'].forEach(function(k){
+    document.getElementById('lv-' + k).addEventListener('change', function(e){
+      var v = e.target.value; document.getElementById('if-' + k).src = v;
+      document.getElementById('lv-' + k + '-t').textContent = labels[v]; document.getElementById('lv-' + k + '-o').href = v;
+    });
+  });
+  document.querySelectorAll('[data-live]').forEach(function(b){ b.addEventListener('click', function(){
+    lmode = b.dataset.live; document.querySelectorAll('[data-live]').forEach(function(x){ x.setAttribute('aria-pressed', x === b); }); fit(); }); });
+  window.addEventListener('resize', fit); fit();
+})();
+</script>
+</body>
+</html>
