@@ -137,6 +137,13 @@ p{margin:0 0 12px; max-width:66ch}
 .exception{margin-top:16px; background:var(--white); border-radius:var(--r-card); padding:18px 24px; font-size:14px; color:var(--g700)}
 
 /* схема интерьера (вместо визуализаций) */
+.hero3d,.gal3 figure{margin:0; border-radius:var(--r-card); overflow:hidden; background:var(--g100); position:relative}
+.hero3d img,.gal3 img{display:block; width:100%; height:auto; aspect-ratio:4/3; object-fit:cover}
+.hero3d img{aspect-ratio:16/9}
+.hero3d figcaption,.gal3 figcaption{position:absolute; left:12px; bottom:12px; right:12px; display:flex; flex-wrap:wrap; gap:6px}
+.gal3{display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-top:16px}
+@media (max-width:900px){ .gal3{grid-template-columns:1fr 1fr} }
+@media (max-width:520px){ .gal3{grid-template-columns:1fr} }
 .scheme{margin:0; background:var(--g100); border-radius:var(--r-card); padding:clamp(16px,3vw,36px); position:relative; color:var(--g500)}
 .scheme svg{display:block; width:100%; height:auto}
 .scheme .tag{position:absolute; top:16px; left:16px}
@@ -374,31 +381,18 @@ footer .bottom{margin-top:28px; padding-top:18px; border-top:1px solid #4a4a4a; 
   <p class="exception">Частным заказчикам продаём в виде исключения, на условиях компании.</p>
 </section>
 
-<!-- Блок 4 — Как панели могут выглядеть в интерьере (изображений изделия нет: условная схема без размеров) -->
+<!-- Блок 4 — Как панели могут выглядеть в интерьере: 3D-визуализации (09.10.2026, вместо SVG-схемы), без цифр акустики -->
 <section class="block" id="gallery">
   <div class="head-row">
     <div><h2>Как панели могут выглядеть в интерьере</h2>
     <p class="lede">Отделку и цвет подбираем под ваш проект.</p></div>
   </div>
-  <figure class="scheme">
-    <span class="tag">Схема</span>
-    <svg viewBox="0 0 960 360" role="img" aria-label="Схема: стена помещения с настенными панелями" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-      <title>Схема: стена помещения с настенными панелями</title>
-      <path d="M40 320H920" stroke-width="2.5"/>
-      <path d="M40 40V320M920 40V320" opacity=".35"/>
-      <g fill="#FFFFFF">
-        <rect x="140" y="70" width="150" height="170" rx="10"/>
-        <rect x="305" y="70" width="150" height="170" rx="10"/>
-        <rect x="470" y="70" width="150" height="170" rx="10"/>
-        <rect x="635" y="70" width="150" height="170" rx="10"/>
-      </g>
-      <g stroke="var(--primary)" opacity=".55">
-        <path d="M160 92H270M325 92H435M490 92H600M655 92H765"/>
-      </g>
-      <path d="M300 320V282H660V320M330 282V262H630V282" opacity=".55"/>
-      <path d="M350 262V250M610 262V250" opacity=".55"/>
-    </svg>
-  </figure>
+  <figure class="hero3d"><img src="../img/ak-wall.jpg" width="1280" height="960" alt="Стена с четырьмя акустическими панелями над диваном — 3D-визуализация" loading="lazy"><figcaption><span class="tag">Стена с панелями над диваном</span><span class="tag">3D-визуализация</span></figcaption></figure>
+  <div class="gal3">
+    <figure><img src="../img/ak-meeting.jpg" width="1280" height="960" alt="Переговорная со стеной из акустических панелей двух тонов — 3D-визуализация" loading="lazy"><figcaption><span class="tag">Переговорная</span><span class="tag">3D-визуализация</span></figcaption></figure>
+    <figure><img src="../img/ak-office.jpg" width="1280" height="960" alt="Рабочая зона офиса: акустические панели разного размера над столом — 3D-визуализация" loading="lazy"><figcaption><span class="tag">Офис · рабочая зона</span><span class="tag">3D-визуализация</span></figcaption></figure>
+    <figure><img src="../img/ak-detail.jpg" width="1280" height="960" alt="Кромка акустических панелей, обтянутых тканью, крупным планом — 3D-визуализация" loading="lazy"><figcaption><span class="tag">Кромка и стык крупным планом</span><span class="tag">3D-визуализация</span></figcaption></figure>
+  </div>
 </section>
 
 <!-- Блок 5 — Акустика и документы -->
@@ -590,7 +584,7 @@ footer .bottom{margin-top:28px; padding-top:18px; border-top:1px solid #4a4a4a; 
 
       <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
       <input type="hidden" name="utm_source"><input type="hidden" name="utm_medium"><input type="hidden" name="utm_campaign"><input type="hidden" name="utm_content">
-      <input type="hidden" name="lead_source" value="landing-akusticheskie-paneli-v1"><input type="hidden" name="page_url"><input type="hidden" name="request_type">
+      <input type="hidden" name="lead_source" value="landing-akusticheskie-paneli-v2"><input type="hidden" name="page_url"><input type="hidden" name="request_type">
 
       <label class="consent-box"><input type="checkbox" id="f-consent" name="consent" value="1"><span>Даю <a href="https://velvet-pro.ru/soglasie.pdf" target="_blank" rel="noopener">согласие на обработку персональных данных</a> в соответствии с <a href="https://velvet-pro.ru/politica.pdf" target="_blank" rel="noopener">политикой конфиденциальности</a>. Без согласия заявка не отправляется.</span></label>
       <div class="send-row">
