@@ -555,13 +555,13 @@ footer .bottom{margin-top:28px; padding-top:18px; border-top:1px solid #4a4a4a; 
     <div class="contacts">
       <p class="eyebrow">Запрос КП</p>
       <h2>Пришлите спецификацию — подготовим КП на серию</h2>
-      <p class="lede" style="margin-top:12px">Работаем в будни с 10:00 до 17:00. Ориентировочную цену видно сразу, точную — в КП после макета. Заявка уходит письмом на info@velvet-pro.ru; если удобнее — напишите в мессенджер.</p>
+      <p class="lede" style="margin-top:12px">Работаем в будни с 10:00 до 17:00. Ориентировочную цену видно сразу, точную — в КП после макета. Заявка уходит письмом на info@velvet-pro.ru; если удобнее — напишите в Telegram или Max.</p>
       <a class="ph" href="tel:+74954806072" data-goal="w1_phone_click">+7 495 480-60-72</a><div class="sub">Москва, ул. Котляковская, 3с1</div>
       <a class="ph" href="tel:+78126700067" data-goal="w1_phone_click">+7 812 670-00-67</a><div class="sub">Санкт-Петербург, ул. Оптиков, 4к3</div>
       <a class="ph" href="tel:+78005555060" data-goal="w1_phone_click">8 800 555-50-60</a><div class="sub">Бесплатно по России</div>
       <div class="msgs">
         <a class="btn btn-light btn-sm" href="https://t.me/+79253061817" target="_blank" rel="noopener" data-goal="w1_messenger_click">Telegram</a>
-        <a class="btn btn-light btn-sm" href="https://wa.me/79253061817" target="_blank" rel="noopener" data-goal="w1_messenger_click">WhatsApp</a>
+        <a class="btn btn-light btn-sm" href="https://max.ru/u/f9LHodD0cOKAibvv4xnLwydR6sh_3dfTyvofGfaGlDE43RYshE6ATx0BtoM" target="_blank" rel="noopener" data-goal="w1_messenger_click">Max</a>
         <a class="btn btn-light btn-sm" href="mailto:info@velvet-pro.ru" data-goal="w1_email_click">info@velvet-pro.ru</a>
       </div>
     </div>
@@ -618,10 +618,10 @@ footer .bottom{margin-top:28px; padding-top:18px; border-top:1px solid #4a4a4a; 
       <input type="hidden" name="lead_source" value="landing-izgolovya-v4.1"><input type="hidden" name="page_url"><input type="hidden" name="request_type">
 
       <label class="consent-box"><input type="checkbox" id="f-consent" name="consent" value="1"><span>Даю <a href="https://velvet-pro.ru/soglasie.pdf" target="_blank" rel="noopener">согласие на обработку персональных данных</a> в соответствии с <a href="https://velvet-pro.ru/politica.pdf" target="_blank" rel="noopener">политикой конфиденциальности</a>. Без согласия заявка не отправляется.</span></label>
-      <p class="consent">Сайт не хранит данные формы: по кнопке откроется ваша почтовая программа с готовым письмом на info@velvet-pro.ru — останется нажать «Отправить». Если почта не настроена — кнопка WhatsApp рядом.</p>
+      <p class="consent">Сайт не хранит данные формы: по кнопке откроется ваша почтовая программа с готовым письмом на info@velvet-pro.ru — останется нажать «Отправить». Если почта не настроена — напишите в Telegram или Max.</p>
       <div class="send-row">
         <button class="btn btn-primary" type="submit" id="submitBtn" disabled>Отправить заявку письмом</button>
-        <a class="btn btn-light" href="https://wa.me/79253061817" target="_blank" rel="noopener" id="waBtn">Отправить в WhatsApp</a>
+        <a class="btn btn-light" href="https://t.me/+79253061817" target="_blank" rel="noopener" id="tgBtn">Написать в Telegram</a>
       </div>
       <p class="status" id="formStatus" role="status"></p>
     </form>
@@ -747,7 +747,7 @@ footer .bottom{margin-top:28px; padding-top:18px; border-top:1px solid #4a4a4a; 
   var consent = document.getElementById('f-consent'), submitBtn = document.getElementById('submitBtn');
   consent.addEventListener('change', function(){ submitBtn.disabled = !consent.checked; });
 
-  // текст заявки (для письма и WhatsApp)
+  // текст заявки (для письма; в Telegram/Max текст не передаётся — ссылки открывают чат)
   var TYPES = {object:'Отель / объект', designer:'Дизайнер / архитектор', contractor:'Подрядчик / комплектатор', retail:'Частное лицо'};
   function sel(id){ var el = document.getElementById(id); return el ? el.value.trim() : ''; }
   function brief(){
@@ -781,11 +781,11 @@ footer .bottom{margin-top:28px; padding-top:18px; border-top:1px solid #4a4a4a; 
     var body = b.text + '\n\n' + tech();
     goal('w1_form_submit_' + b.t, {type:b.t, price: last ? Math.round(last.total) : 0, via:'mailto'});
     if (document.getElementById('f-samples').checked) goal('w1_samples_request', {type:b.t});
-    show(true, 'Открыли почтовую программу с готовым письмом на info@velvet-pro.ru — нажмите в ней «Отправить». Если почта не открылась, отправьте тот же текст в WhatsApp.');
+    show(true, 'Открыли почтовую программу с готовым письмом на info@velvet-pro.ru — нажмите в ней «Отправить». Если почта не открылась — напишите нам в Telegram или Max.');
     location.href = 'mailto:' + MAILTO + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
   });
-  document.getElementById('waBtn').addEventListener('click', function(){
-    var b = brief(); this.href = 'https://wa.me/79253061817?text=' + encodeURIComponent(b.text); goal('w1_messenger_click', {type:b.t, via:'form'});
+  document.getElementById('tgBtn').addEventListener('click', function(){
+    goal('w1_messenger_click', {type:form.getAttribute('data-type'), via:'form', app:'telegram'});
   });
 })();
 </script>
