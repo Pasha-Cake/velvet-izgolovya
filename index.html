@@ -10,7 +10,7 @@
 <meta property="og:description" content="Серии мягких изголовий по проекту: отели, апартаменты, коммерческая недвижимость. Расчёт цены онлайн.">
 <meta property="og:type" content="website">
 <meta property="og:image" content="img/hero.jpg">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://mc.yandex.ru https://mc.yandex.com; connect-src 'self' https://mc.yandex.ru https://mc.yandex.com https://formspree.io; img-src 'self' data: https://mc.yandex.ru https://mc.yandex.com; style-src 'self' 'unsafe-inline'; font-src 'self'; frame-src https://mc.yandex.ru https://mc.yandex.com; form-action 'self' https://formspree.io; base-uri 'self'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://mc.yandex.ru https://mc.yandex.com; connect-src 'self' https://mc.yandex.ru https://mc.yandex.com; img-src 'self' data: https://mc.yandex.ru https://mc.yandex.com; style-src 'self' 'unsafe-inline'; font-src 'self'; frame-src https://mc.yandex.ru https://mc.yandex.com; form-action 'self'; base-uri 'self'">
 <!-- Шрифт: системный стек вместо Google Fonts — IP посетителя не уходит за рубеж (legal.md). Montserrat подключается локально при переносе на velvet-pro.ru -->
 
 <!-- Yandex.Metrika counter 112846969 — загружается только после согласия на cookies (POL-03, legal.md). См. initMetrika() внизу страницы -->
@@ -554,7 +554,7 @@ footer .bottom{margin-top:28px; padding-top:18px; border-top:1px solid #4a4a4a; 
     <div class="contacts">
       <p class="eyebrow">Запрос КП</p>
       <h2>Пришлите спецификацию — подготовим КП на серию</h2>
-      <p class="lede" style="margin-top:12px">Работаем в будни с 10:00 до 17:00. Ориентировочную цену видно сразу, точную — в КП после макета. Заявка уходит менеджеру; если удобнее — напишите в мессенджер или на почту.</p>
+      <p class="lede" style="margin-top:12px">Работаем в будни с 10:00 до 17:00. Ориентировочную цену видно сразу, точную — в КП после макета. Заявка уходит письмом на info@velvet-pro.ru; если удобнее — напишите в мессенджер.</p>
       <a class="ph" href="tel:+74954806072" data-goal="w1_phone_click">+7 495 480-60-72</a><div class="sub">Москва, ул. Котляковская, 3с1</div>
       <a class="ph" href="tel:+78126700067" data-goal="w1_phone_click">+7 812 670-00-67</a><div class="sub">Санкт-Петербург, ул. Оптиков, 4к3</div>
       <a class="ph" href="tel:+78005555060" data-goal="w1_phone_click">8 800 555-50-60</a><div class="sub">Бесплатно по России</div>
@@ -614,12 +614,12 @@ footer .bottom{margin-top:28px; padding-top:18px; border-top:1px solid #4a4a4a; 
 
       <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
       <input type="hidden" name="utm_source"><input type="hidden" name="utm_medium"><input type="hidden" name="utm_campaign"><input type="hidden" name="utm_content">
-      <input type="hidden" name="lead_source" value="landing-izgolovya-v4"><input type="hidden" name="page_url"><input type="hidden" name="request_type">
+      <input type="hidden" name="lead_source" value="landing-izgolovya-v4.1"><input type="hidden" name="page_url"><input type="hidden" name="request_type">
 
       <label class="consent-box"><input type="checkbox" id="f-consent" name="consent" value="1"><span>Даю <a href="https://velvet-pro.ru/soglasie.pdf" target="_blank" rel="noopener">согласие на обработку персональных данных</a> в соответствии с <a href="https://velvet-pro.ru/politica.pdf" target="_blank" rel="noopener">политикой конфиденциальности</a>. Без согласия заявка не отправляется.</span></label>
-      <p class="consent">Тестовая страница: заявка передаётся через сервис Formspree (США) — только для проверки формы, без рекламного трафика. Для рабочей версии форма переносится на velvet-pro.ru.</p>
+      <p class="consent">Сайт не хранит данные формы: по кнопке откроется ваша почтовая программа с готовым письмом на info@velvet-pro.ru — останется нажать «Отправить». Если почта не настроена — кнопка WhatsApp рядом.</p>
       <div class="send-row">
-        <button class="btn btn-primary" type="submit" id="submitBtn" disabled>Отправить заявку</button>
+        <button class="btn btn-primary" type="submit" id="submitBtn" disabled>Отправить заявку письмом</button>
         <a class="btn btn-light" href="https://wa.me/79253061817" target="_blank" rel="noopener" id="waBtn">Отправить в WhatsApp</a>
       </div>
       <p class="status" id="formStatus" role="status"></p>
@@ -658,7 +658,7 @@ footer .bottom{margin-top:28px; padding-top:18px; border-top:1px solid #4a4a4a; 
 <script>
 (function(){
   var YM_ID = window.YM_ID;
-  var FORMSPREE = 'https://formspree.io/f/mdekeerd';  // knowledge/analytics.md#form-endpoint — тест без рекламы (POL-01)
+  var MAILTO = 'info@velvet-pro.ru';  // отправка письмом из почтового клиента посетителя: сайт данные не принимает и не хранит (POL-01)
   var RATE = 15000;           // ₽/м² — knowledge/company.md#цены
   var TUFT = 1.30;            // каретная стяжка: +30 % к цене и сроку
   var TERM = [10, 20];        // рабочих дней — knowledge/company.md
@@ -763,32 +763,25 @@ footer .bottom{margin-top:28px; padding-top:18px; border-top:1px solid #4a4a4a; 
   var status = document.getElementById('formStatus');
   function show(ok, msg){ status.textContent = msg; status.className = 'status ' + (ok ? 'ok' : 'bad'); }
 
-  // отправка через Formspree; цель — только после успешного ответа (analytics.md: w1_form_submit_<type>)
+  // отправка письмом (mailto): текст заявки + источник; цель Метрики — в момент открытия письма
+  function tech(){
+    var q = [];
+    ['utm_source','utm_medium','utm_campaign','utm_content'].forEach(function(k){ var v = form.querySelector('input[name='+k+']').value; if (v) q.push(k+'='+v); });
+    return 'Источник: ' + form.querySelector('input[name=lead_source]').value + (q.length ? ' · ' + q.join(' ') : '') + '\nСтраница: ' + form.querySelector('input[name=page_url]').value;
+  }
   form.addEventListener('submit', function(e){
     e.preventDefault();
     if (!consent.checked){ show(false, 'Поставьте галочку согласия на обработку персональных данных.'); return; }
     var name = sel('f-name'), contact = sel('f-contact');
     if (!name || !contact){ show(false, 'Укажите имя и контакт — без них мы не сможем ответить.'); (name ? document.getElementById('f-contact') : document.getElementById('f-name')).focus(); return; }
     var b = brief();
-    form.querySelector('input[name=request_type]').value = b.t;
     var objName = sel('f-objname') || sel('f-studio') || sel('f-company') || (b.t === 'retail' ? 'частный заказчик' : '');
-    var fd = new FormData(form);
-    fd.append('_subject', 'Запрос Изголовье на заказ: ' + name + (objName ? ' - ' + objName : ''));
-    fd.append('brief', b.text);
-    if (last) fd.append('calc_total', Math.round(last.total));
-    submitBtn.disabled = true; submitBtn.textContent = 'Отправляем…';
-    fetch(FORMSPREE, {method:'POST', body: fd, headers:{'Accept':'application/json'}})
-      .then(function(r){ if (!r.ok) throw new Error(r.status); return r.json(); })
-      .then(function(){
-        goal('w1_form_submit_' + b.t, {type:b.t, price: last ? Math.round(last.total) : 0});
-        if (document.getElementById('f-samples').checked) goal('w1_samples_request', {type:b.t});
-        show(true, 'Заявка отправлена. Ответим в рабочее время — в будни с 10:00 до 17:00.');
-        submitBtn.textContent = 'Отправлено';
-      })
-      .catch(function(){
-        submitBtn.disabled = false; submitBtn.textContent = 'Отправить заявку';
-        show(false, 'Не удалось отправить. Напишите нам в WhatsApp или на info@velvet-pro.ru — текст заявки уже готов в кнопке WhatsApp.');
-      });
+    var subject = 'Запрос Изголовье на заказ: ' + name + (objName ? ' - ' + objName : '');
+    var body = b.text + '\n\n' + tech();
+    goal('w1_form_submit_' + b.t, {type:b.t, price: last ? Math.round(last.total) : 0, via:'mailto'});
+    if (document.getElementById('f-samples').checked) goal('w1_samples_request', {type:b.t});
+    show(true, 'Открыли почтовую программу с готовым письмом на info@velvet-pro.ru — нажмите в ней «Отправить». Если почта не открылась, отправьте тот же текст в WhatsApp.');
+    location.href = 'mailto:' + MAILTO + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
   });
   document.getElementById('waBtn').addEventListener('click', function(){
     var b = brief(); this.href = 'https://wa.me/79253061817?text=' + encodeURIComponent(b.text); goal('w1_messenger_click', {type:b.t, via:'form'});
