@@ -10,21 +10,23 @@
 <meta property="og:description" content="Серии мягких изголовий по проекту: отели, апартаменты, коммерческая недвижимость. Расчёт цены онлайн.">
 <meta property="og:type" content="website">
 <meta property="og:image" content="img/hero.jpg">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://mc.yandex.ru https://mc.yandex.com; connect-src 'self' https://mc.yandex.ru https://mc.yandex.com https://formspree.io; img-src 'self' data: https://mc.yandex.ru https://mc.yandex.com; style-src 'self' 'unsafe-inline'; font-src 'self'; frame-src https://mc.yandex.ru https://mc.yandex.com; form-action 'self' https://formspree.io; base-uri 'self'">
+<!-- Шрифт: системный стек вместо Google Fonts — IP посетителя не уходит за рубеж (legal.md). Montserrat подключается локально при переносе на velvet-pro.ru -->
 
-<!-- Yandex.Metrika counter -->
+<!-- Yandex.Metrika counter 112846969 — загружается только после согласия на cookies (POL-03, legal.md). См. initMetrika() внизу страницы -->
 <script type="text/javascript">
+  window.YM_ID = 112846969;
+  window.initMetrika = function(){
+    if (window.__ymLoaded) return; window.__ymLoaded = true;
     (function(m,e,t,r,i,k,a){
         m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
         m[i].l=1*new Date();
         for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
         k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
     })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=112846969', 'ym');
-    ym(112846969, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
+    ym(window.YM_ID, 'init', {ssr:true, webvisor:true, clickmap:true, referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true, childIframe:false});
+  };
 </script>
-<noscript><div><img src="https://mc.yandex.ru/watch/112846969" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
 <!-- /Yandex.Metrika counter -->
 
 <script type="application/ld+json">
@@ -44,7 +46,7 @@
   --white:#FFFFFF;
   --danger:#F8285A;
   --r-block:48px; --r-card:24px; --r-ctl:12px;
-  --font:'Montserrat', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif;
+  --font:'Montserrat', system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif; /* Montserrat — только если установлен локально */
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
@@ -266,6 +268,18 @@ form[data-type="contractor"] .con-only{display:block}
 .calc-mini{background:var(--white); border-radius:var(--r-ctl); padding:12px 16px; margin:0 0 14px; display:flex; flex-wrap:wrap; justify-content:space-between; gap:6px 16px; font-size:14px}
 .calc-mini b{font-size:18px; color:var(--ink); font-variant-numeric:tabular-nums}
 .consent{font-size:12px; color:var(--g500); margin:12px 0 0}
+.consent-box{display:flex; gap:10px; align-items:flex-start; font-size:13px; color:var(--g700); margin:14px 0 4px; cursor:pointer}
+.consent-box input{width:20px; height:20px; accent-color:var(--primary); margin:0; flex:none}
+.consent-box a{color:var(--primary)}
+#submitBtn:disabled{opacity:.45; cursor:not-allowed}
+.cookie{position:fixed; left:12px; right:12px; bottom:calc(12px + env(safe-area-inset-bottom,0px)); z-index:40; background:var(--ink); color:#fff; border-radius:var(--r-card); padding:16px 18px; display:none; gap:12px; align-items:center; flex-wrap:wrap; box-shadow:0 12px 40px rgba(0,0,0,.25); font-size:13px}
+.cookie.show{display:flex}
+.cookie p{margin:0; flex:1 1 320px; line-height:1.4}
+.cookie p a{color:#fff}
+.cookie .btn{height:40px; padding:0 16px; font-size:14px}
+.cookie .btn-ghost{background:transparent; color:#fff; border:1px solid rgba(255,255,255,.4)}
+@media (min-width:720px){ .cookie{left:auto; right:24px; max-width:620px} }
+body.has-cookie .sticky-cta{bottom:calc(96px + env(safe-area-inset-bottom,0px))}
 .status{margin-top:14px; font-size:14px; border-radius:var(--r-ctl); padding:12px 14px; display:none}
 .status.ok{display:block; background:var(--success-light); color:#067A33}
 .status.bad{display:block; background:#FFEEF3; color:#B0133A}
@@ -293,7 +307,7 @@ footer .bottom{margin-top:28px; padding-top:18px; border-top:1px solid #4a4a4a; 
 <header class="top">
   <div class="wrap top-row">
     <a class="brand" href="https://velvet-pro.ru/" aria-label="Вельвет-ПРО — на главную">
-      <img src="img/logo.svg" alt="Вельвет" onerror="this.remove()">
+      <img src="img/logo.svg" alt="Вельвет" onerror="this.remove()" loading="lazy">
       <span class="word">Вельвет-ПРО<small>изголовья для отелей и HoReCa</small></span>
     </a>
     <div class="contact">
@@ -540,7 +554,7 @@ footer .bottom{margin-top:28px; padding-top:18px; border-top:1px solid #4a4a4a; 
     <div class="contacts">
       <p class="eyebrow">Запрос КП</p>
       <h2>Пришлите спецификацию — подготовим КП на серию</h2>
-      <p class="lede" style="margin-top:12px">Работаем в будни с 10:00 до 17:00. Ориентировочную цену видно сразу, точную — в КП после макета. Приём заявок через сайт временно приостановлен: запрос уходит письмом или в мессенджер.</p>
+      <p class="lede" style="margin-top:12px">Работаем в будни с 10:00 до 17:00. Ориентировочную цену видно сразу, точную — в КП после макета. Заявка уходит менеджеру; если удобнее — напишите в мессенджер или на почту.</p>
       <a class="ph" href="tel:+74954806072" data-goal="w1_phone_click">+7 495 480-60-72</a><div class="sub">Москва, ул. Котляковская, 3с1</div>
       <a class="ph" href="tel:+78126700067" data-goal="w1_phone_click">+7 812 670-00-67</a><div class="sub">Санкт-Петербург, ул. Оптиков, 4к3</div>
       <a class="ph" href="tel:+78005555060" data-goal="w1_phone_click">8 800 555-50-60</a><div class="sub">Бесплатно по России</div>
@@ -565,14 +579,25 @@ footer .bottom{margin-top:28px; padding-top:18px; border-top:1px solid #4a4a4a; 
 
       <div class="calc-mini" id="miniCalc"><span>Расчёт из калькулятора</span><b id="m-sum">не заполнен</b></div>
 
+      <div class="row">
+        <div class="field"><label for="f-name">Имя</label><input id="f-name" name="name" type="text" autocomplete="name" class="ym-disable-keys" required></div>
+        <div class="field"><label for="f-contact">Телефон, e-mail или мессенджер</label><input id="f-contact" name="contact" type="text" autocomplete="tel" class="ym-disable-keys" required></div>
+      </div>
+      <div class="field"><label for="f-company">Компания (необязательно)</label><input id="f-company" name="company" type="text" autocomplete="organization" class="ym-disable-keys"></div>
+
       <div class="obj-only">
         <div class="row">
           <div class="field"><label for="f-objtype">Тип объекта</label>
             <select id="f-objtype" name="object_type"><option>Отель / гостиница</option><option>Бутик-отель</option><option>Апартаменты</option><option>Ресторан / HoReCa</option><option>Коммерческая недвижимость</option><option>Другое</option></select></div>
-          <div class="field"><label for="f-objname">Объект, город</label><input id="f-objname" name="object_name" type="text" placeholder="например, отель на 40 номеров, Сочи"></div>
+          <div class="field"><label for="f-objname">Объект, город</label><input id="f-objname" name="object_name" type="text" placeholder="например, отель на 40 номеров, Сочи" class="ym-disable-keys"></div>
         </div>
         <div class="row">
+          <div class="field"><label for="f-qty">Количество изголовий / номеров</label><input id="f-qty" name="qty" type="text" inputmode="numeric" placeholder="например, 40"></div>
           <div class="field"><label for="f-date">Дата открытия / сдачи</label><input id="f-date" name="deadline" type="text" placeholder="месяц, год"></div>
+        </div>
+        <div class="row">
+          <div class="field"><label for="f-com">Ткань заказчика (COM)</label>
+            <select id="f-com" name="com_requested"><option value="">Нет, подберёте вы</option><option value="1">Да, своя ткань</option></select></div>
           <div class="field"><label for="f-km">Требование по классу пожарной опасности</label>
             <select id="f-km" name="fire_class"><option>Нет требования</option><option>КМ5 достаточно</option><option>Нужен класс выше КМ5</option><option>Уточню</option></select></div>
         </div>
@@ -587,9 +612,14 @@ footer .bottom{margin-top:28px; padding-top:18px; border-top:1px solid #4a4a4a; 
       <label class="check"><input type="checkbox" id="f-samples" name="samples" value="1"><span>Прислать образцы ткани<small>образцы бесплатно, доставка СДЭК за счёт получателя</small></span></label>
       <div class="field"><label for="f-msg">Комментарий: спецификация, ссылка на чертёж, цвет ткани</label><textarea id="f-msg" name="message" rows="3"></textarea></div>
 
-      <p class="consent">Форма ничего не отправляет и не хранит: по кнопке откроется ваша почта или WhatsApp с готовым текстом запроса — останется добавить имя и контакт.</p>
+      <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <input type="hidden" name="utm_source"><input type="hidden" name="utm_medium"><input type="hidden" name="utm_campaign"><input type="hidden" name="utm_content">
+      <input type="hidden" name="lead_source" value="landing-izgolovya-v4"><input type="hidden" name="page_url"><input type="hidden" name="request_type">
+
+      <label class="consent-box"><input type="checkbox" id="f-consent" name="consent" value="1"><span>Даю <a href="https://velvet-pro.ru/soglasie.pdf" target="_blank" rel="noopener">согласие на обработку персональных данных</a> в соответствии с <a href="https://velvet-pro.ru/politica.pdf" target="_blank" rel="noopener">политикой конфиденциальности</a>. Без согласия заявка не отправляется.</span></label>
+      <p class="consent">Тестовая страница: заявка передаётся через сервис Formspree (США) — только для проверки формы, без рекламного трафика. Для рабочей версии форма переносится на velvet-pro.ru.</p>
       <div class="send-row">
-        <button class="btn btn-primary" type="submit" id="submitBtn">Отправить запрос письмом</button>
+        <button class="btn btn-primary" type="submit" id="submitBtn" disabled>Отправить заявку</button>
         <a class="btn btn-light" href="https://wa.me/79253061817" target="_blank" rel="noopener" id="waBtn">Отправить в WhatsApp</a>
       </div>
       <p class="status" id="formStatus" role="status"></p>
@@ -614,6 +644,12 @@ footer .bottom{margin-top:28px; padding-top:18px; border-top:1px solid #4a4a4a; 
   </div>
 </footer>
 
+<div class="cookie" id="cookieBar" role="dialog" aria-live="polite" aria-label="Согласие на cookies">
+  <p>Мы используем cookies и Яндекс Метрику (включая Вебвизор), чтобы понимать, как работает страница. Поля с личными данными не записываются. <a href="https://velvet-pro.ru/politica.pdf" target="_blank" rel="noopener">Политика конфиденциальности</a></p>
+  <button class="btn btn-primary" type="button" id="cookieYes">Принять</button>
+  <button class="btn btn-ghost" type="button" id="cookieNo">Отказаться</button>
+</div>
+
 <div class="sticky-cta">
   <a class="btn btn-primary" href="#price" data-goal="w1_cta_sticky">Рассчитать</a>
   <a class="btn btn-light" href="#lead" data-goal="w1_cta_sticky_kp" data-type="object">Получить КП</a>
@@ -621,11 +657,12 @@ footer .bottom{margin-top:28px; padding-top:18px; border-top:1px solid #4a4a4a; 
 
 <script>
 (function(){
-  var YM_ID = 112846969;
+  var YM_ID = window.YM_ID;
+  var FORMSPREE = 'https://formspree.io/f/mdekeerd';  // knowledge/analytics.md#form-endpoint — тест без рекламы (POL-01)
   var RATE = 15000;           // ₽/м² — knowledge/company.md#цены
   var TUFT = 1.30;            // каретная стяжка: +30 % к цене и сроку
   var TERM = [10, 20];        // рабочих дней — knowledge/company.md
-  function goal(n, p){ try{ if (window.ym) ym(YM_ID, 'reachGoal', n, p||{}); }catch(e){} }
+  function goal(n, p){ try{ if (window.ym && window.__ymLoaded) ym(YM_ID, 'reachGoal', n, p||{}); }catch(e){} }
   function rub(n){ return Math.round(n).toLocaleString('ru-RU').replace(/,/g,' ') + ' ₽'; }
   var KIND = {plain:'гладкое', channels:'вертикальные каналы', tuft:'каретная стяжка'};
 
@@ -685,34 +722,76 @@ footer .bottom{margin-top:28px; padding-top:18px; border-top:1px solid #4a4a4a; 
     tabs.forEach(function(x){ var on = x===b; x.setAttribute('aria-selected', on); document.getElementById(x.getAttribute('aria-controls')).hidden = !on; });
   }); });
 
-  // отправка: Formspree отключён (23-ФЗ) — сайт данные не собирает; текст запроса уходит в почту/WhatsApp пользователя
+  // cookies → Метрика только после согласия (POL-03)
+  var bar = document.getElementById('cookieBar'), choice = null;
+  try { choice = localStorage.getItem('cookie-consent'); } catch(e) {}
+  function cookieDecide(v){
+    choice = v; try { localStorage.setItem('cookie-consent', v); } catch(e) {}
+    bar.classList.remove('show'); document.body.classList.remove('has-cookie');
+    if (v === 'yes') window.initMetrika();
+  }
+  if (choice === 'yes') window.initMetrika();
+  else if (choice !== 'no') { bar.classList.add('show'); document.body.classList.add('has-cookie'); }
+  document.getElementById('cookieYes').addEventListener('click', function(){ cookieDecide('yes'); });
+  document.getElementById('cookieNo').addEventListener('click', function(){ cookieDecide('no'); });
+
+  // UTM и источник → скрытые поля (SR-T1)
+  try {
+    var q = new URLSearchParams(location.search);
+    ['utm_source','utm_medium','utm_campaign','utm_content'].forEach(function(k){ var el = form.querySelector('input[name='+k+']'); if (el) el.value = q.get(k) || ''; });
+    form.querySelector('input[name=page_url]').value = location.href.split('#')[0];
+  } catch(e) {}
+
+  // согласие — кнопка активна только с галочкой (POL-02)
+  var consent = document.getElementById('f-consent'), submitBtn = document.getElementById('submitBtn');
+  consent.addEventListener('change', function(){ submitBtn.disabled = !consent.checked; });
+
+  // текст заявки (для письма и WhatsApp)
   var TYPES = {object:'Отель / объект', designer:'Дизайнер / архитектор', contractor:'Подрядчик / комплектатор', retail:'Частное лицо'};
   function sel(id){ var el = document.getElementById(id); return el ? el.value.trim() : ''; }
   function brief(){
     var t = form.getAttribute('data-type'), L = ['Запрос КП: изголовья', 'Кто: ' + TYPES[t]];
     if (last) L.push('Расчёт: ' + last.w+'×'+last.h+' см, '+last.n+' шт, '+KIND[last.k]+(last.com?', ткань заказчика':'')+', от '+rub(last.total)+' (от '+rub(last.unit)+'/шт), '+last.term+' раб. дн.');
-    if (t==='object' || t==='contractor'){ L.push('Тип объекта: '+sel('f-objtype')); if (sel('f-objname')) L.push('Объект, город: '+sel('f-objname')); if (sel('f-date')) L.push('Дата открытия: '+sel('f-date')); L.push('Класс пожарной опасности: '+sel('f-km')); }
+    if (t==='object' || t==='contractor'){ L.push('Тип объекта: '+sel('f-objtype')); if (sel('f-objname')) L.push('Объект, город: '+sel('f-objname')); if (sel('f-qty')) L.push('Количество: '+sel('f-qty')); if (sel('f-date')) L.push('Дата открытия: '+sel('f-date')); L.push('Класс пожарной опасности: '+sel('f-km')); if (sel('f-com')) L.push('Ткань заказчика: да'); }
     if (t==='contractor') L.push('Роль: '+sel('f-role'));
     if (t==='designer' && sel('f-studio')) L.push('Студия / проект: '+sel('f-studio'));
     if (document.getElementById('f-samples').checked) L.push('Нужны образцы ткани');
     if (sel('f-msg')) L.push('Комментарий: '+sel('f-msg'));
-    L.push('', 'Имя и контакт: ');
+    if (sel('f-name')) L.push('Имя: '+sel('f-name')); if (sel('f-contact')) L.push('Контакт: '+sel('f-contact')); if (sel('f-company')) L.push('Компания: '+sel('f-company'));
     return {t:t, text:L.join('\n')};
   }
   var status = document.getElementById('formStatus');
-  function done(ch, b){
-    goal('w1_lead_' + ch, {type:b.t, price: last ? Math.round(last.total) : 0});
-    if (document.getElementById('f-samples').checked) goal('w1_samples_request');
-    status.textContent = ch==='mailto' ? 'Открыли почтовую программу с текстом запроса. Если она не открылась — напишите на info@velvet-pro.ru.' : 'Открыли WhatsApp с текстом запроса.';
-    status.className = 'status ok';
-  }
+  function show(ok, msg){ status.textContent = msg; status.className = 'status ' + (ok ? 'ok' : 'bad'); }
+
+  // отправка через Formspree; цель — только после успешного ответа (analytics.md: w1_form_submit_<type>)
   form.addEventListener('submit', function(e){
-    e.preventDefault(); var b = brief();
-    location.href = 'mailto:info@velvet-pro.ru?subject=' + encodeURIComponent('КП: изголовья — ' + TYPES[b.t] + (last ? ' · от ' + rub(last.total) : '')) + '&body=' + encodeURIComponent(b.text);
-    done('mailto', b);
+    e.preventDefault();
+    if (!consent.checked){ show(false, 'Поставьте галочку согласия на обработку персональных данных.'); return; }
+    var name = sel('f-name'), contact = sel('f-contact');
+    if (!name || !contact){ show(false, 'Укажите имя и контакт — без них мы не сможем ответить.'); (name ? document.getElementById('f-contact') : document.getElementById('f-name')).focus(); return; }
+    var b = brief();
+    form.querySelector('input[name=request_type]').value = b.t;
+    var objName = sel('f-objname') || sel('f-studio') || sel('f-company') || (b.t === 'retail' ? 'частный заказчик' : '');
+    var fd = new FormData(form);
+    fd.append('_subject', 'Запрос Изголовье на заказ: ' + name + (objName ? ' - ' + objName : ''));
+    fd.append('brief', b.text);
+    if (last) fd.append('calc_total', Math.round(last.total));
+    submitBtn.disabled = true; submitBtn.textContent = 'Отправляем…';
+    fetch(FORMSPREE, {method:'POST', body: fd, headers:{'Accept':'application/json'}})
+      .then(function(r){ if (!r.ok) throw new Error(r.status); return r.json(); })
+      .then(function(){
+        goal('w1_form_submit_' + b.t, {type:b.t, price: last ? Math.round(last.total) : 0});
+        if (document.getElementById('f-samples').checked) goal('w1_samples_request', {type:b.t});
+        show(true, 'Заявка отправлена. Ответим в рабочее время — в будни с 10:00 до 17:00.');
+        submitBtn.textContent = 'Отправлено';
+      })
+      .catch(function(){
+        submitBtn.disabled = false; submitBtn.textContent = 'Отправить заявку';
+        show(false, 'Не удалось отправить. Напишите нам в WhatsApp или на info@velvet-pro.ru — текст заявки уже готов в кнопке WhatsApp.');
+      });
   });
   document.getElementById('waBtn').addEventListener('click', function(){
-    var b = brief(); this.href = 'https://wa.me/79253061817?text=' + encodeURIComponent(b.text); done('whatsapp', b);
+    var b = brief(); this.href = 'https://wa.me/79253061817?text=' + encodeURIComponent(b.text); goal('w1_messenger_click', {type:b.t, via:'form'});
   });
 })();
 </script>
