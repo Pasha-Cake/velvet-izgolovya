@@ -297,6 +297,48 @@ footer .bottom{margin-top:28px; padding-top:18px; border-top:1px solid #4a4a4a; 
 }
 @media (prefers-reduced-motion:reduce){ html{scroll-behavior:auto} .btn{transition:none} }
 </style>
+<style id="vp-css">
+.vp{background:var(--g100,#F0F3F4); border-radius:var(--r-card,24px); padding:clamp(16px,2.6vw,32px); display:grid; gap:18px}
+section.grey .vp{background:var(--white,#fff)}
+.vp-lbl{display:block; font-size:12px; color:var(--g500,#6E6E6E); margin:0 0 8px}
+.vp-ctl{display:flex; flex-wrap:wrap; gap:14px 28px}
+.vp-seg{display:flex; flex-wrap:wrap; gap:6px}
+.vp-seg label{display:inline-flex; align-items:center; gap:6px; background:var(--white,#fff); border:1px solid var(--g200,#E1E1E1); border-radius:999px; padding:7px 14px; font-size:14px; cursor:pointer}
+section.grey .vp-seg label{background:var(--g100,#F0F3F4)}
+.vp-seg input{accent-color:var(--primary,#F25354)}
+.vp-list{display:grid; gap:10px}
+.vp-row{background:var(--white,#fff); border:2px solid transparent; border-radius:var(--r-ctl,12px); padding:14px 16px; display:grid; grid-template-columns:minmax(0,1.3fr) minmax(0,1.2fr) minmax(0,1fr); gap:10px 18px; align-items:start}
+section.grey .vp-row{background:var(--g100,#F0F3F4)}
+.vp-row.is-on{border-color:var(--primary,#F25354)}
+.vp-on{display:flex; gap:10px; cursor:pointer}
+.vp-on input{margin-top:4px; accent-color:var(--primary,#F25354); width:18px; height:18px; flex:none}
+.vp-on b{display:block; font-weight:600; font-size:15px}
+.vp-on small{display:block; color:var(--g500,#6E6E6E); font-size:12.5px}
+.vp-qty{display:flex; gap:8px; flex-wrap:wrap}
+.vp-qty label{font-size:12px; color:var(--g500,#6E6E6E); display:grid; gap:4px; flex:1 1 80px}
+.vp-qty input,.vp-exp select,.vp-exp input,.vp-exp textarea{font:inherit; font-size:15px; padding:8px 10px; border:1px solid var(--g300,#BDBDBD); border-radius:10px; background:#fff; width:100%; color:var(--ink,#090E1C)}
+.vp-opts{grid-column:1 / 3; grid-row:2; display:flex; flex-wrap:wrap; gap:6px 16px; font-size:13.5px; color:var(--g800,#464646)}
+.vp-opts label{display:inline-flex; gap:6px; align-items:center; cursor:pointer}
+.vp-opts input{accent-color:var(--primary,#F25354)}
+.vp-price{grid-column:3; grid-row:1 / span 2; align-self:center; text-align:right; display:grid; gap:2px; font-variant-numeric:tabular-nums}
+.vp-price span{font-size:13px; color:var(--g700,#5B5B5B)}
+.vp-price b{font-size:16px}
+.vp-svc{display:grid; gap:6px; font-size:14px}
+.vp-svc label{display:flex; gap:8px; align-items:center; cursor:pointer}
+.vp-svc input{accent-color:var(--primary,#F25354)}
+.vp-total{display:flex; flex-wrap:wrap; align-items:baseline; gap:6px 16px; border-top:1px solid var(--g200,#E1E1E1); padding-top:14px}
+.vp-total b{font-size:clamp(22px,3vw,30px); font-variant-numeric:tabular-nums}
+.vp-total small{color:var(--g500,#6E6E6E)}
+.vp-exp-g{display:grid; grid-template-columns:1fr 1fr; gap:10px 16px}
+.vp-exp label{font-size:13px; color:var(--g700,#5B5B5B); display:grid; gap:4px}
+.vp-exp .vp-wide{grid-column:1 / -1}
+.vp-note{font-size:12.5px; color:var(--g500,#6E6E6E); margin:0; max-width:90ch}
+.vp #vp-go{justify-self:start}
+.vp-mini{background:var(--g100,#F0F3F4); border-radius:var(--r-ctl,12px); padding:12px 16px; margin:0 0 14px; display:flex; flex-wrap:wrap; gap:6px 14px; align-items:baseline; font-size:14px}
+.vp-mini b{font-variant-numeric:tabular-nums}
+.vp-mini a{color:var(--primary,#F25354); margin-left:auto}
+@media (max-width:820px){ .vp-row{grid-template-columns:1fr} .vp-opts,.vp-price{grid-column:auto; grid-row:auto} .vp-price{text-align:left} .vp-exp-g{grid-template-columns:1fr} }
+</style>
 </head>
 <body>
 
@@ -560,6 +602,13 @@ footer .bottom{margin-top:28px; padding-top:18px; border-top:1px solid #4a4a4a; 
 </section>
 
 <!-- Блок 11 — Заявка на пакет -->
+<!-- Прайс-лист и предварительный расчёт (13.10.2026): tools/build_pricelists.py -->
+<section class="block" id="pricelist">
+  <div class="head-row"><div><p class="eyebrow">Цены</p><h2>Прайс-лист и предварительный расчёт</h2>
+  <p class="lede">Отметьте позиции и объём — увидите ориентир «от–до». Расчёт и ваши ожидания по бюджету и срокам уйдут в заявку вместе с контактами.</p></div></div>
+  <div id="vpcalc" class="vp"></div>
+</section>
+
 <section class="block grey" id="lead">
   <div class="lead-grid">
     <div class="contacts">
@@ -637,7 +686,7 @@ footer .bottom{margin-top:28px; padding-top:18px; border-top:1px solid #4a4a4a; 
 
       <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
       <input type="hidden" name="utm_source"><input type="hidden" name="utm_medium"><input type="hidden" name="utm_campaign"><input type="hidden" name="utm_content">
-      <input type="hidden" name="lead_source" value="landing-soft-package-v2"><input type="hidden" name="page_url">
+      <input type="hidden" name="lead_source" value="landing-soft-package-v3"><input type="hidden" name="page_url">
       <input type="hidden" name="request_type" value="object"><input type="hidden" name="lead_type" value="object">
       <input type="hidden" name="package" value="1"><input type="hidden" name="lines_selected"><input type="hidden" name="lines_count" value="0">
       <input type="hidden" name="lines_ready_count" value="0"><input type="hidden" name="lines_dev">
@@ -942,7 +991,7 @@ footer .bottom{margin-top:28px; padding-top:18px; border-top:1px solid #4a4a4a; 
     goal('w1_form_submit_' + t, p);
     if (samples) goal('w1_samples_request', {type:t});
     show(true, 'Письмо подготовлено. Если почтовая программа не открылась, напишите на info@velvet-pro.ru или в Telegram, Max — укажите линии и параметры объекта.');
-    location.href = 'mailto:' + MAILTO + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+    location.href = 'mailto:' + MAILTO + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body + (window.vpCalcText ? window.vpCalcText() : ''));
   });
   document.getElementById('tgBtn').addEventListener('click', function(){ goal('w1_messenger_click', {type:form.getAttribute('data-type'), via:'form', app:'telegram'}); });
   document.getElementById('maxBtn').addEventListener('click', function(){ goal('w1_messenger_click', {type:form.getAttribute('data-type'), via:'form', app:'max'}); });
@@ -956,6 +1005,146 @@ footer .bottom{margin-top:28px; padding-top:18px; border-top:1px solid #4a4a4a; 
     s.textContent = JSON.stringify({'@context':'https://schema.org','@type':'FAQPage', mainEntity:qa});
     document.head.appendChild(s);
   } catch(e) {}
+})();
+</script>
+<script id="vp-js">window.VP_PRICE={"clients":[{"id":"object","name":"Отель / объект"},{"id":"contractor","name":"Подрядчик"},{"id":"designer","name":"Дизайнер"},{"id":"private","name":"Частное лицо"}],"urgency":[{"id":"standard","name":"Стандартный"},{"id":"fast","name":"Ускоренный (−30 % к сроку)"},{"id":"urgent","name":"Срочный (−50 % к сроку)"}],"dClient":{"object":0.0,"contractor":0.0,"designer":0.0714,"private":0.1071},"dUrg":{"standard":0.0,"fast":0.0714,"urgent":0.1429},"ladders":{"*":[{"from":0,"d":0.0714},{"from":20,"d":0.0357},{"from":100,"d":0.0}],"м²":[{"from":0,"d":0.0714},{"from":20,"d":0.0357},{"from":100,"d":0.0}],"п.м":[{"from":0,"d":0.0714},{"from":30,"d":0.0357},{"from":150,"d":0.0}],"шт":[{"from":0,"d":0.0714},{"from":10,"d":0.0357},{"from":50,"d":0.0}],"номер":[{"from":0,"d":0.0714},{"from":10,"d":0.0357},{"from":40,"d":0.0}]},"capF":1.3214,"budgets":["до 300 тыс. ₽","300 тыс. – 1 млн ₽","1–3 млн ₽","3–10 млн ₽","более 10 млн ₽","пока не знаю"],"disclaimer":"Цены — предварительный ориентир с НДС: зависят от объёма, сложности, срока и типа заказа. Не являются публичной офертой (ст. 437 ГК РФ). Точную стоимость фиксируем в КП после макета или замера. Замер, доставка и укладка — по тарифам компании.","items":[{"id":"hb-hotel-series","name":"Изголовья для номеров серией","unit":"м²","ladder":"м²","note":"фанера + ППУ, обивка рогожкой; ширина = ширина кровати","p0":[6846,10080],"opts":[{"id":"channels","name":"Вертикальные каналы","mult":1.15},{"id":"capitone","name":"Каретная стяжка","mult":1.3},{"id":"com","name":"Ткань заказчика (COM)","d":0.0357,"mult":0.9}],"floor":15000,"fs":1.4,"dims":[180,120,10]},{"id":"cp-loop","name":"Ковролин гостиничный петлевой (рулон)","unit":"м²","ladder":"м²","note":"","p0":[1414,2268],"opts":[{"id":"brand","name":"Брендирование / печать","d":0.0357}],"capF":1.0714},{"id":"cp-cut","name":"Ковролин гостиничный разрезной (рулон)","unit":"м²","ladder":"м²","note":"","p0":[1960,2310],"opts":[],"capF":1.0714},{"id":"cp-tile","name":"Ковровая плитка 50 × 50 см","unit":"м²","ladder":"м²","note":"","p0":[1666,3304],"opts":[],"capF":1.0714},{"id":"cu-blackout","name":"Шторы блэкаут для номера","unit":"п.м","ladder":"п.м","note":"готовое изделие, высота до 2,8 м; п.м ширины полотна","p0":[2184,3262],"opts":[{"id":"fr_fabric","name":"Ткань с сертификатом пожарной безопасности (подбор по запросу)","mult":1.25},{"id":"hand_pleat","name":"Ручная складка / подкладка","mult":1.15}]},{"id":"cu-tulle","name":"Тюль / вуаль для номера","unit":"п.м","ladder":"п.м","note":"готовое изделие; п.м ширины полотна; карниз — в КП","p0":[2254,2422],"opts":[{"id":"fr_fabric","name":"Ткань с сертификатом пожарной безопасности (подбор по запросу)","mult":1.25}]}],"services":[{"id":"measure","name":"Замер (выезд)","price":3000,"unit":""},{"id":"carpet-install","name":"Укладка ковролина","price":370,"unit":"м²"},{"id":"carpet-seam","name":"Бесшовная стыковка ковролина","price":400,"unit":"п.м"},{"id":"delivery-mkad","name":"Доставка в пределах МКАД","price":1000,"unit":""},{"id":"delivery-mo","name":"Доставка по Московской области","price":1500,"unit":""},{"id":"delivery-tk","name":"Доставка транспортной компанией по РФ","price":1200,"unit":""},{"id":"samples","name":"Образцы под задачу (доставка СДЭК — за счёт получателя)","price":0,"unit":""}],"whatHint":"Например: 60 номеров, ковролин 18 м² и окно 1,6 м на номер, изголовья 180 см, открытие в мае"};
+/* Динамический прайс-лист и предварительный расчёт (волна 1, 13.10.2026).
+   Данные — window.VP_PRICE (собирается tools/build_pricelists.py из work/pricing/pricing-model.json).
+   Цены — ориентир «от–до», не оферта. Итог уходит в письмо заявки через window.vpCalcText(). */
+(function(){
+  var D = window.VP_PRICE; if (!D) return;
+  var root = document.getElementById('vpcalc'); if (!root) return;
+  var YM = 112846969, used = false;
+  function goal(n){ try{ if (window.ym && window.__ymLoaded) ym(YM, 'reachGoal', n); }catch(e){} }
+  function esc(s){ return String(s).replace(/[&<>"]/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]; }); }
+  function r100(n){ return Math.round(n/100)*100; }
+  function rng(a, b){ return a === b ? rub(a) : rub(a) + ' – ' + rub(b); }
+  function rub(n){ return Math.round(n).toLocaleString('ru-RU').replace(/,/g,' ') + ' ₽'; }
+  function num(v){ var x = parseFloat(String(v).replace(',','.')); return isFinite(x) && x > 0 ? x : 0; }
+  var S = { client:'object', urg:'standard', items:{}, svc:{} };
+
+  // ---------- разметка ----------
+  var h = [];
+  h.push('<div class="vp-ctl"><div class="vp-grp"><span class="vp-lbl">Кто вы</span><div class="vp-seg" role="radiogroup" aria-label="Тип клиента">');
+  D.clients.forEach(function(c, i){ h.push('<label><input type="radio" name="vp-client" value="'+c.id+'"'+(i===0?' checked':'')+'>'+esc(c.name)+'</label>'); });
+  h.push('</div></div><div class="vp-grp"><span class="vp-lbl">Срок</span><div class="vp-seg" role="radiogroup" aria-label="Срок">');
+  D.urgency.forEach(function(c, i){ h.push('<label><input type="radio" name="vp-urg" value="'+c.id+'"'+(i===0?' checked':'')+'>'+esc(c.name)+'</label>'); });
+  h.push('</div></div></div>');
+  h.push('<div class="vp-list">');
+  D.items.forEach(function(it){
+    h.push('<div class="vp-row" data-id="'+it.id+'"><label class="vp-on"><input type="checkbox" data-k="on"><span><b>'+esc(it.name)+'</b><small>'+esc(it.note||'')+'</small></span></label>');
+    h.push('<div class="vp-qty">');
+    if (it.dims){
+      h.push('<label>Ширина, см<input type="number" inputmode="numeric" min="30" max="1000" data-k="w" value="'+it.dims[0]+'"></label><label>Высота, см<input type="number" inputmode="numeric" min="20" max="400" data-k="h" value="'+it.dims[1]+'"></label><label>Штук<input type="number" inputmode="numeric" min="1" max="9999" data-k="n" value="'+it.dims[2]+'"></label>');
+    } else {
+      h.push('<label>Количество, '+esc(it.unit)+'<input type="number" inputmode="decimal" min="0" step="any" data-k="q" value="'+(it.q||'')+'"></label>');
+    }
+    h.push('</div>');
+    if (it.opts && it.opts.length){
+      h.push('<div class="vp-opts">');
+      it.opts.forEach(function(o){ h.push('<label><input type="checkbox" data-o="'+o.id+'">'+esc(o.name)+'</label>'); });
+      h.push('</div>');
+    }
+    h.push('<div class="vp-price"><span data-k="unit">—</span><b data-k="sum">—</b></div></div>');
+  });
+  h.push('</div>');
+  if (D.services.length){
+    h.push('<div class="vp-svc"><span class="vp-lbl">Услуги по тарифам компании</span>');
+    D.services.forEach(function(s){ h.push('<label><input type="checkbox" data-s="'+s.id+'">'+esc(s.name)+' — '+(s.price ? 'от '+rub(s.price)+(s.unit?' / '+esc(s.unit):'') : 'бесплатно')+'</label>'); });
+    h.push('</div>');
+  }
+  h.push('<div class="vp-total" aria-live="polite"><span>Ориентир по выбранным позициям</span><b id="vp-total">выберите позиции</b><small id="vp-total-n"></small></div>');
+  h.push('<div class="vp-exp"><span class="vp-lbl">Ваши ожидания — заполните, если знаете</span><div class="vp-exp-g">');
+  h.push('<label>Бюджет проекта<select id="vp-budget"><option value="">— не указан —</option>');
+  D.budgets.forEach(function(b){ h.push('<option>'+esc(b)+'</option>'); });
+  h.push('</select></label><label>Когда нужно (месяц сдачи/открытия)<input type="month" id="vp-when"></label>');
+  h.push('<label class="vp-wide">Что нужно и что важно<textarea id="vp-what" maxlength="500" rows="2" placeholder="'+esc(D.whatHint)+'"></textarea></label></div></div>');
+  h.push('<p class="vp-note">'+esc(D.disclaimer)+'</p>');
+  h.push('<a class="btn btn-primary" href="#lead" id="vp-go">Добавить расчёт в заявку</a>');
+  root.innerHTML = h.join('');
+
+  // ---------- расчёт ----------
+  function ladder(unit, q){ var L = D.ladders[unit] || D.ladders['*'], d = 0; L.forEach(function(s){ if (q >= s.from) d = s.d; }); return d; }
+  function line(it, row){
+    var on = row.querySelector('[data-k=on]').checked, q;
+    if (it.dims){
+      var w = num(row.querySelector('[data-k=w]').value), hh = num(row.querySelector('[data-k=h]').value), n = Math.max(1, Math.round(num(row.querySelector('[data-k=n]').value)) || 1);
+      q = w/100 * hh/100 * n;
+    } else q = num(row.querySelector('[data-k=q]').value);
+    var mult = 1, addW = 0, dOpt = 0, names = [];
+    (it.opts||[]).forEach(function(o){ var c = row.querySelector('[data-o="'+o.id+'"]'); if (c && c.checked){ mult *= (o.mult||1); addW += (o.addW||0); dOpt += (o.d||0); names.push(o.name); } });
+    var f = 1 + D.dClient[S.client] + D.dUrg[S.urg] + ladder(it.ladder, q) + dOpt;
+    f = Math.min(f, it.capF || D.capF);
+    // нижняя граница цены (решение компании, напр. изголовья от 15 000 ₽/м²) — база, к ней применяются те же надбавки
+    var lo = (it.p0[0]*mult + addW) * f, hi = (it.p0[1]*mult + addW) * f;
+    if (it.floor){ var ff = it.floor * mult * (1 + (f - 1) * (it.fs || 1)); lo = Math.max(lo, ff); hi = Math.max(hi, ff); }
+    lo = r100(lo); hi = r100(hi);
+    return { on:on, q:q, lo:lo, hi:hi, opts:names };
+  }
+  function fmtQ(q){ return (Math.round(q*100)/100).toLocaleString('ru-RU'); }
+  var LAST = null;
+  function calc(){
+    S.client = (root.querySelector('input[name=vp-client]:checked')||{}).value || 'object';
+    S.urg = (root.querySelector('input[name=vp-urg]:checked')||{}).value || 'standard';
+    var tot = [0,0], lines = [], cnt = 0;
+    D.items.forEach(function(it){
+      var row = root.querySelector('.vp-row[data-id="'+it.id+'"]'), L = line(it, row);
+      row.classList.toggle('is-on', L.on);
+      row.querySelector('[data-k=unit]').textContent = rng(L.lo, L.hi) + ' / ' + it.unit;
+      var s = row.querySelector('[data-k=sum]');
+      if (L.on && L.q > 0){
+        var a = L.lo*L.q, b = L.hi*L.q; tot[0] += a; tot[1] += b; cnt++;
+        s.textContent = rng(r100(a), r100(b));
+        lines.push(it.name + (it.dims ? ' — ' + row.querySelector('[data-k=w]').value + '×' + row.querySelector('[data-k=h]').value + ' см × ' + row.querySelector('[data-k=n]').value + ' шт = ' + fmtQ(L.q) + ' ' + it.unit : ' — ' + fmtQ(L.q) + ' ' + it.unit) +
+          (L.opts.length ? ' · ' + L.opts.join(', ') : '') + ' · ' + rng(L.lo, L.hi) + ' за ' + it.unit + ' · итого ' + rng(r100(a), r100(b)));
+      } else s.textContent = L.on ? 'укажите количество' : '';
+    });
+    var svc = [];
+    D.services.forEach(function(sv){ var c = root.querySelector('[data-s="'+sv.id+'"]'); if (c && c.checked) svc.push(sv.name + (sv.price ? ' — от ' + rub(sv.price) + (sv.unit ? '/' + sv.unit : '') : ' — бесплатно')); });
+    var T = document.getElementById('vp-total');
+    T.textContent = cnt ? rng(Math.round(tot[0]/1000)*1000, Math.round(tot[1]/1000)*1000) : 'выберите позиции';
+    document.getElementById('vp-total-n').textContent = cnt ? ('позиций: ' + cnt + (svc.length ? '; услуги — по тарифам, отдельно' : '') + '; с НДС') : '';
+    var exp = { budget: document.getElementById('vp-budget').value, when: document.getElementById('vp-when').value, what: document.getElementById('vp-what').value.trim() };
+    LAST = { lines:lines, svc:svc, tot:tot, cnt:cnt, exp:exp };
+    mini();
+    if (!used && (cnt || exp.budget || exp.when || exp.what)){ used = true; goal('w1_price_calc_used'); }
+  }
+  function mini(){
+    var f = document.getElementById('leadForm'); if (!f) return;
+    var m = document.getElementById('vpMini');
+    if (!m){
+      m = document.createElement('div'); m.id = 'vpMini'; m.className = 'vp-mini';
+      var btn = f.querySelector('button[type=submit],input[type=submit]');
+      if (btn && btn.parentNode) btn.parentNode.insertBefore(m, btn); else f.appendChild(m);
+    }
+    var e = LAST && LAST.exp, has = LAST && (LAST.cnt || LAST.svc.length || e.budget || e.when || e.what);
+    m.innerHTML = has ? ('<span>Предварительный расчёт добавлен в заявку</span><b>' + (LAST.cnt ? esc(document.getElementById('vp-total').textContent) + ' · позиций: ' + LAST.cnt : 'ожидания по бюджету и срокам') + '</b><a href="#vpcalc">изменить</a>')
+                     : '<span>Предварительный расчёт</span><b>не заполнен</b><a href="#vpcalc">посчитать</a>';
+  }
+  window.vpCalcText = function(){
+    if (!LAST) return '';
+    var e = LAST.exp, out = [];
+    if (LAST.cnt || LAST.svc.length){
+      out.push('', '--- Предварительный расчёт с сайта (ориентир с НДС, не оферта) ---');
+      out.push('Тип клиента: ' + D.clients.filter(function(c){ return c.id===S.client; })[0].name + '; срок: ' + D.urgency.filter(function(c){ return c.id===S.urg; })[0].name);
+      LAST.lines.forEach(function(l, i){ out.push((i+1) + ') ' + l); });
+      if (LAST.svc.length) out.push('Услуги: ' + LAST.svc.join('; '));
+      if (LAST.cnt) out.push('ИТОГО ориентир: ' + rng(Math.round(LAST.tot[0]/1000)*1000, Math.round(LAST.tot[1]/1000)*1000));
+    }
+    if (e.budget || e.when || e.what){
+      out.push('', '--- Ожидания заказчика ---');
+      if (e.budget) out.push('Бюджет: ' + e.budget);
+      if (e.when) out.push('Срок (месяц): ' + e.when.split('-').reverse().join('.'));
+      if (e.what) out.push('Содержание: ' + e.what);
+    }
+    return out.length ? out.join('\n') : '';
+  };
+  root.addEventListener('input', calc); root.addEventListener('change', calc);
+  root.querySelectorAll('.vp-row').forEach(function(r){
+    r.querySelectorAll('input:not([data-k=on])').forEach(function(i){ i.addEventListener('input', function(){ var c = r.querySelector('[data-k=on]'); if (!c.checked && i.type !== 'checkbox'){ c.checked = true; calc(); } }); });
+  });
+  document.getElementById('vp-go').addEventListener('click', function(){ calc(); goal('w1_price_calc_to_form'); });
+  calc(); used = false;
 })();
 </script>
 </body>
