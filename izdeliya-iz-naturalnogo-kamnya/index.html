@@ -9,7 +9,7 @@
 <meta property="og:title" content="Изделия из натурального камня на заказ — Вельвет-ПРО">
 <meta property="og:description" content="Мрамор, гранит, травертин: столешницы, подоконники, барные стойки, камины, лестницы, полы, стены, мозаика и скульптура. Расчёт онлайн, КП для объектов.">
 <meta property="og:type" content="website">
-<meta property="og:image" content="../img/ai-kn-hero.jpg">
+<meta property="og:image" content="../img/ai-kn-hero-onyx.jpg">
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://mc.yandex.ru https://mc.yandex.com; connect-src 'self' https://mc.yandex.ru https://mc.yandex.com; img-src 'self' data: https://mc.yandex.ru https://mc.yandex.com; style-src 'self' 'unsafe-inline'; font-src 'self'; frame-src https://mc.yandex.ru https://mc.yandex.com; form-action 'self'; base-uri 'self'">
 <!-- Тестовая страница: noindex, без канонической ссылки (ГЕЙТ 1, решение 5). Шрифт — системный стек, IP посетителя не уходит за рубеж (legal.md) -->
 
@@ -118,7 +118,9 @@ p{margin:0 0 12px; max-width:66ch}
 }
 
 /* решения по типам объектов */
-.cats{display:grid; grid-template-columns:repeat(4,1fr); gap:16px}
+.cats{display:grid; grid-template-columns:repeat(3,1fr); gap:20px}
+.cat .tx h3 a{color:inherit; text-decoration:none}
+.cat .tx h3 a:hover{text-decoration:underline}
 .cat{display:flex; flex-direction:column; border-radius:var(--r-card); background:var(--g100); overflow:hidden}
 .cat .ph{position:relative; display:block}
 .cat .ph img{width:100%; height:auto; aspect-ratio:4/3; object-fit:cover; display:block}
@@ -394,7 +396,7 @@ section.grey .vp-row{background:var(--g100,#F0F3F4)}
 <!-- 1. Hero -->
 <section class="hero" id="top">
  <div class="hero-img">
- <img src="../img/ai-kn-hero.jpg" width="1200" height="896" alt="Изделия из натурального камня на заказ — визуализация" fetchpriority="high">
+ <img src="../img/ai-kn-hero-onyx-640.jpg" srcset="../img/ai-kn-hero-onyx-640.jpg 640w, ../img/ai-kn-hero-onyx.jpg 1200w" sizes="(max-width: 700px) 100vw, 50vw" width="1200" height="896" alt="Изделия из натурального камня на заказ — визуализация" fetchpriority="high">
  <span class="viz">Визуализация</span>
  </div>
  <div class="hero-body">
@@ -418,69 +420,69 @@ section.grey .vp-row{background:var(--g100,#F0F3F4)}
  <div class="head-row"><div><h2>Каталог изделий</h2></div></div>
  <div class="cats">
  <article class="cat">
-  <a class="ph" href="#price"><img src="../img/ai-kn-mosaic.jpg" width="1200" height="896" alt="Флорентийская мозаика — визуализация" loading="lazy"><span class="viz">Визуализация</span></a>
-  <div class="tx"><h3>Флорентийская мозаика</h3><p>Панно и узоры из мрамора по вашему эскизу</p><p class="from">от 210 000 ₽/м²</p>
-  <div class="cta-row"><a class="btn btn-primary btn-sm" href="#lead" data-type="object" data-goal="w1_cta_solutions">Заказать</a><a class="btn btn-light btn-sm" href="#price" data-goal="w1_cta_price">Рассчитать</a></div></div>
+  <a class="ph" href="mosaic/"><img src="../img/ai-kn-mosaic-640.jpg" srcset="../img/ai-kn-mosaic-640.jpg 640w, ../img/ai-kn-mosaic.jpg 1200w" sizes="(max-width: 700px) 100vw, 50vw" width="1200" height="896" alt="Флорентийская мозаика — визуализация" loading="lazy"><span class="viz">Визуализация</span></a>
+  <div class="tx"><h3><a href="mosaic/">Флорентийская мозаика</a></h3><p>Панно и узоры из мрамора по вашему эскизу</p><p class="from">от 210 000 ₽/м²</p>
+  <div class="cta-row"><a class="btn btn-primary btn-sm" href="mosaic/" data-goal="w1_cta_solutions">Подробнее</a><a class="btn btn-light btn-sm" href="#lead" data-type="object" data-product="Флорентийская мозаика" data-goal="w1_cta_price">Заказать</a></div></div>
  </article>
  <article class="cat">
-  <a class="ph" href="#price"><img src="../img/ai-kn-tables.jpg" width="1200" height="896" alt="Столы и столики из камня — визуализация" loading="lazy"><span class="viz">Визуализация</span></a>
-  <div class="tx"><h3>Столы и столики из камня</h3><p>Обеденные, журнальные, барные столы из натурального камня</p><p class="from">от 92 400 ₽/шт</p>
-  <div class="cta-row"><a class="btn btn-primary btn-sm" href="#lead" data-type="object" data-goal="w1_cta_solutions">Заказать</a><a class="btn btn-light btn-sm" href="#price" data-goal="w1_cta_price">Рассчитать</a></div></div>
+  <a class="ph" href="tables/"><img src="../img/ai-kn-tables-640.jpg" srcset="../img/ai-kn-tables-640.jpg 640w, ../img/ai-kn-tables.jpg 1200w" sizes="(max-width: 700px) 100vw, 50vw" width="1200" height="896" alt="Столы и столики из камня — визуализация" loading="lazy"><span class="viz">Визуализация</span></a>
+  <div class="tx"><h3><a href="tables/">Столы и столики из камня</a></h3><p>Обеденные, журнальные, барные столы из натурального камня</p><p class="from">от 92 400 ₽/шт</p>
+  <div class="cta-row"><a class="btn btn-primary btn-sm" href="tables/" data-goal="w1_cta_solutions">Подробнее</a><a class="btn btn-light btn-sm" href="#lead" data-type="object" data-product="Столы и столики из камня" data-goal="w1_cta_price">Заказать</a></div></div>
  </article>
  <article class="cat">
-  <a class="ph" href="#price"><img src="../img/ai-kn-sills.jpg" width="1200" height="896" alt="Подоконники из камня — визуализация" loading="lazy"><span class="viz">Визуализация</span></a>
-  <div class="tx"><h3>Подоконники из камня</h3><p>Подоконники из мрамора и гранита по размерам окна</p><p class="from">от 6 800 ₽/п.м</p>
-  <div class="cta-row"><a class="btn btn-primary btn-sm" href="#lead" data-type="object" data-goal="w1_cta_solutions">Заказать</a><a class="btn btn-light btn-sm" href="#price" data-goal="w1_cta_price">Рассчитать</a></div></div>
+  <a class="ph" href="sills/"><img src="../img/ai-kn-sills-640.jpg" srcset="../img/ai-kn-sills-640.jpg 640w, ../img/ai-kn-sills.jpg 1200w" sizes="(max-width: 700px) 100vw, 50vw" width="1200" height="896" alt="Подоконники из камня — визуализация" loading="lazy"><span class="viz">Визуализация</span></a>
+  <div class="tx"><h3><a href="sills/">Подоконники из камня</a></h3><p>Подоконники из мрамора и гранита по размерам окна</p><p class="from">от 6 800 ₽/п.м</p>
+  <div class="cta-row"><a class="btn btn-primary btn-sm" href="sills/" data-goal="w1_cta_solutions">Подробнее</a><a class="btn btn-light btn-sm" href="#lead" data-type="object" data-product="Подоконники из камня" data-goal="w1_cta_price">Заказать</a></div></div>
  </article>
  <article class="cat">
-  <a class="ph" href="#price"><img src="../img/ai-kn-sink-tops.jpg" width="1200" height="896" alt="Столешницы со встроенной мойкой — визуализация" loading="lazy"><span class="viz">Визуализация</span></a>
-  <div class="tx"><h3>Столешницы со встроенной мойкой</h3><p>Столешницы с интегрированной раковиной для санузлов и HoReCa</p><p class="from">от 19 500 ₽/м²</p>
-  <div class="cta-row"><a class="btn btn-primary btn-sm" href="#lead" data-type="object" data-goal="w1_cta_solutions">Заказать</a><a class="btn btn-light btn-sm" href="#price" data-goal="w1_cta_price">Рассчитать</a></div></div>
+  <a class="ph" href="sink-tops/"><img src="../img/ai-kn-sink-tops-640.jpg" srcset="../img/ai-kn-sink-tops-640.jpg 640w, ../img/ai-kn-sink-tops.jpg 1200w" sizes="(max-width: 700px) 100vw, 50vw" width="1200" height="896" alt="Столешницы со встроенной мойкой — визуализация" loading="lazy"><span class="viz">Визуализация</span></a>
+  <div class="tx"><h3><a href="sink-tops/">Столешницы со встроенной мойкой</a></h3><p>Столешницы с интегрированной раковиной для санузлов и HoReCa</p><p class="from">от 19 500 ₽/м²</p>
+  <div class="cta-row"><a class="btn btn-primary btn-sm" href="sink-tops/" data-goal="w1_cta_solutions">Подробнее</a><a class="btn btn-light btn-sm" href="#lead" data-type="object" data-product="Столешницы со встроенной мойкой" data-goal="w1_cta_price">Заказать</a></div></div>
  </article>
  <article class="cat">
-  <a class="ph" href="#price"><img src="../img/ai-kn-bar.jpg" width="1200" height="896" alt="Барные стойки из камня — визуализация" loading="lazy"><span class="viz">Визуализация</span></a>
-  <div class="tx"><h3>Барные стойки из камня</h3><p>Барные стойки для ресторанов, баров и кухонь</p><p class="from">от 9 700 ₽/п.м</p>
-  <div class="cta-row"><a class="btn btn-primary btn-sm" href="#lead" data-type="object" data-goal="w1_cta_solutions">Заказать</a><a class="btn btn-light btn-sm" href="#price" data-goal="w1_cta_price">Рассчитать</a></div></div>
+  <a class="ph" href="bar/"><img src="../img/ai-kn-bar-640.jpg" srcset="../img/ai-kn-bar-640.jpg 640w, ../img/ai-kn-bar.jpg 1200w" sizes="(max-width: 700px) 100vw, 50vw" width="1200" height="896" alt="Барные стойки из камня — визуализация" loading="lazy"><span class="viz">Визуализация</span></a>
+  <div class="tx"><h3><a href="bar/">Барные стойки из камня</a></h3><p>Барные стойки для ресторанов, баров и кухонь</p><p class="from">от 9 700 ₽/п.м</p>
+  <div class="cta-row"><a class="btn btn-primary btn-sm" href="bar/" data-goal="w1_cta_solutions">Подробнее</a><a class="btn btn-light btn-sm" href="#lead" data-type="object" data-product="Барные стойки из камня" data-goal="w1_cta_price">Заказать</a></div></div>
  </article>
  <article class="cat">
-  <a class="ph" href="#price"><img src="../img/ai-kn-islands.jpg" width="1200" height="896" alt="Кухонные острова — визуализация" loading="lazy"><span class="viz">Визуализация</span></a>
-  <div class="tx"><h3>Кухонные острова</h3><p>Столешницы островов из цельного слэба мрамора или гранита</p><p class="from">от 25 500 ₽/м²</p>
-  <div class="cta-row"><a class="btn btn-primary btn-sm" href="#lead" data-type="object" data-goal="w1_cta_solutions">Заказать</a><a class="btn btn-light btn-sm" href="#price" data-goal="w1_cta_price">Рассчитать</a></div></div>
+  <a class="ph" href="islands/"><img src="../img/ai-kn-islands-640.jpg" srcset="../img/ai-kn-islands-640.jpg 640w, ../img/ai-kn-islands.jpg 1200w" sizes="(max-width: 700px) 100vw, 50vw" width="1200" height="896" alt="Кухонные острова — визуализация" loading="lazy"><span class="viz">Визуализация</span></a>
+  <div class="tx"><h3><a href="islands/">Кухонные острова</a></h3><p>Столешницы островов из цельного слэба мрамора или гранита</p><p class="from">от 25 500 ₽/м²</p>
+  <div class="cta-row"><a class="btn btn-primary btn-sm" href="islands/" data-goal="w1_cta_solutions">Подробнее</a><a class="btn btn-light btn-sm" href="#lead" data-type="object" data-product="Кухонные острова" data-goal="w1_cta_price">Заказать</a></div></div>
  </article>
  <article class="cat">
-  <a class="ph" href="#price"><img src="../img/ai-kn-backsplash.jpg" width="1200" height="896" alt="Кухонные фартуки из камня — визуализация" loading="lazy"><span class="viz">Визуализация</span></a>
-  <div class="tx"><h3>Кухонные фартуки из камня</h3><p>Фартук из слэба в тон столешнице</p><p class="from">от 12 600 ₽/м²</p>
-  <div class="cta-row"><a class="btn btn-primary btn-sm" href="#lead" data-type="object" data-goal="w1_cta_solutions">Заказать</a><a class="btn btn-light btn-sm" href="#price" data-goal="w1_cta_price">Рассчитать</a></div></div>
+  <a class="ph" href="backsplash/"><img src="../img/ai-kn-backsplash-640.jpg" srcset="../img/ai-kn-backsplash-640.jpg 640w, ../img/ai-kn-backsplash.jpg 1200w" sizes="(max-width: 700px) 100vw, 50vw" width="1200" height="896" alt="Кухонные фартуки из камня — визуализация" loading="lazy"><span class="viz">Визуализация</span></a>
+  <div class="tx"><h3><a href="backsplash/">Кухонные фартуки из камня</a></h3><p>Фартук из слэба в тон столешнице</p><p class="from">от 12 600 ₽/м²</p>
+  <div class="cta-row"><a class="btn btn-primary btn-sm" href="backsplash/" data-goal="w1_cta_solutions">Подробнее</a><a class="btn btn-light btn-sm" href="#lead" data-type="object" data-product="Кухонные фартуки из камня" data-goal="w1_cta_price">Заказать</a></div></div>
  </article>
  <article class="cat">
-  <a class="ph" href="#price"><img src="../img/ai-kn-shower.jpg" width="1200" height="896" alt="Душевые поддоны из камня — визуализация" loading="lazy"><span class="viz">Визуализация</span></a>
-  <div class="tx"><h3>Душевые поддоны из камня</h3><p>Поддоны из мрамора с уклоном и выпилом под трап</p><p class="from">от 9 200 ₽/м²</p>
-  <div class="cta-row"><a class="btn btn-primary btn-sm" href="#lead" data-type="object" data-goal="w1_cta_solutions">Заказать</a><a class="btn btn-light btn-sm" href="#price" data-goal="w1_cta_price">Рассчитать</a></div></div>
+  <a class="ph" href="shower/"><img src="../img/ai-kn-shower-640.jpg" srcset="../img/ai-kn-shower-640.jpg 640w, ../img/ai-kn-shower.jpg 1200w" sizes="(max-width: 700px) 100vw, 50vw" width="1200" height="896" alt="Душевые поддоны из камня — визуализация" loading="lazy"><span class="viz">Визуализация</span></a>
+  <div class="tx"><h3><a href="shower/">Душевые поддоны из камня</a></h3><p>Поддоны из мрамора с уклоном и выпилом под трап</p><p class="from">от 9 200 ₽/м²</p>
+  <div class="cta-row"><a class="btn btn-primary btn-sm" href="shower/" data-goal="w1_cta_solutions">Подробнее</a><a class="btn btn-light btn-sm" href="#lead" data-type="object" data-product="Душевые поддоны из камня" data-goal="w1_cta_price">Заказать</a></div></div>
  </article>
  <article class="cat">
-  <a class="ph" href="#price"><img src="../img/ai-kn-sculpture.jpg" width="1200" height="896" alt="Интерьерные скульптуры из камня — визуализация" loading="lazy"><span class="viz">Визуализация</span></a>
-  <div class="tx"><h3>Интерьерные скульптуры из камня</h3><p>Скульптура из мрамора для холлов, лобби и садов</p><p class="from">от 52 500 ₽/шт</p>
-  <div class="cta-row"><a class="btn btn-primary btn-sm" href="#lead" data-type="object" data-goal="w1_cta_solutions">Заказать</a><a class="btn btn-light btn-sm" href="#price" data-goal="w1_cta_price">Рассчитать</a></div></div>
+  <a class="ph" href="sculpture/"><img src="../img/ai-kn-sculpture-640.jpg" srcset="../img/ai-kn-sculpture-640.jpg 640w, ../img/ai-kn-sculpture.jpg 1200w" sizes="(max-width: 700px) 100vw, 50vw" width="1200" height="896" alt="Интерьерные скульптуры из камня — визуализация" loading="lazy"><span class="viz">Визуализация</span></a>
+  <div class="tx"><h3><a href="sculpture/">Интерьерные скульптуры из камня</a></h3><p>Скульптура из мрамора для холлов, лобби и садов</p><p class="from">от 52 500 ₽/шт</p>
+  <div class="cta-row"><a class="btn btn-primary btn-sm" href="sculpture/" data-goal="w1_cta_solutions">Подробнее</a><a class="btn btn-light btn-sm" href="#lead" data-type="object" data-product="Интерьерные скульптуры из камня" data-goal="w1_cta_price">Заказать</a></div></div>
  </article>
  <article class="cat">
-  <a class="ph" href="#price"><img src="../img/ai-kn-fireplace.jpg" width="1200" height="896" alt="Отделка каминов / порталы — визуализация" loading="lazy"><span class="viz">Визуализация</span></a>
-  <div class="tx"><h3>Отделка каминов / порталы</h3><p>Каминные порталы из мрамора: классика и минимализм</p><p class="from">от 110 200 ₽/шт</p>
-  <div class="cta-row"><a class="btn btn-primary btn-sm" href="#lead" data-type="object" data-goal="w1_cta_solutions">Заказать</a><a class="btn btn-light btn-sm" href="#price" data-goal="w1_cta_price">Рассчитать</a></div></div>
+  <a class="ph" href="fireplace/"><img src="../img/ai-kn-fireplace-640.jpg" srcset="../img/ai-kn-fireplace-640.jpg 640w, ../img/ai-kn-fireplace.jpg 1200w" sizes="(max-width: 700px) 100vw, 50vw" width="1200" height="896" alt="Отделка каминов / порталы — визуализация" loading="lazy"><span class="viz">Визуализация</span></a>
+  <div class="tx"><h3><a href="fireplace/">Отделка каминов / порталы</a></h3><p>Каминные порталы из мрамора: классика и минимализм</p><p class="from">от 110 200 ₽/шт</p>
+  <div class="cta-row"><a class="btn btn-primary btn-sm" href="fireplace/" data-goal="w1_cta_solutions">Подробнее</a><a class="btn btn-light btn-sm" href="#lead" data-type="object" data-product="Отделка каминов / порталы" data-goal="w1_cta_price">Заказать</a></div></div>
  </article>
  <article class="cat">
-  <a class="ph" href="#price"><img src="../img/ai-kn-stairs.jpg" width="1200" height="896" alt="Отделка лестниц, ступени — визуализация" loading="lazy"><span class="viz">Визуализация</span></a>
-  <div class="tx"><h3>Отделка лестниц, ступени</h3><p>Ступени и подступенки из мрамора и гранита</p><p class="from">от 5 100 ₽/п.м</p>
-  <div class="cta-row"><a class="btn btn-primary btn-sm" href="#lead" data-type="object" data-goal="w1_cta_solutions">Заказать</a><a class="btn btn-light btn-sm" href="#price" data-goal="w1_cta_price">Рассчитать</a></div></div>
+  <a class="ph" href="stairs/"><img src="../img/ai-kn-stairs-640.jpg" srcset="../img/ai-kn-stairs-640.jpg 640w, ../img/ai-kn-stairs.jpg 1200w" sizes="(max-width: 700px) 100vw, 50vw" width="1200" height="896" alt="Отделка лестниц, ступени — визуализация" loading="lazy"><span class="viz">Визуализация</span></a>
+  <div class="tx"><h3><a href="stairs/">Отделка лестниц, ступени</a></h3><p>Ступени и подступенки из мрамора и гранита</p><p class="from">от 5 100 ₽/п.м</p>
+  <div class="cta-row"><a class="btn btn-primary btn-sm" href="stairs/" data-goal="w1_cta_solutions">Подробнее</a><a class="btn btn-light btn-sm" href="#lead" data-type="object" data-product="Отделка лестниц, ступени" data-goal="w1_cta_price">Заказать</a></div></div>
  </article>
  <article class="cat">
-  <a class="ph" href="#price"><img src="../img/ai-kn-floors.jpg" width="1200" height="896" alt="Отделка полов — визуализация" loading="lazy"><span class="viz">Визуализация</span></a>
-  <div class="tx"><h3>Отделка полов</h3><p>Полы из мраморной плитки и крупноформатных слэбов</p><p class="from">от 7 200 ₽/м²</p>
-  <div class="cta-row"><a class="btn btn-primary btn-sm" href="#lead" data-type="object" data-goal="w1_cta_solutions">Заказать</a><a class="btn btn-light btn-sm" href="#price" data-goal="w1_cta_price">Рассчитать</a></div></div>
+  <a class="ph" href="floors/"><img src="../img/ai-kn-floors-640.jpg" srcset="../img/ai-kn-floors-640.jpg 640w, ../img/ai-kn-floors.jpg 1200w" sizes="(max-width: 700px) 100vw, 50vw" width="1200" height="896" alt="Отделка полов — визуализация" loading="lazy"><span class="viz">Визуализация</span></a>
+  <div class="tx"><h3><a href="floors/">Отделка полов</a></h3><p>Полы из мраморной плитки и крупноформатных слэбов</p><p class="from">от 7 200 ₽/м²</p>
+  <div class="cta-row"><a class="btn btn-primary btn-sm" href="floors/" data-goal="w1_cta_solutions">Подробнее</a><a class="btn btn-light btn-sm" href="#lead" data-type="object" data-product="Отделка полов" data-goal="w1_cta_price">Заказать</a></div></div>
  </article>
  <article class="cat">
-  <a class="ph" href="#price"><img src="../img/ai-kn-walls.jpg" width="1200" height="896" alt="Отделка стен — визуализация" loading="lazy"><span class="viz">Визуализация</span></a>
-  <div class="tx"><h3>Отделка стен</h3><p>Облицовка стен мрамором для лобби, санузлов, ресторанов</p><p class="from">от 13 200 ₽/м²</p>
-  <div class="cta-row"><a class="btn btn-primary btn-sm" href="#lead" data-type="object" data-goal="w1_cta_solutions">Заказать</a><a class="btn btn-light btn-sm" href="#price" data-goal="w1_cta_price">Рассчитать</a></div></div>
+  <a class="ph" href="walls/"><img src="../img/ai-kn-walls-640.jpg" srcset="../img/ai-kn-walls-640.jpg 640w, ../img/ai-kn-walls.jpg 1200w" sizes="(max-width: 700px) 100vw, 50vw" width="1200" height="896" alt="Отделка стен — визуализация" loading="lazy"><span class="viz">Визуализация</span></a>
+  <div class="tx"><h3><a href="walls/">Отделка стен</a></h3><p>Облицовка стен мрамором для лобби, санузлов, ресторанов</p><p class="from">от 13 200 ₽/м²</p>
+  <div class="cta-row"><a class="btn btn-primary btn-sm" href="walls/" data-goal="w1_cta_solutions">Подробнее</a><a class="btn btn-light btn-sm" href="#lead" data-type="object" data-product="Отделка стен" data-goal="w1_cta_price">Заказать</a></div></div>
  </article>
  </div>
  <p class="note" style="margin-top:12px">Цены «от» — ориентир с НДС для объекта; точная стоимость — в КП.</p>
@@ -491,15 +493,15 @@ section.grey .vp-row{background:var(--g100,#F0F3F4)}
  <div class="head-row"><div><h2>Где применяют</h2></div></div>
  <div class="segs segs3">
  <a class="seg" href="#lead" data-type="object" data-goal="w1_cta_solutions">
-  <div class="ph"><img src="../img/ai-kn-hotel.jpg" width="1200" height="896" alt="Отели и апартаменты — визуализация" loading="lazy"><span class="viz">Визуализация</span></div>
+  <div class="ph"><img src="../img/ai-kn-hotel-640.jpg" srcset="../img/ai-kn-hotel-640.jpg 640w, ../img/ai-kn-hotel.jpg 1200w" sizes="(max-width: 700px) 100vw, 50vw" width="1200" height="896" alt="Отели и апартаменты — визуализация" loading="lazy"><span class="viz">Визуализация</span></div>
   <div class="tx"><h3>Отели и апартаменты</h3><p>Санузлы, лобби, полы и стены из мрамора.</p><span class="go">Заказать →</span></div>
  </a>
  <a class="seg" href="#lead" data-type="object" data-goal="w1_cta_solutions">
-  <div class="ph"><img src="../img/ai-kn-restaurant.jpg" width="1200" height="896" alt="Рестораны и бары — визуализация" loading="lazy"><span class="viz">Визуализация</span></div>
+  <div class="ph"><img src="../img/ai-kn-restaurant-640.jpg" srcset="../img/ai-kn-restaurant-640.jpg 640w, ../img/ai-kn-restaurant.jpg 1200w" sizes="(max-width: 700px) 100vw, 50vw" width="1200" height="896" alt="Рестораны и бары — визуализация" loading="lazy"><span class="viz">Визуализация</span></div>
   <div class="tx"><h3>Рестораны и бары</h3><p>Барные стойки, столы, облицовка залов.</p><span class="go">Заказать →</span></div>
  </a>
  <a class="seg" href="#lead" data-type="object" data-goal="w1_cta_solutions">
-  <div class="ph"><img src="../img/ai-kn-home.jpg" width="1200" height="896" alt="Частные резиденции — визуализация" loading="lazy"><span class="viz">Визуализация</span></div>
+  <div class="ph"><img src="../img/ai-kn-home-640.jpg" srcset="../img/ai-kn-home-640.jpg 640w, ../img/ai-kn-home.jpg 1200w" sizes="(max-width: 700px) 100vw, 50vw" width="1200" height="896" alt="Частные резиденции — визуализация" loading="lazy"><span class="viz">Визуализация</span></div>
   <div class="tx"><h3>Частные резиденции</h3><p>Кухни, камины, лестницы — по проекту дизайнера.</p><span class="go">Заказать →</span></div>
  </a>
  </div>
@@ -528,7 +530,7 @@ section.grey .vp-row{background:var(--g100,#F0F3F4)}
     <div class="pnl"><h2>Из чего делаем</h2>
       <ul class="comp"><li><b>Мрамор</b>Белый, тёмный, цветной — под проект</li><li><b>Гранит</b>Для стоек, ступеней и полов</li><li><b>Травертин и оникс</b>Тёплые оттенки, подсветка оникса</li></ul>
       <p>Цена сильно зависит от породы камня: перед запуском согласуем слэб по фото и фиксируем стоимость в КП.</p></div>
-    <figure class="pnl-fig"><img src="../img/ai-kn-detail.jpg" width="1200" height="896" alt="Из чего делаем — визуализация" loading="lazy"><figcaption><span class="tag">Крупный план</span><span class="tag">Визуализация</span></figcaption></figure>
+    <figure class="pnl-fig"><img src="../img/ai-kn-detail-640.jpg" srcset="../img/ai-kn-detail-640.jpg 640w, ../img/ai-kn-detail.jpg 1200w" sizes="(max-width: 700px) 100vw, 50vw" width="1200" height="896" alt="Из чего делаем — визуализация" loading="lazy"><figcaption><span class="tag">Крупный план</span><span class="tag">Визуализация</span></figcaption></figure>
     <div class="pnl"><h2>Варианты</h2><ul class="opts"><li><b>Обработка поверхности</b> — Полировка или матовая (хонингованная) поверхность.</li><li><b>Профиль кромки</b> — Прямой, скруглённый, фигурный — по проекту.</li><li><b>Вырезы</b> — Под мойку, варочную панель, смеситель.</li><li><b>Подсветка</b> — Для просвечивающего камня, например оникса.</li></ul></div>
     <div class="pnl"><h2>Сроки и монтаж</h2>
       <p><b>Срок:</b> срок — в КП после замера и выбора камня</p>
@@ -634,44 +636,15 @@ section.grey .vp-row{background:var(--g100,#F0F3F4)}
  </div>
  </fieldset>
  <p class="tnote retail-note">Частным заказчикам работаем в виде исключения, на условиях компании — условия сообщим по заявке.</p>
- <p class="tnote con-note">Монтаж в Москве и Санкт-Петербурге — стоимость считаем в КП после замера (ориентир рынка: подоконники от 2 200 ₽/п.м, столешницы и стойки от 2 600 ₽/п.м, полы от 1 700 ₽/м²). В другие города — поставка без монтажа.</p>
 
  <div class="row">
  <div class="field"><label for="f-name">Имя</label><input id="f-name" name="name" type="text" autocomplete="name" class="ym-disable-keys" required></div>
  <div class="field"><label for="f-contact">Телефон, e-mail или мессенджер</label><input id="f-contact" name="contact" type="text" autocomplete="tel" class="ym-disable-keys" required></div>
  </div>
- <div class="field"><label for="f-company">Компания (необязательно)</label><input id="f-company" name="company" type="text" autocomplete="organization" class="ym-disable-keys"></div>
-
- <div class="s-o">
- <div class="row">
- <div class="field"><label for="f-objtype">Тип объекта</label>
- <select id="f-objtype" name="object_type"><option value="">—</option><option>Отель / апартаменты</option><option>Ресторан / бар</option><option>Офис / коммерческая недвижимость</option><option>Частная резиденция</option><option>Дизайн-проект</option><option>Другое</option></select></div>
- <div class="field"><label for="f-objname">Объект, город (необязательно)</label><input id="f-objname" name="object_name" type="text" placeholder="например, ресторан, Москва" class="ym-disable-keys"></div>
- </div>
- </div>
- <div class="s-c">
- <div class="field"><label for="f-role">Ваша роль на объекте</label>
- <select id="f-role" name="contractor_role"><option>Генподрядчик</option><option>Комплектация / поставка</option><option>Отделочные работы</option><option>Другое</option></select></div>
- </div>
- <div class="s-d">
- <div class="field"><label for="f-studio">Студия / проект (необязательно)</label><input id="f-studio" name="studio" type="text" class="ym-disable-keys"></div>
- </div>
- <div class="row">
- <div class="field s-o s-d s-c"><label for="f-qty"><span class="lbl-o">Изделия, размеры и количество</span><span class="lbl-oc">Изделия, размеры и количество (необязательно)</span></label><input id="f-qty" name="qty" type="text" placeholder="например, 4 шт., 2400×900 мм"></div>
- <div class="field s-o s-c"><label for="f-date"><span class="lbl-o-date">Дата открытия / сдачи</span><span class="lbl-c">Срок по объекту (необязательно)</span></label><input id="f-date" name="deadline" type="text" placeholder="месяц, год"></div>
- </div>
- <div class="s-o">
- <div class="field"><label for="f-km">Требования проекта к материалам</label>
- <select id="f-km" name="fire_class"><option value="">—</option><option>Нет особых требований</option><option>Есть требования по пожарной безопасности</option><option>Есть требования по влагостойкости</option><option>Уточню по проекту</option></select>
- <span class="hint">Опишите требования в комментарии — ответим по вашему объекту</span></div>
- </div>
- <div class="s-o s-d s-c">
- <label class="check"><input type="checkbox" id="f-com" name="com_requested" value="1"><span>Хотим использовать свой материал<small class="com-hint">Укажите материал в комментарии</small></span></label>
- <label class="check"><input type="checkbox" id="f-pack" name="package_interest" value="1"><span>Нужны и другие изделия для объекта</span></label>
- </div>
- <label class="check"><input type="checkbox" id="f-samples" name="samples" value="1"><span>Нужны образцы материалов<small>условия сообщим в ответе на заявку</small></span></label>
- <div class="field" id="addrField" hidden><label for="f-addr">Адрес доставки образцов</label><input id="f-addr" name="delivery_address" type="text" autocomplete="street-address" class="ym-disable-keys"></div>
- <div class="field"><label for="f-msg">Комментарий: размеры, ссылка на чертёж, материал и цвет</label><textarea id="f-msg" name="message" rows="3" maxlength="1000" class="ym-disable-keys"></textarea></div>
+ <div class="field"><label for="f-product">Изделие</label><select id="f-product" name="product"><option value="">— выберите или опишите в комментарии</option><option>Флорентийская мозаика</option><option>Столы и столики из камня</option><option>Подоконники из камня</option><option>Столешницы со встроенной мойкой</option><option>Барные стойки из камня</option><option>Кухонные острова</option><option>Кухонные фартуки из камня</option><option>Душевые поддоны из камня</option><option>Интерьерные скульптуры из камня</option><option>Отделка каминов / порталы</option><option>Отделка лестниц, ступени</option><option>Отделка полов</option><option>Отделка стен</option></select></div>
+ <div class="field"><label for="f-qty">Размеры и количество</label><input id="f-qty" name="qty" type="text" placeholder="например, 2 шт., 180×90 см"></div>
+ <div class="field"><label for="f-msg">Комментарий (необязательно)</label><textarea id="f-msg" name="message" rows="3" maxlength="1000" class="ym-disable-keys" placeholder="город, срок, ссылка на проект или фото"></textarea></div>
+ <div hidden><input type="checkbox" id="f-com"><input type="checkbox" id="f-pack"><input type="checkbox" id="f-samples"><div id="addrField" hidden><input id="f-addr"></div></div>
 
  <div class="hp" aria-hidden="true"><input type="text" name="_gotcha" tabindex="-1" autocomplete="off"></div>
  <input type="hidden" name="utm_source"><input type="hidden" name="utm_medium"><input type="hidden" name="utm_campaign"><input type="hidden" name="utm_content">
@@ -712,7 +685,7 @@ section.grey .vp-row{background:var(--g100,#F0F3F4)}
 </div>
 
 <div class="sticky-cta">
- <a class="btn btn-light" href="#lead" data-goal="w1_samples_request" data-src="sticky" data-samples="1">Образцы материалов</a>
+ <a class="btn btn-light" href="#price" data-goal="w1_cta_price">Рассчитать</a>
  <a class="btn btn-primary" href="#lead" data-goal="w1_cta_sticky_kp" data-type="object">Заказать</a>
 </div>
 
@@ -797,6 +770,7 @@ section.grey .vp-row{background:var(--g100,#F0F3F4)}
 
   function body(t, fl){
     var L = ['Новая заявка с сайта ' + location.href.split(/[?#]/)[0] + ' Дата: ' + new Date().toLocaleString('ru-RU'), 'Тип обращения: ' + TYPES[t], 'Имя: ' + val('f-name'), 'Контакт: ' + val('f-contact')];
+    if (val('f-product')) L.push('Изделие: ' + val('f-product'));
     if (val('f-company')) L.push('Компания: ' + val('f-company'));
     if (t === 'object'){
       L.push('Тип объекта: ' + val('f-objtype'));
@@ -814,14 +788,12 @@ section.grey .vp-row{background:var(--g100,#F0F3F4)}
       if (val('f-studio')) L.push('Студия / проект: ' + val('f-studio'));
       if (val('f-qty')) L.push('Изделия, размеры и количество: ' + val('f-qty'));
     }
-    if (t !== 'retail'){ L.push('Свой материал (COM): ' + yn('f-com')); L.push('Нужны другие изделия: ' + yn('f-pack')); }
-    L.push('Образцы материалов: ' + yn('f-samples') + (samples.checked ? '; адрес: ' + val('f-addr') : ''));
     if (val('f-msg')) L.push('Комментарий: ' + val('f-msg'));
     var u = [];
     ['utm_source','utm_medium','utm_campaign','utm_content'].forEach(function(k){ u.push(k + '=' + (hidden(k) || '-')); });
     L.push('—');
     L.push('Источник: lead_source=' + hidden('lead_source') + '; ' + u.join('; ') + '; page_url=' + hidden('page_url') + '; request_type=' + t + '; lead_flags=' + (fl.join(',') || '-'));
-    return L.join('\n');
+    return L.filter(function(x){ return !/: (—)?$/.test(x); }).join('\n');
   }
 
   var status = $('formStatus');
@@ -839,7 +811,7 @@ section.grey .vp-row{background:var(--g100,#F0F3F4)}
     if (!name || !contact){ mark([!name ? 'f-name' : 'f-contact']); show(false, 'Укажите имя и контакт — без них мы не сможем ответить.'); (name ? $('f-contact') : $('f-name')).focus(); return; }
     var t = curType();
     if (t === 'object'){
-      var miss = ['f-objtype','f-qty','f-date','f-km'].filter(function(id){ return !val(id); });
+      var miss = [].filter(function(id){ return !val(id); });
       if (miss.length){ mark(miss); show(false, 'Заполните тип объекта, площадь или число номеров, дату открытия и требование по классу — без них не подготовим сравнимое КП.'); $(miss[0]).focus(); return; }
     }
     if (samples.checked && !val('f-addr')){ mark(['f-addr']); show(false, 'Укажите адрес для доставки образцов СДЭК.'); $('f-addr').focus(); return; }
@@ -858,7 +830,7 @@ section.grey .vp-row{background:var(--g100,#F0F3F4)}
   });
 })();
 </script>
-<script id="vp-js">window.VP_PRICE={"clients":[{"id":"object","name":"Объект / компания"},{"id":"contractor","name":"Подрядчик"},{"id":"designer","name":"Дизайнер"},{"id":"private","name":"Частное лицо"}],"urgency":[{"id":"standard","name":"Стандартный"},{"id":"fast","name":"Ускоренный (−30 % к сроку)"},{"id":"urgent","name":"Срочный (−50 % к сроку)"}],"dClient":{"object":0.0,"contractor":0.0,"designer":0.0714,"private":0.1071},"dUrg":{"standard":0.0,"fast":0.0714,"urgent":0.1429},"ladders":{"*":[{"from":0,"d":0.0714},{"from":20,"d":0.0357},{"from":100,"d":0.0}],"м²":[{"from":0,"d":0.0714},{"from":20,"d":0.0357},{"from":100,"d":0.0}],"п.м":[{"from":0,"d":0.0714},{"from":30,"d":0.0357},{"from":150,"d":0.0}],"шт":[{"from":0,"d":0.0714},{"from":10,"d":0.0357},{"from":50,"d":0.0}],"номер":[{"from":0,"d":0.0714},{"from":10,"d":0.0357},{"from":40,"d":0.0}]},"capF":1.3214,"items":[{"id":"mosaic-panel","name":"Панно флорентийская мозаика","unit":"м²","ladder":"м²","note":"мрамор, инкрустация, индивидуальный эскиз","p0":[210000,945000],"opts":[],"dims":[100,100,1]},{"id":"table-design","name":"Дизайнерский стол из мрамора","unit":"шт","ladder":"шт","note":"мрамор, с опорой, цена «от»","p0":[92400,362250],"opts":[]},{"id":"sill-pm","name":"Подоконник из мрамора/гранита","unit":"п.м","ladder":"п.м","note":"20–30 мм, цена «от»","p0":[6832,22372],"opts":[]},{"id":"sink-top","name":"Столешница с раковиной","unit":"м²","ladder":"м²","note":"мрамор, ванная, 1–2 раковины","p0":[19474,27874],"opts":[],"dims":[120,55,1]},{"id":"bar-pm","name":"Барная стойка, погонаж","unit":"п.м","ladder":"п.м","note":"мрамор, толщина не указана","p0":[9660,14280],"opts":[]},{"id":"island-m2","name":"Столешница кухонного острова","unit":"м²","ladder":"м²","note":"мрамор Emperador, 20–30 мм","p0":[25508,28084],"opts":[],"dims":[200,100,1]},{"id":"backsplash-m2","name":"Фартук из мрамора","unit":"м²","ladder":"м²","note":"мрамор, полированный","p0":[12572,18270],"opts":[],"dims":[300,60,1]},{"id":"shower-tray","name":"Душевой поддон из мрамора","unit":"м²","ladder":"м²","note":"мрамор, без монтажа","p0":[9184,25830],"opts":[],"dims":[90,90,1]},{"id":"sculpture","name":"Интерьерная скульптура из мрамора","unit":"шт","ladder":"шт","note":"мрамор, 55–90 см","p0":[52500,285712],"opts":[]},{"id":"fireplace-std","name":"Каминный портал из камня","unit":"шт","ladder":"шт","note":"гранит/мрамор, изготовление, «от»","p0":[110250,124950],"opts":[]},{"id":"stairs-step","name":"Ступень с подступенком","unit":"п.м","ladder":"п.м","note":"мрамор, полированная","p0":[5096,13230],"opts":[]},{"id":"floor-tile","name":"Плитка мрамор 600×300×20","unit":"м²","ladder":"м²","note":"полированная, без укладки","p0":[7210,14784],"opts":[]},{"id":"wall-turnkey","name":"Облицовка стен мрамором","unit":"м²","ladder":"м²","note":"20 мм, под ключ","p0":[13216,29932],"opts":[]},{"id":"sink-cutout","name":"Вырез под мойку","unit":"шт","ladder":"шт","note":"мрамор/гранит, с обработкой кромки","p0":[2772,7672],"opts":[]}],"services":[{"id":"measure","name":"Выезд на замер","price":3000,"unit":"выезд"}],"budgets":["до 300 тыс. ₽","300 тыс. – 1 млн ₽","1–3 млн ₽","3–10 млн ₽","более 10 млн ₽","пока не знаю"],"whatHint":"Например: подоконники 6 шт., столешница 3 м с мойкой, мрамор светлый, срок — март","disclaimer":"Цены — предварительный ориентир с НДС: зависят от размеров, материала, объёма и срока. Не являются публичной офертой (ст. 437 ГК РФ). Точную стоимость фиксируем в КП."};
+<script id="vp-js">window.VP_PRICE={"clients":[{"id":"object","name":"Объект / компания"},{"id":"contractor","name":"Подрядчик"},{"id":"designer","name":"Дизайнер"},{"id":"private","name":"Частное лицо"}],"urgency":[{"id":"standard","name":"Стандартный"},{"id":"fast","name":"Ускоренный (−30 % к сроку)"},{"id":"urgent","name":"Срочный (−50 % к сроку)"}],"dClient":{"object":0.0,"contractor":0.0,"designer":0.0714,"private":0.1071},"dUrg":{"standard":0.0,"fast":0.0714,"urgent":0.1429},"ladders":{"*":[{"from":0,"d":0.0714},{"from":20,"d":0.0357},{"from":100,"d":0.0}],"м²":[{"from":0,"d":0.0714},{"from":20,"d":0.0357},{"from":100,"d":0.0}],"п.м":[{"from":0,"d":0.0714},{"from":30,"d":0.0357},{"from":150,"d":0.0}],"шт":[{"from":0,"d":0.0714},{"from":10,"d":0.0357},{"from":50,"d":0.0}],"номер":[{"from":0,"d":0.0714},{"from":10,"d":0.0357},{"from":40,"d":0.0}]},"capF":1.3214,"items":[{"id":"mosaic-panel","name":"Панно флорентийская мозаика","unit":"м²","ladder":"м²","note":"мрамор, инкрустация, индивидуальный эскиз","p0":[210000,945000],"opts":[],"dims":[100,100,1]},{"id":"mosaic-picture","name":"Картина флорентийская мозаика","unit":"шт","ladder":"шт","note":"мрамор, 20×15 – 61×41 см","p0":[41104,630000],"opts":[]},{"id":"table-design","name":"Дизайнерский стол из мрамора","unit":"шт","ladder":"шт","note":"мрамор, с опорой, цена «от»","p0":[92400,362250],"opts":[]},{"id":"table-top","name":"Столешница для стола","unit":"п.м","ladder":"п.м","note":"мрамор, без подстолья, только «от»","p0":[10500,10500],"opts":[]},{"id":"sill-pm","name":"Подоконник из мрамора/гранита","unit":"п.м","ladder":"п.м","note":"20–30 мм, цена «от»","p0":[6832,22372],"opts":[]},{"id":"sill-m2","name":"Подоконник из камня","unit":"м²","ladder":"м²","note":"мрамор/гранит 20–30 мм","p0":[10668,27734],"opts":[],"dims":[150,30,1]},{"id":"sink-top","name":"Столешница с раковиной","unit":"м²","ladder":"м²","note":"мрамор, ванная, 1–2 раковины","p0":[19474,27874],"opts":[],"dims":[120,55,1]},{"id":"sink-cutout","name":"Вырез под мойку","unit":"шт","ladder":"шт","note":"мрамор/гранит, с обработкой кромки","p0":[2772,7672],"opts":[]},{"id":"bar-pm","name":"Барная стойка, погонаж","unit":"п.м","ladder":"п.м","note":"мрамор, толщина не указана","p0":[9660,14280],"opts":[]},{"id":"bar-m2","name":"Барная стойка из мрамора","unit":"м²","ladder":"м²","note":"мрамор, толщина не указана","p0":[13552,18368],"opts":[],"dims":[200,50,1]},{"id":"island-m2","name":"Столешница кухонного острова","unit":"м²","ladder":"м²","note":"мрамор Emperador, 20–30 мм","p0":[25508,28084],"opts":[],"dims":[200,100,1]},{"id":"island-base","name":"Кухонная столешница из камня","unit":"п.м","ladder":"п.м","note":"гранит/мрамор, цена «от»","p0":[9968,9968],"opts":[]},{"id":"backsplash-m2","name":"Фартук из мрамора","unit":"м²","ladder":"м²","note":"мрамор, полированный","p0":[12572,18270],"opts":[],"dims":[300,60,1]},{"id":"backsplash-pm","name":"Фартук из мрамора","unit":"п.м","ladder":"п.м","note":"высота до 60 см","p0":[8540,17304],"opts":[]},{"id":"shower-tray","name":"Душевой поддон из мрамора","unit":"м²","ladder":"м²","note":"мрамор, без монтажа","p0":[9184,25830],"opts":[],"dims":[90,90,1]},{"id":"sculpture","name":"Интерьерная скульптура из мрамора","unit":"шт","ladder":"шт","note":"мрамор, 55–90 см","p0":[52500,285712],"opts":[]},{"id":"fireplace-std","name":"Каминный портал из камня","unit":"шт","ladder":"шт","note":"гранит/мрамор, изготовление, «от»","p0":[110250,124950],"opts":[]},{"id":"fireplace-turnkey","name":"Мраморный портал под ключ","unit":"шт","ladder":"шт","note":"мрамор, с монтажом","p0":[152250,520800],"opts":[]},{"id":"stairs-step","name":"Ступень с подступенком","unit":"п.м","ladder":"п.м","note":"мрамор, полированная","p0":[5096,13230],"opts":[]},{"id":"stairs-base","name":"Ступени мрамор/гранит","unit":"п.м","ladder":"п.м","note":"цена «от», травертин тоже","p0":[9352,9352],"opts":[]},{"id":"floor-tile","name":"Плитка мрамор 600×300×20","unit":"м²","ladder":"м²","note":"полированная, без укладки","p0":[7210,14784],"opts":[]},{"id":"floor-premium","name":"Мраморный пол, сортовой камень","unit":"м²","ladder":"м²","note":"мрамор, цена «от»","p0":[16590,46200],"opts":[]},{"id":"wall-turnkey","name":"Облицовка стен мрамором","unit":"м²","ladder":"м²","note":"20 мм, под ключ","p0":[13216,29932],"opts":[]},{"id":"wall-tile","name":"Плитка мрамор для стен","unit":"м²","ladder":"м²","note":"600×300×20, без монтажа","p0":[7210,14784],"opts":[]}],"services":[{"id":"measure","name":"Выезд на замер","price":3000,"unit":"выезд"}],"budgets":["до 300 тыс. ₽","300 тыс. – 1 млн ₽","1–3 млн ₽","3–10 млн ₽","более 10 млн ₽","пока не знаю"],"whatHint":"Например: подоконники 6 шт., столешница 3 м с мойкой, мрамор светлый, срок — март","disclaimer":"Цены — предварительный ориентир с НДС: зависят от размеров, материала, объёма и срока. Не являются публичной офертой (ст. 437 ГК РФ). Точную стоимость фиксируем в КП."};
 /* Динамический прайс-лист и предварительный расчёт (волна 1, 13.10.2026).
    Данные — window.VP_PRICE (собирается tools/build_pricelists.py из work/pricing/pricing-model.json).
    Цены — ориентир «от–до», не оферта. Итог уходит в письмо заявки через window.vpCalcText(). */
@@ -998,5 +970,6 @@ section.grey .vp-row{background:var(--g100,#F0F3F4)}
   calc(); used = false;
 })();
 </script>
+<script>document.addEventListener('click',function(ev){var a=ev.target.closest&&ev.target.closest('[data-product]');if(!a)return;var f=document.getElementById('f-product');if(!f)return;var v=a.getAttribute('data-product');if(f.tagName==='SELECT'&&![].some.call(f.options,function(o){return o.text===v;})){var o=document.createElement('option');o.text=v;f.add(o);}f.value=v;});</script>
 </body>
 </html>
