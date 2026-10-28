@@ -1,0 +1,957 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Слэбы дерева и изделия из них на заказ — Вельвет-ПРО</title>
+<meta name="description" content="Столы из эпоксидной смолы, столешницы из слэба и массива, сухие слэбы карагача и дуба. Расчёт стоимости онлайн, КП для объектов.">
+<meta name="robots" content="noindex,nofollow">
+<meta property="og:title" content="Слэбы дерева и изделия из них на заказ — Вельвет-ПРО">
+<meta property="og:description" content="Столы из эпоксидной смолы, столешницы из слэба и массива, сухие слэбы карагача и дуба. Расчёт стоимости онлайн, КП для объектов.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="../img/ai-slab-hero.jpg">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://mc.yandex.ru https://mc.yandex.com; connect-src 'self' https://mc.yandex.ru https://mc.yandex.com; img-src 'self' data: https://mc.yandex.ru https://mc.yandex.com; style-src 'self' 'unsafe-inline'; font-src 'self'; frame-src https://mc.yandex.ru https://mc.yandex.com; form-action 'self'; base-uri 'self'">
+<!-- Тестовая страница: noindex, без канонической ссылки (ГЕЙТ 1, решение 5). Шрифт — системный стек, IP посетителя не уходит за рубеж (legal.md) -->
+
+<!-- Yandex.Metrika counter 112846969 — загружается только после согласия на cookies (POL-03, legal.md). См. initMetrika() внизу страницы -->
+<script type="text/javascript">
+  window.YM_ID = 112846969;
+  window.initMetrika = function(){
+    if (window.__ymLoaded) return; window.__ymLoaded = true;
+    (function(m,e,t,r,i,k,a){
+        m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+        m[i].l=1*new Date();
+        for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+    })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=112846969', 'ym');
+    ym(window.YM_ID, 'init', {ssr:true, webvisor:true, clickmap:true, referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true, childIframe:false});
+  };
+</script>
+<!-- /Yandex.Metrika counter -->
+
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Из чего складывается цена?", "acceptedAnswer": {"@type": "Answer", "text": "Из площади столешницы, породы, доли смолы и подстолья. Кап и широкая река дороже. Ориентир покажет калькулятор, точную цену пришлём в КП."}}, {"@type": "Question", "name": "Можно ли увидеть слэб до изготовления?", "acceptedAnswer": {"@type": "Answer", "text": "Да. Присылаем фото и размеры подходящих слэбов, вы выбираете конкретный спил до запуска."}}, {"@type": "Question", "name": "Какая влажность слэбов?", "acceptedAnswer": {"@type": "Answer", "text": "Камерная сушка до 8–12 %. Такой слэб готов к обработке и меньше ведёт в изделии."}}, {"@type": "Question", "name": "Что лучше: цельная или сращённая ламель?", "acceptedAnswer": {"@type": "Answer", "text": "Цельная ламель даёт сплошной рисунок без стыков, но дороже. Сращённая — бюджетнее, стыки видны. Для острова чаще берут цельную."}}, {"@type": "Question", "name": "Можно заказать серию одинаковых столов для ресторана?", "acceptedAnswer": {"@type": "Answer", "text": "Да. Размер, смола и подстолье будут одинаковыми, а рисунок дерева — у каждого свой. Фото слэбов согласуем до запуска."}}, {"@type": "Question", "name": "Делаете вырезы под мойку и варочную панель?", "acceptedAnswer": {"@type": "Answer", "text": "Да, по шаблону техники или чертежу кухни. Вырез — от 2 100 ₽, торцы вокруг обрабатываем от влаги."}}]}
+</script>
+
+<style>
+/* Токены — UI Kit «Velvet 2025» (Figma) и главная velvet-pro.ru */
+:root{
+  --primary:#F25354; --primary-active:#F22D2E; --primary-light:#FF7778; --primary-clarity:#FDE5E5;
+  --secondary:#1FA483; --success:#17C653; --success-light:#EAFFF1;
+  --ink:#090E1C; --g900:#343434; --g800:#464646; --g700:#5B5B5B; --g500:#6E6E6E; --g400:#8A8A8A; --g300:#BDBDBD; --g200:#E1E1E1; --g100:#F0F3F4;
+  --white:#FFFFFF;
+  --danger:#F8285A;
+  --r-block:48px; --r-card:24px; --r-ctl:12px;
+  --font:'Montserrat', system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif; /* Montserrat — только если установлен локально */
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+section[id]{scroll-margin-top:140px}
+@media (max-width:900px){ section[id]{scroll-margin-top:84px} }
+body{margin:0; background:var(--white); color:var(--g900); font-family:var(--font); font-size:15px; line-height:1.4; -webkit-font-smoothing:antialiased; overflow-x:hidden}
+img{max-width:100%; display:block}
+a{color:inherit}
+h1,h2,h3,h4{margin:0; line-height:1.1; text-wrap:balance; color:var(--g900)}
+h1{font-size:clamp(30px,4.4vw,60px); font-weight:700; color:var(--ink)}
+h2{font-size:clamp(24px,3.2vw,46px); font-weight:700; letter-spacing:.27px; line-height:1.2}
+h3{font-size:clamp(18px,1.7vw,24px); font-weight:500}
+p{margin:0 0 12px; max-width:66ch}
+.lede{font-size:18px; line-height:1.25; color:var(--g800); max-width:58ch}
+.muted{color:var(--g500)}
+.wrap{max-width:1440px; margin:0 auto; padding-inline:clamp(16px,4vw,56px)}
+.block{border:1px solid var(--g200); border-radius:var(--r-block); padding:clamp(22px,3.4vw,48px); margin-top:24px; background:var(--white)}
+.block.grey{background:var(--g100); border-color:var(--g100)}
+.head-row{display:flex; flex-wrap:wrap; justify-content:space-between; align-items:flex-end; gap:16px 24px; margin-bottom:28px}
+.head-row .lede{margin:12px 0 0}
+@media (max-width:640px){ :root{--r-block:24px} .block{margin-top:12px} }
+.eyebrow{font-size:13px; font-weight:500; color:var(--primary); margin:0 0 12px}
+
+/* кнопки — Main / Light button */
+.btn{display:inline-flex; align-items:center; justify-content:center; gap:8px; height:48px; padding:0 24px; border-radius:var(--r-ctl); font:500 15px/1.2 var(--font); text-decoration:none; border:1px solid transparent; cursor:pointer; white-space:nowrap; transition:background .15s, border-color .15s, color .15s}
+.btn-primary{background:var(--primary); color:#fff}
+.btn-primary:hover{background:var(--primary-active)}
+.btn-light{background:var(--white); color:var(--g900); border-color:var(--g200)}
+.btn-light:hover{border-color:var(--g400)}
+.btn:focus-visible{outline:2px solid var(--ink); outline-offset:2px}
+.btn[disabled]{background:var(--g200); color:var(--g400); cursor:default}
+.btn-sm{height:40px; padding:0 16px; font-size:13px}
+.arrow::after{content:"→"; font-size:16px}
+@media (max-width:520px){ .btn{white-space:normal; height:auto; min-height:48px; padding-block:10px; text-align:center} .btn-sm{min-height:40px} }
+
+/* шапка — как на velvet-pro.ru */
+.top{position:sticky; top:0; z-index:20; background:var(--white); border-bottom:1px solid var(--g200)}
+.top-row{display:flex; align-items:center; gap:28px; min-height:76px}
+.brand{display:flex; align-items:center; gap:10px; text-decoration:none; color:var(--ink); min-width:0}
+.brand img{height:40px; width:auto}
+.brand .word{font-weight:700; font-size:22px; letter-spacing:-.01em; line-height:1.1}
+.brand .word small{display:block; font-size:11px; font-weight:500; color:var(--g500)}
+.contact{display:flex; gap:24px; margin-left:auto; align-items:center}
+.contact .c{line-height:1.3}
+.contact .c a{display:block; font-weight:600; text-decoration:none; font-size:15px; color:var(--g900)}
+.contact .c span{font-size:12px; color:var(--g500)}
+.menu{display:flex; gap:28px; align-items:center; min-height:52px; border-top:1px solid var(--g200); font-size:15px}
+.menu a{text-decoration:none; color:var(--g900)}
+.menu a:hover{color:var(--primary)}
+.menu .chat{margin-left:auto; color:var(--g500); font-size:14px}
+@media (max-width:1180px){ .contact .c.hide-md{display:none} .menu{gap:20px; font-size:14px} }
+@media (max-width:900px){ .menu{display:none} .contact .c{display:none} }
+@media (max-width:520px){ .top .btn{display:none} }
+
+/* hero — «big-slide» дизайн-кита: изображение под белой вуалью */
+.hero{position:relative; overflow:hidden; border-radius:var(--r-block); margin-top:20px; min-height:600px; display:flex; background:var(--g100)}
+.hero-img{position:absolute; inset:0}
+.hero-img img{width:100%; height:100%; object-fit:cover; object-position:70% 60%}
+.hero-img::after{content:""; position:absolute; inset:0; background:linear-gradient(90deg,rgba(255,255,255,.97) 0%,rgba(255,255,255,.88) 40%,rgba(255,255,255,.2) 72%,rgba(255,255,255,0) 100%)}
+.hero-body{position:relative; padding:clamp(24px,4vw,56px); display:flex; flex-direction:column; gap:24px; justify-content:center; max-width:760px}
+.hero-body .lede{margin:0}
+.who{display:flex; flex-wrap:wrap; gap:8px}
+.chip{display:inline-flex; align-items:center; min-height:32px; padding:4px 12px; border-radius:8px; background:var(--white); border:1px solid var(--g200); font-size:13px; font-weight:500; color:var(--g800)}
+.cta-row{display:flex; flex-wrap:wrap; gap:12px}
+.facts{display:flex; flex-wrap:wrap; gap:8px 20px; margin:0; padding:0; list-style:none}
+.facts li{font-size:14px; color:var(--g800); padding-left:18px; position:relative}
+.facts li::before{content:""; position:absolute; left:0; top:.45em; width:8px; height:8px; border-radius:50%; background:var(--primary)}
+.viz{position:absolute; right:14px; bottom:14px; background:rgba(255,255,255,.9); color:var(--g700); font-size:11px; padding:5px 10px; border-radius:8px}
+@media (max-width:900px){
+  .hero{flex-direction:column; min-height:0}
+  .hero-img{position:relative; inset:auto; aspect-ratio:4/3; order:-1}
+  .hero-img::after{display:none}
+}
+
+/* решения по типам объектов */
+.cats{display:grid; grid-template-columns:repeat(4,1fr); gap:16px}
+.cat{display:flex; flex-direction:column; border-radius:var(--r-card); background:var(--g100); overflow:hidden}
+.cat .ph{position:relative; display:block}
+.cat .ph img{width:100%; height:auto; aspect-ratio:4/3; object-fit:cover; display:block}
+.cat .ph .viz{position:absolute; right:10px; bottom:10px; background:rgba(255,255,255,.9); font-size:11px; padding:4px 8px; border-radius:8px; color:var(--g700)}
+.cat .tx{padding:20px; display:flex; flex-direction:column; gap:8px; flex:1}
+.cat .tx h3{margin:0}
+.cat .tx p{margin:0}
+.cat .from{font-weight:600}
+.cat .cta-row{margin-top:auto; display:flex; gap:8px; flex-wrap:wrap}
+@media (max-width:1000px){.cats{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:560px){.cats{grid-template-columns:1fr}}
+.segs{display:grid; grid-template-columns:repeat(4,1fr); gap:16px}
+.segs3{grid-template-columns:repeat(3,1fr)}
+@media (max-width:1100px){ .segs{grid-template-columns:1fr 1fr} }
+@media (max-width:560px){ .segs{grid-template-columns:1fr} }
+.seg{display:flex; flex-direction:column; border-radius:var(--r-card); background:var(--g100); overflow:hidden; text-decoration:none; color:inherit}
+.seg .ph{position:relative}
+.seg .ph img{width:100%; height:auto; aspect-ratio:4/3; object-fit:cover; display:block}
+.seg .ph .viz{position:absolute; right:10px; bottom:10px; background:rgba(255,255,255,.9); font-size:11px; padding:4px 8px; border-radius:8px; color:var(--g700)}
+.seg .tx{padding:24px 22px 22px; display:flex; flex-direction:column; gap:10px; flex:1}
+.seg p{margin:0; font-size:14px; color:var(--g700)}
+.seg .go{margin-top:auto; color:var(--primary); font-weight:500; font-size:14px; padding-top:6px}
+.seg:hover h3{color:var(--primary)}
+
+/* партнёры */
+.partners{display:grid; grid-template-columns:repeat(3,1fr); gap:16px}
+@media (max-width:900px){ .partners{grid-template-columns:1fr} }
+.pcard{background:var(--white); border-radius:var(--r-card); padding:28px; display:flex; flex-direction:column}
+.pcard h2,.pcard h3{font-size:clamp(20px,1.9vw,26px); font-weight:600; line-height:1.2}
+.pcard .ic{width:44px; height:44px; border-radius:12px; background:var(--primary-clarity); color:var(--primary); display:grid; place-items:center; margin-bottom:18px}
+.pcard ul{margin:12px 0 18px; padding-left:18px}
+.pcard li{margin-bottom:8px; font-size:14px; color:var(--g800)}
+.pcard .btn{margin-top:auto; align-self:flex-start}
+.exception{margin-top:16px; display:flex; flex-wrap:wrap; gap:8px 16px; align-items:center; justify-content:space-between; background:var(--white); border-radius:var(--r-card); padding:18px 24px; font-size:14px; color:var(--g700)}
+
+/* панель: состав, размер, COM, класс */
+.panel-grid{display:grid; grid-template-columns:1fr 1fr; gap:16px}
+@media (max-width:900px){ .panel-grid{grid-template-columns:1fr} }
+.pnl-fig{margin:0; border-radius:var(--r-card); overflow:hidden; position:relative; background:var(--g100)}
+.pnl-fig img{width:100%; height:100%; object-fit:cover; aspect-ratio:4/3; display:block}
+.pnl-fig figcaption{position:absolute; left:12px; bottom:12px; display:flex; gap:6px}
+.opts{margin:0; padding-left:18px; display:grid; gap:8px; font-size:15px; color:var(--g800)}
+.pnl{background:var(--g100); border-radius:var(--r-card); padding:clamp(20px,2.6vw,32px)}
+.pnl h2{font-size:clamp(22px,2.4vw,32px); margin-bottom:14px}
+.pnl h3{font-size:18px; font-weight:600; margin:18px 0 8px}
+.pnl p{font-size:15px; color:var(--g800)}
+.comp{display:grid; grid-template-columns:repeat(3,1fr); gap:10px; margin:16px 0 0; padding:0; list-style:none}
+@media (max-width:640px){ .comp{grid-template-columns:1fr} }
+.comp li{background:var(--white); border-radius:16px; padding:14px 16px; font-size:14px; color:var(--g800)}
+.comp b{display:block; color:var(--ink); font-size:15px; margin-bottom:2px}
+.pnl .btn{margin-top:6px}
+
+/* галерея */
+.gal{display:grid; grid-template-columns:repeat(6,1fr); gap:16px}
+.gal figure{margin:0; border-radius:var(--r-card); overflow:hidden; background:var(--g100); position:relative}
+.gal figure img{width:100%; height:100%; object-fit:cover; aspect-ratio:4/3}
+.gal .big{grid-column:span 3}
+.gal .mid{grid-column:span 2}
+.gal figcaption{position:absolute; left:12px; bottom:12px; right:12px; display:flex; flex-wrap:wrap; gap:6px}
+.tag{display:inline-block; background:rgba(255,255,255,.93); color:var(--g900); font-size:12px; font-weight:500; padding:6px 10px; border-radius:8px}
+@media (max-width:900px){ .gal{grid-template-columns:1fr 1fr} .gal .big,.gal .mid{grid-column:span 1} }
+@media (max-width:520px){ .gal{grid-template-columns:1fr} }
+.note{font-size:12px; color:var(--g500); margin:14px 0 0}
+
+/* как считаем */
+.price-grid{display:grid; grid-template-columns:1fr 1fr; gap:16px; align-items:start}
+@media (max-width:900px){ .price-grid{grid-template-columns:1fr} }
+.price-grid > div{background:var(--white); border-radius:var(--r-card); padding:clamp(20px,2.6vw,32px)}
+.price-grid h3{font-size:20px; font-weight:600; margin-bottom:12px}
+.price-grid ul,.price-grid ol{margin:0 0 16px; padding-left:20px}
+.price-grid li{margin-bottom:8px; font-size:15px; color:var(--g800)}
+
+/* сервис — табы как в дизайн-ките */
+.tabs{display:grid; grid-template-columns:repeat(4,1fr); gap:4px; background:var(--g100); padding:6px; border-radius:20px; margin-bottom:20px}
+.tabs button{all:unset; text-align:center; padding:14px 8px; border-radius:16px; font-size:clamp(14px,1.4vw,20px); color:var(--g500); cursor:pointer}
+.tabs button[aria-selected="true"]{background:var(--white); color:var(--g900); box-shadow:0 2px 8px rgba(9,14,28,.06)}
+.tabs button:focus-visible{outline:2px solid var(--ink); outline-offset:1px}
+.svc{display:grid; grid-template-columns:repeat(3,1fr); gap:16px}
+.svc[hidden]{display:none}
+@media (max-width:900px){ .svc{grid-template-columns:1fr} }
+.svc div{background:var(--g100); border-radius:var(--r-card); padding:26px 28px; min-height:150px}
+.svc h3{font-size:22px; margin-bottom:10px}
+.svc p{font-size:14px; color:var(--g700); margin:0}
+
+/* преимущества */
+.adv{display:grid; grid-template-columns:repeat(3,1fr); gap:16px}
+@media (max-width:900px){ .adv{grid-template-columns:1fr} }
+.adv div{background:var(--white); border-radius:var(--r-card); padding:28px}
+.adv svg{color:var(--primary); margin-bottom:18px}
+.adv h3{font-size:22px; margin-bottom:8px}
+.adv p{font-size:14px; color:var(--g700); margin:0}
+.clients{display:flex; flex-wrap:wrap; gap:10px; margin-top:28px}
+.clients span{display:inline-flex; align-items:center; height:56px; padding:0 22px; border-radius:16px; background:var(--white); font-weight:600; color:var(--g700)}
+
+/* собрать вместе */
+.bundle{display:grid; grid-template-columns:1.05fr .95fr; gap:24px; align-items:center}
+@media (max-width:900px){ .bundle{grid-template-columns:1fr} }
+.bundle figure{margin:0; border-radius:var(--r-card); overflow:hidden; position:relative; background:var(--g100)}
+.bundle figure img{width:100%; aspect-ratio:4/3; object-fit:cover}
+.bundle figcaption{position:absolute; left:12px; bottom:12px}
+.bundle h2{margin-bottom:16px}
+.bundle p{color:var(--g800)}
+.links{display:flex; flex-wrap:wrap; gap:10px; margin-top:8px}
+
+/* шаги */
+.steps{display:grid; grid-template-columns:repeat(6,1fr); gap:12px}
+@media (max-width:1100px){ .steps{grid-template-columns:repeat(3,1fr)} }
+@media (max-width:600px){ .steps{grid-template-columns:1fr} }
+.steps div{padding:20px; border-radius:var(--r-card); background:var(--g100); font-size:14px}
+.steps b{display:block; color:var(--primary); font-size:13px; margin-bottom:10px}
+.steps strong{display:block; margin-bottom:6px; font-size:15px; font-weight:600}
+.steps span{color:var(--g700)}
+
+/* faq */
+details{border-bottom:1px solid var(--g200); padding:18px 0}
+summary{cursor:pointer; font-weight:600; font-size:16px; list-style:none; display:flex; justify-content:space-between; gap:12px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+"; color:var(--primary); font-weight:500; font-size:22px; line-height:1}
+details[open] summary::after{content:"–"}
+details p{margin:10px 0 0; color:var(--g800)}
+
+/* заявка */
+.lead-grid{display:grid; grid-template-columns:.8fr 1.2fr; gap:40px; align-items:start}
+@media (max-width:1000px){ .lead-grid{grid-template-columns:1fr} }
+.contacts a.ph{display:block; text-decoration:none; font-weight:600; font-size:20px; margin-top:14px; color:var(--g900)}
+.contacts .sub{font-size:13px; color:var(--g500)}
+.msgs{display:flex; flex-wrap:wrap; gap:10px; margin-top:20px}
+form{background:var(--g100); border-radius:var(--r-card); padding:clamp(18px,3vw,32px); min-width:0}
+fieldset{border:none; padding:0; margin:0 0 16px; min-width:0}
+legend{font-weight:600; margin-bottom:10px; font-size:15px; padding:0}
+.types{display:grid; grid-template-columns:repeat(4,1fr); gap:8px}
+@media (max-width:700px){ .types{grid-template-columns:1fr 1fr} }
+.types label{display:flex; align-items:center; justify-content:center; min-height:52px; padding:8px 10px; border-radius:var(--r-ctl); background:var(--white); border:1px solid var(--g200); font-size:13px; font-weight:500; cursor:pointer; text-align:center; line-height:1.2; position:relative}
+.types input{position:absolute; opacity:0; width:0; height:0}
+.types label:has(input:checked){border-color:var(--primary); background:var(--primary-clarity); color:var(--primary)}
+.types label:has(input:focus-visible){outline:2px solid var(--ink); outline-offset:2px}
+.types label.retail{color:var(--g500); font-weight:400}
+.tnote{display:none; font-size:13px; color:var(--g700); background:var(--white); border-radius:var(--r-ctl); padding:12px 14px; margin:-4px 0 14px}
+form[data-type="retail"] .retail-note, form[data-type="contractor"] .con-note{display:block}
+.field{position:relative; margin-bottom:12px; min-width:0}
+.field label{display:block; font-size:12px; color:var(--g500); margin:0 0 6px 2px}
+.field input,.field select,.field textarea{width:100%; height:48px; padding:0 16px; border:1px solid var(--g200); border-radius:var(--r-ctl); font:400 15px var(--font); background:var(--white); color:var(--ink)}
+.field textarea{height:auto; padding:12px 16px; resize:vertical}
+.field input:hover,.field select:hover,.field textarea:hover{border-color:var(--g300)}
+.field input:focus,.field select:focus,.field textarea:focus{outline:none; border-color:var(--primary)}
+.field .hint{display:block; font-size:12px; color:var(--g500); margin:6px 2px 0}
+.field.invalid input,.field.invalid select{border-color:var(--danger)}
+.row{display:grid; grid-template-columns:1fr 1fr; gap:12px}
+@media (max-width:560px){ .row{grid-template-columns:1fr} }
+.check{display:flex; gap:10px; align-items:flex-start; font-size:14px; cursor:pointer; margin:4px 0 10px}
+.check input{width:20px; height:20px; accent-color:var(--primary); margin:0; flex:none}
+.check small{display:block; color:var(--g500); font-size:12px}
+.com-hint{display:none}
+#f-com:checked ~ span .com-hint{display:block}
+/* показ полей по потоку: s-o — объект, s-d — дизайнер, s-c — подрядчик */
+.s-o,.s-d,.s-c{display:none}
+form[data-type="object"] .s-o, form[data-type="designer"] .s-d, form[data-type="contractor"] .s-c{display:block}
+.lbl-o,.lbl-oc,.lbl-c{display:none}
+form[data-type="object"] .lbl-o{display:inline}
+form[data-type="designer"] .lbl-oc, form[data-type="contractor"] .lbl-oc{display:inline}
+form[data-type="contractor"] .lbl-c{display:inline}
+form[data-type="contractor"] .lbl-o-date{display:none}
+.lbl-o-date{display:inline}
+.consent-box{display:flex; gap:10px; align-items:flex-start; font-size:13px; color:var(--g700); margin:14px 0 4px; cursor:pointer}
+.consent-box input{width:20px; height:20px; accent-color:var(--primary); margin:0; flex:none}
+.consent-box a{color:var(--primary)}
+.consent{font-size:12px; color:var(--g500); margin:12px 0 0}
+#submitBtn:disabled{opacity:.45; cursor:not-allowed}
+.send-row{display:flex; flex-wrap:wrap; gap:12px; align-items:center; margin-top:12px}
+.status{margin-top:14px; font-size:14px; border-radius:var(--r-ctl); padding:12px 14px; display:none}
+.status.ok{display:block; background:var(--success-light); color:#067A33}
+.status.bad{display:block; background:#FFEEF3; color:#B0133A}
+.hp{position:absolute; left:-9999px; width:1px; height:1px; overflow:hidden}
+
+.cookie{position:fixed; left:12px; right:12px; bottom:calc(12px + env(safe-area-inset-bottom,0px)); z-index:40; background:var(--ink); color:#fff; border-radius:var(--r-card); padding:16px 18px; display:none; gap:12px; align-items:center; flex-wrap:wrap; box-shadow:0 12px 40px rgba(0,0,0,.25); font-size:13px}
+.cookie.show{display:flex}
+.cookie p{margin:0; flex:1 1 260px; line-height:1.4}
+.cookie p a{color:#fff}
+.cookie .btn{height:40px; min-height:40px; padding:0 16px; font-size:14px}
+.cookie .btn-ghost{background:transparent; color:#fff; border:1px solid rgba(255,255,255,.4)}
+@media (min-width:720px){ .cookie{left:auto; right:24px; max-width:620px} }
+body.has-cookie .sticky-cta{bottom:calc(24px + var(--cookie-h,84px) + env(safe-area-inset-bottom,0px))}
+
+footer{margin-top:24px; background:var(--g900); color:var(--g300); border-radius:var(--r-block) var(--r-block) 0 0; padding-block:40px; font-size:13px}
+footer .cols{display:grid; grid-template-columns:repeat(4,1fr); gap:24px}
+@media (max-width:900px){ footer .cols{grid-template-columns:1fr 1fr} }
+@media (max-width:420px){ footer .cols{grid-template-columns:1fr} }
+footer b{display:block; color:#fff; font-size:14px; margin-bottom:10px}
+footer a{color:var(--g300); text-decoration:none}
+footer a:hover{color:#fff}
+footer .bottom{margin-top:28px; padding-top:18px; border-top:1px solid #4a4a4a; display:flex; flex-wrap:wrap; gap:8px 24px; justify-content:space-between}
+
+.sticky-cta{display:none}
+@media (max-width:640px){
+  .sticky-cta{display:flex; position:fixed; left:12px; right:12px; bottom:calc(12px + env(safe-area-inset-bottom,0px)); z-index:30; gap:8px}
+  .sticky-cta .btn{flex:1; box-shadow:0 6px 20px rgba(9,14,28,.18)}
+  body{padding-bottom:80px}
+}
+@media (prefers-reduced-motion:reduce){ html{scroll-behavior:auto} .btn{transition:none} }
+</style>
+<style id="vp-css">
+.vp{background:var(--g100,#F0F3F4); border-radius:var(--r-card,24px); padding:clamp(16px,2.6vw,32px); display:grid; gap:18px}
+section.grey .vp{background:var(--white,#fff)}
+.vp-lbl{display:block; font-size:12px; color:var(--g500,#6E6E6E); margin:0 0 8px}
+.vp-ctl{display:flex; flex-wrap:wrap; gap:14px 28px}
+.vp-seg{display:flex; flex-wrap:wrap; gap:6px}
+.vp-seg label{display:inline-flex; align-items:center; gap:6px; background:var(--white,#fff); border:1px solid var(--g200,#E1E1E1); border-radius:999px; padding:7px 14px; font-size:14px; cursor:pointer}
+section.grey .vp-seg label{background:var(--g100,#F0F3F4)}
+.vp-seg input{accent-color:var(--primary,#F25354)}
+.vp-list{display:grid; gap:10px}
+.vp-row{background:var(--white,#fff); border:2px solid transparent; border-radius:var(--r-ctl,12px); padding:14px 16px; display:grid; grid-template-columns:minmax(0,1.3fr) minmax(0,1.2fr) minmax(0,1fr); gap:10px 18px; align-items:start}
+section.grey .vp-row{background:var(--g100,#F0F3F4)}
+.vp-row.is-on{border-color:var(--primary,#F25354)}
+.vp-on{display:flex; gap:10px; cursor:pointer}
+.vp-on input{margin-top:4px; accent-color:var(--primary,#F25354); width:18px; height:18px; flex:none}
+.vp-on b{display:block; font-weight:600; font-size:15px}
+.vp-on small{display:block; color:var(--g500,#6E6E6E); font-size:12.5px}
+.vp-qty{display:flex; gap:8px; flex-wrap:wrap}
+.vp-qty label{font-size:12px; color:var(--g500,#6E6E6E); display:grid; gap:4px; flex:1 1 80px}
+.vp-qty input,.vp-exp select,.vp-exp input,.vp-exp textarea{font:inherit; font-size:15px; padding:8px 10px; border:1px solid var(--g300,#BDBDBD); border-radius:10px; background:#fff; width:100%; color:var(--ink,#090E1C)}
+.vp-opts{grid-column:1 / 3; grid-row:2; display:flex; flex-wrap:wrap; gap:6px 16px; font-size:13.5px; color:var(--g800,#464646)}
+.vp-opts label{display:inline-flex; gap:6px; align-items:center; cursor:pointer}
+.vp-opts input{accent-color:var(--primary,#F25354)}
+.vp-price{grid-column:3; grid-row:1 / span 2; align-self:center; text-align:right; display:grid; gap:2px; font-variant-numeric:tabular-nums}
+.vp-price span{font-size:13px; color:var(--g700,#5B5B5B)}
+.vp-price b{font-size:16px}
+.vp-svc{display:grid; gap:6px; font-size:14px}
+.vp-svc label{display:flex; gap:8px; align-items:center; cursor:pointer}
+.vp-svc input{accent-color:var(--primary,#F25354)}
+.vp-total{display:flex; flex-wrap:wrap; align-items:baseline; gap:6px 16px; border-top:1px solid var(--g200,#E1E1E1); padding-top:14px}
+.vp-total b{font-size:clamp(22px,3vw,30px); font-variant-numeric:tabular-nums}
+.vp-total small{color:var(--g500,#6E6E6E)}
+.vp-exp-g{display:grid; grid-template-columns:1fr 1fr; gap:10px 16px}
+.vp-exp label{font-size:13px; color:var(--g700,#5B5B5B); display:grid; gap:4px}
+.vp-exp .vp-wide{grid-column:1 / -1}
+.vp-note{font-size:12.5px; color:var(--g500,#6E6E6E); margin:0; max-width:90ch}
+.vp #vp-go{justify-self:start}
+.vp-mini{background:var(--g100,#F0F3F4); border-radius:var(--r-ctl,12px); padding:12px 16px; margin:0 0 14px; display:flex; flex-wrap:wrap; gap:6px 14px; align-items:baseline; font-size:14px}
+.vp-mini b{font-variant-numeric:tabular-nums}
+.vp-mini a{color:var(--primary,#F25354); margin-left:auto}
+@media (max-width:820px){ .vp-row{grid-template-columns:1fr} .vp-opts,.vp-price{grid-column:auto; grid-row:auto} .vp-price{text-align:left} .vp-exp-g{grid-template-columns:1fr} }
+</style>
+</head>
+<body>
+
+<header class="top">
+ <div class="wrap top-row">
+ <a class="brand" href="https://velvet-pro.ru/" target="_blank" rel="noopener" aria-label="Вельвет-ПРО — на главную">
+ <img src="../img/logo.svg" alt="Вельвет" width="40" height="40" onerror="this.remove()" loading="lazy">
+ <span class="word">Вельвет-ПРО<small>слэбы дерева и изделия из них</small></span>
+ </a>
+ <div class="contact">
+      <div class="c"><a href="https://t.me/+79253061817" target="_blank" rel="noopener" data-goal="w1_messenger_click">Telegram</a><span>напишите нам</span></div>
+      <div class="c"><a href="https://max.ru/u/f9LHodD0cOKAibvv4xnLwydR6sh_3dfTyvofGfaGlDE43RYshE6ATx0BtoM" target="_blank" rel="noopener" data-goal="w1_messenger_click">MAX</a><span>напишите нам</span></div>
+ <div class="c hide-md"><a href="mailto:info@velvet-pro.ru" data-goal="w1_email_click">info@velvet-pro.ru</a><span>Приём заявок в будни с 10:00 до 18:00</span></div>
+ <a class="btn btn-primary btn-sm" href="#lead" data-goal="w1_cta_header" data-type="object">Заказать</a>
+ </div>
+ </div>
+ <nav class="wrap menu" aria-label="Разделы">
+ <a href="#catalog">Каталог</a><a href="#solutions">Применение</a>
+ <a href="#partners">Дизайнерам и подрядчикам</a>
+ <a href="#about">Исполнение</a>
+ <a href="#price">Цены</a>
+ <a href="#service">Сервис</a>
+ <a href="#process">Как работаем</a>
+ <a href="#faq">Вопросы</a>
+ <a class="chat" href="https://t.me/+79253061817" target="_blank" rel="noopener" data-goal="w1_messenger_click">Чат с нами</a>
+ </nav>
+</header>
+
+<main class="wrap">
+
+<!-- 1. Hero -->
+<section class="hero" id="top">
+ <div class="hero-img">
+ <img src="../img/ai-slab-hero.jpg" width="1200" height="896" alt="Слэбы дерева и изделия из них на заказ — визуализация" fetchpriority="high">
+ <span class="viz">Визуализация</span>
+ </div>
+ <div class="hero-body">
+ <p class="eyebrow">Столы, столешницы, слэбы</p>
+ <h1>Слэбы дерева и изделия из них на заказ</h1>
+ <p class="lede">Столы-реки, столешницы из слэба и массива, сухие слэбы — для ресторанов, отелей и офисов. Делаем на партнёрских производствах под брендом Вельвет-ПРО.</p>
+ <ul class="facts">
+ <li>Карагач, дуб, орех, ясень</li>
+ <li>Размер под ваш объект</li>
+ <li>Подбор слэба по фото</li>
+ </ul>
+ <div class="cta-row">
+ <a class="btn btn-primary" href="#lead" data-goal="w1_cta_hero" data-type="object">Заказать</a>
+ <a class="btn btn-light" href="#price" data-goal="w1_cta_price">Рассчитать стоимость</a>
+ </div>
+ </div>
+</section>
+
+<!-- 1a. Каталог -->
+<section class="block" id="catalog">
+ <div class="head-row"><div><h2>Каталог</h2></div></div>
+ <div class="cats">
+ <article class="cat">
+  <a class="ph" href="#price"><img src="../img/ai-slab-epoxy.jpg" width="1200" height="896" alt="Столы из эпоксидной смолы — визуализация" loading="lazy"><span class="viz">Визуализация</span></a>
+  <div class="tx"><h3>Столы из эпоксидной смолы</h3><p>Столы-реки: обеденные, для кафе и журнальные.</p><p class="from">от 35 700 ₽/шт</p>
+  <div class="cta-row"><a class="btn btn-primary btn-sm" href="#lead" data-type="object" data-goal="w1_cta_solutions">Заказать</a><a class="btn btn-light btn-sm" href="#price" data-goal="w1_cta_price">Рассчитать</a></div></div>
+ </article>
+ <article class="cat">
+  <a class="ph" href="#price"><img src="../img/ai-slab-countertop.jpg" width="1200" height="896" alt="Столешницы из слэба — визуализация" loading="lazy"><span class="viz">Визуализация</span></a>
+  <div class="tx"><h3>Столешницы из слэба</h3><p>Цельный спил с живым краем для кухни, бара, санузла.</p><p class="from">от 52 500 ₽/м²</p>
+  <div class="cta-row"><a class="btn btn-primary btn-sm" href="#lead" data-type="object" data-goal="w1_cta_solutions">Заказать</a><a class="btn btn-light btn-sm" href="#price" data-goal="w1_cta_price">Рассчитать</a></div></div>
+ </article>
+ <article class="cat">
+  <a class="ph" href="#price"><img src="../img/ai-slab-massiv.jpg" width="1200" height="896" alt="Столешницы из массива — визуализация" loading="lazy"><span class="viz">Визуализация</span></a>
+  <div class="tx"><h3>Столешницы из массива</h3><p>Дуб из склеенных ламелей, 40 мм, ровный край.</p><p class="from">от 10 200 ₽/м²</p>
+  <div class="cta-row"><a class="btn btn-primary btn-sm" href="#lead" data-type="object" data-goal="w1_cta_solutions">Заказать</a><a class="btn btn-light btn-sm" href="#price" data-goal="w1_cta_price">Рассчитать</a></div></div>
+ </article>
+ <article class="cat">
+  <a class="ph" href="#price"><img src="../img/ai-slab-raw.jpg" width="1200" height="896" alt="Слэбы дерева — визуализация" loading="lazy"><span class="viz">Визуализация</span></a>
+  <div class="tx"><h3>Слэбы дерева</h3><p>Сухие слэбы карагача и дуба — подбор по фото.</p><p class="from">от 7 500 ₽/м²</p>
+  <div class="cta-row"><a class="btn btn-primary btn-sm" href="#lead" data-type="object" data-goal="w1_cta_solutions">Заказать</a><a class="btn btn-light btn-sm" href="#price" data-goal="w1_cta_price">Рассчитать</a></div></div>
+ </article>
+ </div>
+ <p class="note" style="margin-top:12px">Цены «от» — ориентир с НДС для объекта; точная стоимость — в КП.</p>
+</section>
+
+<!-- 2. Применение -->
+<section class="block" id="solutions">
+ <div class="head-row"><div><h2>Где применяют</h2></div></div>
+ <div class="segs segs3">
+ <a class="seg" href="#lead" data-type="object" data-goal="w1_cta_solutions">
+  <div class="ph"><img src="../img/ai-slab-bar.jpg" width="1200" height="896" alt="Рестораны и бары — визуализация" loading="lazy"><span class="viz">Визуализация</span></div>
+  <div class="tx"><h3>Рестораны и бары</h3><p>Барные стойки и столы-реки серией под зал.</p><span class="go">Заказать →</span></div>
+ </a>
+ <a class="seg" href="#lead" data-type="object" data-goal="w1_cta_solutions">
+  <div class="ph"><img src="../img/ai-slab-office.jpg" width="1200" height="896" alt="Офисы и переговорные — визуализация" loading="lazy"><span class="viz">Визуализация</span></div>
+  <div class="tx"><h3>Офисы и переговорные</h3><p>Большой стол из двух слэбов как центр комнаты.</p><span class="go">Заказать →</span></div>
+ </a>
+ <a class="seg" href="#lead" data-type="object" data-goal="w1_cta_solutions">
+  <div class="ph"><img src="../img/ai-slab-vanity.jpg" width="1200" height="896" alt="Отели и санузлы — визуализация" loading="lazy"><span class="viz">Визуализация</span></div>
+  <div class="tx"><h3>Отели и санузлы</h3><p>Столешницы под раковину из слэба с живым краем.</p><span class="go">Заказать →</span></div>
+ </a>
+ </div>
+</section>
+
+<!-- 3. Для кого -->
+<section class="block grey" id="partners">
+  <div class="partners">
+    <div class="pcard"><h2>Дизайнерам</h2>
+      <ul><li>Изготавливаем по вашему чертежу и спецификации.</li><li>Отдельная очередь заявок проектировщиков.</li></ul>
+      <a class="btn btn-light btn-sm" href="#lead" data-type="designer" data-goal="w1_form_type_select">Заявка дизайнера</a></div>
+    <div class="pcard"><h2>Подрядчикам</h2>
+      <ul><li>КП для вашей сметы, договор, безнал и ЭДО.</li><li>Серии изделий для объектов.</li></ul>
+      <a class="btn btn-light btn-sm" href="#lead" data-type="contractor" data-goal="w1_form_type_select">Заявка подрядчика</a></div>
+    <div class="pcard"><h3>Компаниям и объектам</h3>
+      <ul><li>Отели, рестораны, офисы, коммерческая недвижимость.</li><li>Партнёрские производства, марка «Вельвет-ПРО».</li></ul>
+      <a class="btn btn-light btn-sm" href="#lead" data-type="object" data-goal="w1_form_type_select">Заказать</a></div>
+  </div>
+  <div class="exception"><span>Частным заказчикам — в виде исключения, на условиях компании.</span>
+    <a class="btn btn-light btn-sm" href="#lead" data-type="retail" data-goal="w1_form_type_select">Частная заявка</a></div>
+</section>
+
+<!-- 4. Исполнение -->
+<section class="block" id="about">
+  <div class="panel-grid">
+    <div class="pnl"><h2>Что такое слэб</h2>
+      <ul class="comp"><li><b>Спил</b>Продольный срез ствола с живым краем</li><li><b>Сушка</b>Камерная, влажность 8–12 %</li><li><b>Покрытие</b>Масло-воск или лак</li></ul>
+      <p>Двух одинаковых рисунков не бывает: перед запуском согласуем фото конкретного слэба.</p></div>
+    <figure class="pnl-fig"><img src="../img/ai-slab-detail.jpg" width="1200" height="896" alt="Что такое слэб — визуализация" loading="lazy"><figcaption><span class="tag">Крупный план</span><span class="tag">Визуализация</span></figcaption></figure>
+    <div class="pnl"><h2>Варианты</h2><ul class="opts"><li><b>Стол-река</b> — Слэб плюс прозрачная или тонированная эпоксидная смола.</li><li><b>Живой край</b> — Природная кромка ствола с одной или двух сторон.</li><li><b>Массив из ламелей</b> — Ровная столешница: цельная или сращённая ламель.</li><li><b>Слэб как есть</b> — Сухой спил для вашей мастерской или подрядчика.</li></ul></div>
+    <div class="pnl"><h2>Сроки и монтаж</h2>
+      <p><b>Срок:</b> 10–40 рабочих дней (ориентир); слэбы со склада — срок в КП</p>
+      <p>Монтаж столешниц в Москве и Санкт-Петербурге — от 2 100 ₽ за столешницу, вырез под мойку — от 2 100 ₽. Столы и слэбы поставляем без монтажа.</p>
+      <p>Изготавливаем на партнёрских производствах под брендом «Вельвет-ПРО».</p></div>
+  </div>
+  <p class="note" style="margin-top:12px">Изображения — визуализации, не фотографии выполненных объектов.</p>
+</section>
+
+<!-- 6'. Как считаем стоимость (калькулятора и прайса нет) -->
+<section class="block" id="price">
+ <div class="head-row">
+ <div><h2>Цены и расчёт</h2>
+ <p class="lede">Отметьте позиции и объём — увидите ориентир. Точную стоимость фиксируем в КП.</p></div>
+ </div>
+ <div id="vpcalc" class="vp" style="margin-top:24px"></div>
+</section>
+
+<!-- 7. Сервис -->
+<section class="block" id="service">
+ <div class="head-row"><div><h2>Сервис</h2></div></div>
+ <div class="tabs" role="tablist">
+ <button role="tab" id="t-svc" aria-selected="true" aria-controls="p-svc">Услуги</button>
+ <button role="tab" id="t-del" aria-selected="false" aria-controls="p-del">Доставка</button>
+ <button role="tab" id="t-pay" aria-selected="false" aria-controls="p-pay">Оплата</button>
+ <button role="tab" id="t-mnt" aria-selected="false" aria-controls="p-mnt">Монтаж</button>
+ </div>
+ <div class="svc" role="tabpanel" id="p-svc" aria-labelledby="t-svc">
+ <div><h3>Образцы материалов</h3><p>Подберём под проект — условия сообщим в ответе на заявку.</p></div>
+ <div><h3>Чертёж и спецификация</h3><p>Изготавливаем по вашему чертежу или размерам.</p></div>
+ <div><h3>Выезд на замер</h3><p>От 3 000 ₽.</p></div>
+ </div>
+ <div class="svc" role="tabpanel" id="p-del" aria-labelledby="t-del" hidden>
+ <div><h3>Москва и область</h3><p>Москва, в пределах МКАД — 1 000 ₽; Московская область — 1 500 ₽.</p></div>
+ <div><h3>Транспортные компании</h3><p>СДЭК — от 1 200 ₽, ПЭК — от 2 000 ₽, Деловые линии — от 2 800 ₽.</p></div>
+ <div><h3>Самовывоз</h3><p>Самовывоз — бесплатно.</p></div>
+ </div>
+ <div class="svc" role="tabpanel" id="p-mnt" aria-labelledby="t-mnt" hidden>
+    <div><h3>Монтаж</h3><p>Монтаж столешниц в Москве и Санкт-Петербурге — от 2 100 ₽ за столешницу, вырез под мойку — от 2 100 ₽. Столы и слэбы поставляем без монтажа.</p></div>
+    <div><h3>Срок изготовления</h3><p>10–40 рабочих дней (ориентир); слэбы со склада — срок в КП</p></div>
+  </div>
+ <div class="svc" role="tabpanel" id="p-pay" aria-labelledby="t-pay" hidden>
+ <div><h3>Юрлицам</h3><p>Безналичный расчёт, ЭДО.</p></div>
+ <div><h3>Физлицам</h3><p>Онлайн картой.</p></div>
+ </div>
+</section>
+
+<!-- 8. Преимущества и клиенты -->
+<section class="block grey" id="advantages">
+ <div class="head-row"><div><h2>Что берём на себя</h2></div></div>
+ <div class="adv">
+ <div><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 20h16M6 16V8l6-4 6 4v8"/><path d="M10 12h4"/></svg><h3>Считаем по вашему чертежу</h3><p>Подберём размеры и материалы под проект и подготовим КП.</p></div>
+ <div><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M3 7h11v9H3zM14 10h4l3 3v3h-7"/><circle cx="7" cy="18" r="2"/><circle cx="17" cy="18" r="2"/></svg><h3>Отправляем транспортными компаниями</h3><p>СДЭК, ПЭК, Деловые линии или самовывоз.</p></div>
+ <div><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 5h16v10H8l-4 4z"/><path d="M9 10l2 2 4-4"/></svg><h3>Работаем с юрлицами</h3><p>Безналичный расчёт и ЭДО.</p></div>
+ </div>
+</section>
+
+<!-- 10. Как работаем -->
+<section class="block grey" id="process">
+ <div class="head-row"><div><h2>Как работаем</h2></div></div>
+ <div class="steps">
+ <div><b>Шаг 1</b><strong>Заявка</strong><span>Размеры, материал, количество и срок — в форме или мессенджере.</span></div>
+ <div><b>Шаг 2</b><strong>Расчёт и КП</strong><span>Фиксируем размеры, материал, цену и срок.</span></div>
+ <div><b>Шаг 3</b><strong>Замер — при необходимости</strong><span>Выезд на замер — от 3 000 ₽.</span></div>
+ <div><b>Шаг 4</b><strong>Договор и предоплата</strong><span>Для юрлиц — безнал и ЭДО.</span></div>
+ <div><b>Шаг 5</b><strong>Изготовление</strong><span>10–40 рабочих дней (ориентир); слэбы со склада — срок в КП.</span></div>
+ <div><b>Шаг 6</b><strong>Доставка и монтаж</strong><span>Монтаж столешниц в Москве и Санкт-Петербурге — от 2 100 ₽ за столешницу, вырез под мойку — от 2 100 ₽. Столы и слэбы поставляем без монтажа.</span></div>
+ </div>
+</section>
+
+<!-- 11. FAQ -->
+<section class="block" id="faq">
+ <div class="head-row"><div><h2>Частые вопросы</h2></div></div>
+ <details><summary>Из чего складывается цена?</summary><p>Из площади столешницы, породы, доли смолы и подстолья. Кап и широкая река дороже. Ориентир покажет калькулятор, точную цену пришлём в КП.</p></details>
+ <details><summary>Можно ли увидеть слэб до изготовления?</summary><p>Да. Присылаем фото и размеры подходящих слэбов, вы выбираете конкретный спил до запуска.</p></details>
+ <details><summary>Какая влажность слэбов?</summary><p>Камерная сушка до 8–12 %. Такой слэб готов к обработке и меньше ведёт в изделии.</p></details>
+ <details><summary>Что лучше: цельная или сращённая ламель?</summary><p>Цельная ламель даёт сплошной рисунок без стыков, но дороже. Сращённая — бюджетнее, стыки видны. Для острова чаще берут цельную.</p></details>
+ <details><summary>Можно заказать серию одинаковых столов для ресторана?</summary><p>Да. Размер, смола и подстолье будут одинаковыми, а рисунок дерева — у каждого свой. Фото слэбов согласуем до запуска.</p></details>
+ <details><summary>Делаете вырезы под мойку и варочную панель?</summary><p>Да, по шаблону техники или чертежу кухни. Вырез — от 2 100 ₽, торцы вокруг обрабатываем от влаги.</p></details>
+</section>
+
+<!-- 12. Заявка -->
+<section class="block grey" id="lead">
+ <div class="lead-grid">
+ <div class="contacts">
+ <h2>Оставить заявку</h2>
+ <p class="lede" style="margin-top:12px">Пришлите размеры или чертёж — подготовим КП. Приём заявок и онлайн-консультация — в будни с 10:00 до 18:00. Заявка уходит письмом на info@velvet-pro.ru; если удобнее — напишите в Telegram или Max.</p>
+ <div class="msgs">
+ <a class="btn btn-light btn-sm" href="https://t.me/+79253061817" target="_blank" rel="noopener" data-goal="w1_messenger_click">Telegram</a>
+ <a class="btn btn-light btn-sm" href="https://max.ru/u/f9LHodD0cOKAibvv4xnLwydR6sh_3dfTyvofGfaGlDE43RYshE6ATx0BtoM" target="_blank" rel="noopener" data-goal="w1_messenger_click">Max</a>
+ <a class="btn btn-light btn-sm" href="mailto:info@velvet-pro.ru" data-goal="w1_email_click">info@velvet-pro.ru</a>
+ </div>
+ </div>
+
+ <form id="leadForm" data-type="object" novalidate>
+ <fieldset>
+ <legend>Кто вы</legend>
+ <div class="types">
+ <label><input type="radio" name="type" value="object" checked><span>Отель / объект</span></label>
+ <label><input type="radio" name="type" value="designer"><span>Дизайнер / архитектор</span></label>
+ <label><input type="radio" name="type" value="contractor"><span>Подрядчик / комплектатор</span></label>
+ <label class="retail"><input type="radio" name="type" value="retail"><span>Частное лицо</span></label>
+ </div>
+ </fieldset>
+ <p class="tnote retail-note">Частным заказчикам работаем в виде исключения, на условиях компании — условия сообщим по заявке.</p>
+ <p class="tnote con-note">Монтаж столешниц в Москве и Санкт-Петербурге — от 2 100 ₽ за столешницу, вырез под мойку — от 2 100 ₽. Столы и слэбы поставляем без монтажа.</p>
+
+ <div class="row">
+ <div class="field"><label for="f-name">Имя</label><input id="f-name" name="name" type="text" autocomplete="name" class="ym-disable-keys" required></div>
+ <div class="field"><label for="f-contact">Телефон, e-mail или мессенджер</label><input id="f-contact" name="contact" type="text" autocomplete="tel" class="ym-disable-keys" required></div>
+ </div>
+ <div class="field"><label for="f-company">Компания (необязательно)</label><input id="f-company" name="company" type="text" autocomplete="organization" class="ym-disable-keys"></div>
+
+ <div class="s-o">
+ <div class="row">
+ <div class="field"><label for="f-objtype">Тип объекта</label>
+ <select id="f-objtype" name="object_type"><option value="">—</option><option>Ресторан / кафе / бар</option><option>Отель / лобби</option><option>Офис / переговорная</option><option>Мастерская / производство</option><option>Дизайн-проект</option><option>Частный интерьер</option><option>Другое</option></select></div>
+ <div class="field"><label for="f-objname">Объект, город (необязательно)</label><input id="f-objname" name="object_name" type="text" placeholder="например, ресторан, Москва" class="ym-disable-keys"></div>
+ </div>
+ </div>
+ <div class="s-c">
+ <div class="field"><label for="f-role">Ваша роль на объекте</label>
+ <select id="f-role" name="contractor_role"><option>Генподрядчик</option><option>Комплектация / поставка</option><option>Отделочные работы</option><option>Другое</option></select></div>
+ </div>
+ <div class="s-d">
+ <div class="field"><label for="f-studio">Студия / проект (необязательно)</label><input id="f-studio" name="studio" type="text" class="ym-disable-keys"></div>
+ </div>
+ <div class="row">
+ <div class="field s-o s-d s-c"><label for="f-qty"><span class="lbl-o">Изделия, размеры и количество</span><span class="lbl-oc">Изделия, размеры и количество (необязательно)</span></label><input id="f-qty" name="qty" type="text" placeholder="например, 4 шт., 2400×900 мм"></div>
+ <div class="field s-o s-c"><label for="f-date"><span class="lbl-o-date">Дата открытия / сдачи</span><span class="lbl-c">Срок по объекту (необязательно)</span></label><input id="f-date" name="deadline" type="text" placeholder="месяц, год"></div>
+ </div>
+ <div class="s-o">
+ <div class="field"><label for="f-km">Требования проекта к материалам</label>
+ <select id="f-km" name="fire_class"><option value="">—</option><option>Нет особых требований</option><option>Есть требования по пожарной безопасности</option><option>Есть требования по влагостойкости</option><option>Уточню по проекту</option></select>
+ <span class="hint">Опишите требования в комментарии — ответим по вашему объекту</span></div>
+ </div>
+ <div class="s-o s-d s-c">
+ <label class="check"><input type="checkbox" id="f-com" name="com_requested" value="1"><span>Хотим использовать свой материал<small class="com-hint">Укажите материал в комментарии</small></span></label>
+ <label class="check"><input type="checkbox" id="f-pack" name="package_interest" value="1"><span>Нужны и другие изделия для объекта</span></label>
+ </div>
+ <label class="check"><input type="checkbox" id="f-samples" name="samples" value="1"><span>Нужны образцы материалов<small>условия сообщим в ответе на заявку</small></span></label>
+ <div class="field" id="addrField" hidden><label for="f-addr">Адрес доставки образцов</label><input id="f-addr" name="delivery_address" type="text" autocomplete="street-address" class="ym-disable-keys"></div>
+ <div class="field"><label for="f-msg">Комментарий: размеры, ссылка на чертёж, материал и цвет</label><textarea id="f-msg" name="message" rows="3" maxlength="1000" class="ym-disable-keys"></textarea></div>
+
+ <div class="hp" aria-hidden="true"><input type="text" name="_gotcha" tabindex="-1" autocomplete="off"></div>
+ <input type="hidden" name="utm_source"><input type="hidden" name="utm_medium"><input type="hidden" name="utm_campaign"><input type="hidden" name="utm_content">
+ <input type="hidden" name="lead_source" value="landing-izdeliya-iz-slaba-v1"><input type="hidden" name="page_url"><input type="hidden" name="request_type" value="object"><input type="hidden" name="lead_flags">
+
+ <label class="consent-box"><input type="checkbox" id="f-consent" name="consent" value="1"><span>Даю <a href="https://velvet-pro.ru/soglasie.pdf" target="_blank" rel="noopener">согласие на обработку персональных данных</a> в соответствии с <a href="https://velvet-pro.ru/politica.pdf" target="_blank" rel="noopener">политикой конфиденциальности</a>. Без согласия заявка не отправляется.</span></label>
+ <p class="consent">Сайт не хранит данные формы: по кнопке откроется ваша почтовая программа с готовым письмом на info@velvet-pro.ru — останется нажать «Отправить». Если почта не настроена — напишите в Telegram или Max.</p>
+ <div class="send-row">
+ <button class="btn btn-primary" type="submit" id="submitBtn" disabled>Отправить заявку письмом</button>
+ <a class="btn btn-light" href="https://t.me/+79253061817" target="_blank" rel="noopener" id="tgBtn">Написать в Telegram</a>
+ </div>
+ <p class="status" id="formStatus" role="status"></p>
+ </form>
+ </div>
+</section>
+
+</main>
+
+<footer>
+ <div class="wrap">
+ <div class="cols">
+ <div><b>Вельвет-ПРО</b>Вельвет-ПРО · слэбы дерева и изделия из них</div>
+ <div><b>Москва</b>ул. Котляковская, 3с1</div>
+ <div><b>Санкт-Петербург</b>ул. Оптиков, 4к3</div>
+ <div><b>Связь</b><a href="mailto:info@velvet-pro.ru">info@velvet-pro.ru</a><br>Приём заявок в будни с 10:00 до 18:00</div>
+ </div>
+ <div class="bottom">
+ <span>© Вельвет-ПРО · <a href="https://velvet-pro.ru/" target="_blank" rel="noopener">velvet-pro.ru</a></span>
+ <span><a href="https://velvet-pro.ru/politica.pdf" target="_blank" rel="noopener">Политика конфиденциальности</a> · Изображения — 3D-визуализации</span>
+ </div>
+ </div>
+</footer>
+
+<div class="cookie" id="cookieBar" role="dialog" aria-live="polite" aria-label="Согласие на cookies">
+ <p>Мы используем cookies и Яндекс Метрику (включая Вебвизор), чтобы понимать, как работает страница. Поля с личными данными не записываются. <a href="https://velvet-pro.ru/politica.pdf" target="_blank" rel="noopener">Политика конфиденциальности</a></p>
+ <button class="btn btn-primary" type="button" id="cookieYes">Принять</button>
+ <button class="btn btn-ghost" type="button" id="cookieNo">Отказаться</button>
+</div>
+
+<div class="sticky-cta">
+ <a class="btn btn-light" href="#lead" data-goal="w1_samples_request" data-src="sticky" data-samples="1">Образцы материалов</a>
+ <a class="btn btn-primary" href="#lead" data-goal="w1_cta_sticky_kp" data-type="object">Заказать</a>
+</div>
+
+<script>
+(function(){
+  var YM_ID = window.YM_ID;
+  var PAGE = 'myagkie-paneli';
+  var MAILTO = 'info@velvet-pro.ru';  // отправка письмом из почтового клиента посетителя: сайт данные не принимает и не хранит (POL-01)
+  function goal(n, p){ p = p || {}; p.page = PAGE; try{ if (window.ym && window.__ymLoaded) ym(YM_ID, 'reachGoal', n, p); }catch(e){} }
+  var form = document.getElementById('leadForm');
+  function $(id){ return document.getElementById(id); }
+
+  // потоки заявок (SR-L1)
+  var radios = form.querySelectorAll('input[name=type]');
+  function curType(){ return form.getAttribute('data-type'); }
+  function setType(t){ form.setAttribute('data-type', t); radios.forEach(function(r){ r.checked = (r.value === t); }); form.querySelector('input[name=request_type]').value = t; }
+  radios.forEach(function(r){ r.addEventListener('change', function(){ setType(r.value); goal('w1_form_type_select', {type:r.value}); }); });
+
+  // образцы → адрес СДЭК
+  var samples = $('f-samples'), addrField = $('addrField');
+  function syncSamples(){ addrField.hidden = !samples.checked; }
+  samples.addEventListener('change', syncSamples);
+
+  // CTA: тип потока, предзаполнение чекбоксов, цели
+  document.querySelectorAll('[data-goal]').forEach(function(a){
+    a.addEventListener('click', function(){
+      var t = a.getAttribute('data-type'); if (t) setType(t);
+      if (a.getAttribute('data-samples')) { samples.checked = true; syncSamples(); }
+      if (a.getAttribute('data-com')) $('f-com').checked = true;
+      if (a.getAttribute('data-pack')) $('f-pack').checked = true;
+      var p = {type: curType()}; var src = a.getAttribute('data-src'); if (src) p.source_block = src;
+      goal(a.getAttribute('data-goal'), p);
+    });
+  });
+
+  // табы «Сервис»
+  var tabs = document.querySelectorAll('.tabs [role=tab]');
+  tabs.forEach(function(b){ b.addEventListener('click', function(){
+    tabs.forEach(function(x){ var on = x===b; x.setAttribute('aria-selected', on); $(x.getAttribute('aria-controls')).hidden = !on; });
+  }); });
+
+  // cookies → Метрика только после согласия (POL-03)
+  var bar = $('cookieBar'), choice = null;
+  try { choice = localStorage.getItem('cookie-consent'); } catch(e) {}
+  function fitCookie(){ try { document.body.style.setProperty('--cookie-h', bar.offsetHeight + 'px'); } catch(e) {} }
+  function cookieDecide(v){
+    choice = v; try { localStorage.setItem('cookie-consent', v); } catch(e) {}
+    bar.classList.remove('show'); document.body.classList.remove('has-cookie');
+    if (v === 'yes') window.initMetrika();
+  }
+  if (choice === 'yes') window.initMetrika();
+  else if (choice !== 'no') { bar.classList.add('show'); document.body.classList.add('has-cookie'); fitCookie(); window.addEventListener('resize', fitCookie); }
+  $('cookieYes').addEventListener('click', function(){ cookieDecide('yes'); });
+  $('cookieNo').addEventListener('click', function(){ cookieDecide('no'); });
+
+  // UTM и источник → скрытые поля (SR-T1)
+  try {
+    var q = new URLSearchParams(location.search);
+    ['utm_source','utm_medium','utm_campaign','utm_content'].forEach(function(k){ var el = form.querySelector('input[name='+k+']'); if (el) el.value = q.get(k) || ''; });
+    form.querySelector('input[name=page_url]').value = location.href.split('#')[0];
+  } catch(e) {}
+
+  // согласие — кнопка активна только с галочкой (POL-02)
+  var consent = $('f-consent'), submitBtn = $('submitBtn');
+  consent.addEventListener('change', function(){ submitBtn.disabled = !consent.checked; });
+
+  var TYPES = {object:'Отель / объект', designer:'Дизайнер / архитектор', contractor:'Подрядчик / комплектатор', retail:'Частное лицо'};
+  function val(id){ var el = $(id); return el ? el.value.trim() : ''; }
+  function yn(id){ return $(id).checked ? 'да' : 'нет'; }
+  function hidden(n){ return form.querySelector('input[name='+n+']').value; }
+
+  // флаги лида (решение 9 ГЕЙТА 1 izgolovya; отчёт analytics-integrator)
+  function flags(t){
+    var f = [];
+    if (t === 'object' && val('f-km') === 'Нужен класс выше КМ5') f.push('km_risk');
+    if (t !== 'retail' && $('f-com').checked) f.push('com_check');
+    if (/сертификат|протокол|документ/i.test(val('f-msg'))) f.push('doc_needed');
+    if (t !== 'retail' && $('f-pack').checked) f.push('pack');
+    if (samples.checked) f.push('samples');
+    return f;
+  }
+
+  function body(t, fl){
+    var L = ['Новая заявка с сайта ' + location.href.split(/[?#]/)[0] + ' Дата: ' + new Date().toLocaleString('ru-RU'), 'Тип обращения: ' + TYPES[t], 'Имя: ' + val('f-name'), 'Контакт: ' + val('f-contact')];
+    if (val('f-company')) L.push('Компания: ' + val('f-company'));
+    if (t === 'object'){
+      L.push('Тип объекта: ' + val('f-objtype'));
+      if (val('f-objname')) L.push('Объект, город: ' + val('f-objname'));
+      L.push('Изделия, размеры и количество: ' + val('f-qty'));
+      L.push('Дата открытия: ' + val('f-date'));
+      L.push('Требования к материалам: ' + val('f-km'));
+    }
+    if (t === 'contractor'){
+      L.push('Роль на объекте: ' + val('f-role'));
+      if (val('f-qty')) L.push('Изделия, размеры и количество: ' + val('f-qty'));
+      if (val('f-date')) L.push('Срок по объекту: ' + val('f-date'));
+    }
+    if (t === 'designer'){
+      if (val('f-studio')) L.push('Студия / проект: ' + val('f-studio'));
+      if (val('f-qty')) L.push('Изделия, размеры и количество: ' + val('f-qty'));
+    }
+    if (t !== 'retail'){ L.push('Свой материал (COM): ' + yn('f-com')); L.push('Нужны другие изделия: ' + yn('f-pack')); }
+    L.push('Образцы материалов: ' + yn('f-samples') + (samples.checked ? '; адрес: ' + val('f-addr') : ''));
+    if (val('f-msg')) L.push('Комментарий: ' + val('f-msg'));
+    var u = [];
+    ['utm_source','utm_medium','utm_campaign','utm_content'].forEach(function(k){ u.push(k + '=' + (hidden(k) || '-')); });
+    L.push('—');
+    L.push('Источник: lead_source=' + hidden('lead_source') + '; ' + u.join('; ') + '; page_url=' + hidden('page_url') + '; request_type=' + t + '; lead_flags=' + (fl.join(',') || '-'));
+    return L.join('\n');
+  }
+
+  var status = $('formStatus');
+  function show(ok, msg){ status.textContent = msg; status.className = 'status ' + (ok ? 'ok' : 'bad'); }
+  function mark(ids){ ids.forEach(function(id){ $(id).closest('.field').classList.add('invalid'); }); }
+  form.addEventListener('input', function(e){ var f = e.target.closest && e.target.closest('.field'); if (f) f.classList.remove('invalid'); });
+  form.addEventListener('change', function(e){ var f = e.target.closest && e.target.closest('.field'); if (f) f.classList.remove('invalid'); });
+
+  // отправка письмом (mailto): цель Метрики — в момент открытия письма (доставка из почтового клиента не подтверждается)
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    if (form.querySelector('input[name=_gotcha]').value) return;
+    if (!consent.checked){ show(false, 'Поставьте галочку согласия на обработку персональных данных.'); return; }
+    var name = val('f-name'), contact = val('f-contact');
+    if (!name || !contact){ mark([!name ? 'f-name' : 'f-contact']); show(false, 'Укажите имя и контакт — без них мы не сможем ответить.'); (name ? $('f-contact') : $('f-name')).focus(); return; }
+    var t = curType();
+    if (t === 'object'){
+      var miss = ['f-objtype','f-qty','f-date','f-km'].filter(function(id){ return !val(id); });
+      if (miss.length){ mark(miss); show(false, 'Заполните тип объекта, площадь или число номеров, дату открытия и требование по классу — без них не подготовим сравнимое КП.'); $(miss[0]).focus(); return; }
+    }
+    if (samples.checked && !val('f-addr')){ mark(['f-addr']); show(false, 'Укажите адрес для доставки образцов СДЭК.'); $('f-addr').focus(); return; }
+    var fl = flags(t);
+    form.querySelector('input[name=request_type]').value = t;
+    form.querySelector('input[name=lead_flags]').value = fl.join(',');
+    var objName = val('f-objtype') || ({object:'Объект', designer:'Дизайнер', contractor:'Подрядчик', retail:'Частное лицо'})[t] || '';
+    var subject = 'Запрос Изделия из слэба: ' + name + (objName ? ' - ' + objName : '');
+    goal('w1_form_submit_' + t, {type:t, via:'mailto', lead_flags: fl.join(',')});
+    if (samples.checked) goal('w1_samples_request', {type:t, source_block:'form'});
+    show(true, 'Открыли почтовую программу с готовым письмом на info@velvet-pro.ru — нажмите в ней «Отправить». Если почта не открылась — напишите нам в Telegram или Max.');
+    location.href = 'mailto:' + MAILTO + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body(t, fl) + (window.vpCalcText ? window.vpCalcText() : ''));
+  });
+  $('tgBtn').addEventListener('click', function(){
+    goal('w1_messenger_click', {type:curType(), via:'form', app:'telegram'});
+  });
+})();
+</script>
+<script id="vp-js">window.VP_PRICE={"clients":[{"id":"object","name":"Объект / компания"},{"id":"contractor","name":"Подрядчик"},{"id":"designer","name":"Дизайнер"},{"id":"private","name":"Частное лицо"}],"urgency":[{"id":"standard","name":"Стандартный"},{"id":"fast","name":"Ускоренный (−30 % к сроку)"},{"id":"urgent","name":"Срочный (−50 % к сроку)"}],"dClient":{"object":0.0,"contractor":0.0,"designer":0.0714,"private":0.1071},"dUrg":{"standard":0.0,"fast":0.0714,"urgent":0.1429},"ladders":{"*":[{"from":0,"d":0.0714},{"from":20,"d":0.0357},{"from":100,"d":0.0}],"м²":[{"from":0,"d":0.0714},{"from":20,"d":0.0357},{"from":100,"d":0.0}],"п.м":[{"from":0,"d":0.0714},{"from":30,"d":0.0357},{"from":150,"d":0.0}],"шт":[{"from":0,"d":0.0714},{"from":10,"d":0.0357},{"from":50,"d":0.0}],"номер":[{"from":0,"d":0.0714},{"from":10,"d":0.0357},{"from":40,"d":0.0}]},"capF":1.3214,"items":[{"id":"epoxy-river-top","name":"Стол-река: столешница","unit":"м²","ladder":"м²","note":"Слэб + смола, без подстолья","p0":[49420,84000],"opts":[{"id":"burl","name":"Каповая древесина","mult":1.3},{"id":"wide-river","name":"Смола больше 20 % площади","mult":1.3}],"dims":[200,100,1]},{"id":"epoxy-cafe-table","name":"Стол для кафе Ø 60–120 см","unit":"шт","ladder":"шт","note":"С подстольем на одной опоре","p0":[56700,83020],"opts":[{"id":"burl","name":"Каповая древесина","mult":1.3}]},{"id":"epoxy-coffee-table","name":"Журнальный стол-река до 100×60 см","unit":"шт","ladder":"шт","note":"С подстольем","p0":[35700,57820],"opts":[{"id":"burl","name":"Каповая древесина","mult":1.3}]},{"id":"epoxy-base","name":"Подстолье металлическое","unit":"шт","ladder":"шт","note":"Высота 750 мм, цвет RAL","p0":[10500,23100],"opts":[],"capF":1.0714},{"id":"slab-top","name":"Столешница из слэба для кухни или бара","unit":"м²","ladder":"м²","note":"40–50 мм, покрытие включено","p0":[52500,94500],"opts":[{"id":"walnut-burl","name":"Орех или каповый карагач","mult":1.2},{"id":"resin-insert","name":"Вставка эпоксидной смолы","mult":1.4}],"dims":[200,60,1]},{"id":"oak-spliced-40","name":"Дуб, сращённая ламель, 40 мм","unit":"м²","ladder":"м²","note":"Покрытие масло-воск или лак","p0":[10220,24080],"opts":[{"id":"thin-20","name":"Толщина 20 мм","mult":0.92}],"capF":1.0714,"dims":[200,60,1]},{"id":"oak-solid-40","name":"Дуб, цельная ламель, 40 мм","unit":"м²","ladder":"м²","note":"Покрытие масло-воск или лак","p0":[15680,37380],"opts":[{"id":"thin-20","name":"Толщина 20 мм","mult":0.78},{"id":"long-295","name":"Длина больше 2,95 м","mult":1.04}],"capF":1.0714,"dims":[200,60,1]},{"id":"slab-elm","name":"Слэб карагача, 70–75 мм","unit":"м²","ladder":"м²","note":"Камерная сушка, не шлифован","p0":[7532,10584],"opts":[],"capF":1.0714,"dims":[300,60,1]},{"id":"slab-oak","name":"Слэб дуба, 50–60 мм","unit":"м²","ladder":"м²","note":"Не шлифован","p0":[8820,15120],"opts":[],"capF":1.0714,"dims":[250,50,1]},{"id":"slab-river-pair","name":"Пара слэбов карагача для стола-реки","unit":"шт","ladder":"шт","note":"Подготовлены под заливку","p0":[40950,40950],"opts":[],"capF":1.0714},{"id":"cutout","name":"Вырез под мойку или варочную панель","unit":"шт","ladder":"шт","note":"С обработкой торца","p0":[2100,2800],"opts":[],"capF":1.0714},{"id":"mount","name":"Монтаж столешницы (Москва, СПб)","unit":"шт","ladder":"шт","note":"До 3 п.м, без подключения техники","p0":[2100,3780],"opts":[],"capF":1.0714}],"services":[{"id":"measure","name":"Выезд на замер","price":3000,"unit":"выезд"}],"budgets":["до 300 тыс. ₽","300 тыс. – 1 млн ₽","1–3 млн ₽","3–10 млн ₽","более 10 млн ₽","пока не знаю"],"whatHint":"Например: 12 изделий, размеры, материал, цвет, срок сдачи объекта","disclaimer":"Цены — предварительный ориентир с НДС: зависят от размеров, материала, объёма и срока. Не являются публичной офертой (ст. 437 ГК РФ). Точную стоимость фиксируем в КП."};
+/* Динамический прайс-лист и предварительный расчёт (волна 1, 13.10.2026).
+   Данные — window.VP_PRICE (собирается tools/build_pricelists.py из work/pricing/pricing-model.json).
+   Цены — ориентир «от–до», не оферта. Итог уходит в письмо заявки через window.vpCalcText(). */
+(function(){
+  var D = window.VP_PRICE; if (!D) return;
+  var root = document.getElementById('vpcalc'); if (!root) return;
+  var YM = 112846969, used = false;
+  function goal(n){ try{ if (window.ym && window.__ymLoaded) ym(YM, 'reachGoal', n); }catch(e){} }
+  function esc(s){ return String(s).replace(/[&<>"]/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]; }); }
+  function r100(n){ return Math.round(n/100)*100; }
+  function rng(a, b){ return a === b ? rub(a) : rub(a) + ' – ' + rub(b); }
+  function rub(n){ return Math.round(n).toLocaleString('ru-RU').replace(/,/g,' ') + ' ₽'; }
+  function num(v){ var x = parseFloat(String(v).replace(',','.')); return isFinite(x) && x > 0 ? x : 0; }
+  var S = { client:'object', urg:'standard', items:{}, svc:{} };
+
+  // ---------- разметка ----------
+  var h = [];
+  h.push('<div class="vp-ctl"><div class="vp-grp"><span class="vp-lbl">Кто вы</span><div class="vp-seg" role="radiogroup" aria-label="Тип клиента">');
+  D.clients.forEach(function(c, i){ h.push('<label><input type="radio" name="vp-client" value="'+c.id+'"'+(i===0?' checked':'')+'>'+esc(c.name)+'</label>'); });
+  h.push('</div></div><div class="vp-grp"><span class="vp-lbl">Срок</span><div class="vp-seg" role="radiogroup" aria-label="Срок">');
+  D.urgency.forEach(function(c, i){ h.push('<label><input type="radio" name="vp-urg" value="'+c.id+'"'+(i===0?' checked':'')+'>'+esc(c.name)+'</label>'); });
+  h.push('</div></div></div>');
+  h.push('<div class="vp-list">');
+  D.items.forEach(function(it){
+    h.push('<div class="vp-row" data-id="'+it.id+'"><label class="vp-on"><input type="checkbox" data-k="on"><span><b>'+esc(it.name)+'</b><small>'+esc(it.note||'')+'</small></span></label>');
+    h.push('<div class="vp-qty">');
+    if (it.dims){
+      h.push('<label>Ширина, см<input type="number" inputmode="numeric" min="30" max="1000" data-k="w" value="'+it.dims[0]+'"></label><label>Высота, см<input type="number" inputmode="numeric" min="20" max="400" data-k="h" value="'+it.dims[1]+'"></label><label>Штук<input type="number" inputmode="numeric" min="1" max="9999" data-k="n" value="'+it.dims[2]+'"></label>');
+    } else {
+      h.push('<label>Количество, '+esc(it.unit)+'<input type="number" inputmode="decimal" min="0" step="any" data-k="q" value="'+(it.q||'')+'"></label>');
+    }
+    h.push('</div>');
+    if (it.opts && it.opts.length){
+      h.push('<div class="vp-opts">');
+      it.opts.forEach(function(o){ h.push('<label><input type="checkbox" data-o="'+o.id+'">'+esc(o.name)+'</label>'); });
+      h.push('</div>');
+    }
+    h.push('<div class="vp-price"><span data-k="unit">—</span><b data-k="sum">—</b></div></div>');
+  });
+  h.push('</div>');
+  if (D.services.length){
+    h.push('<div class="vp-svc"><span class="vp-lbl">Услуги по тарифам компании</span>');
+    D.services.forEach(function(s){ h.push('<label><input type="checkbox" data-s="'+s.id+'">'+esc(s.name)+' — '+(s.price ? 'от '+rub(s.price)+(s.unit?' / '+esc(s.unit):'') : 'бесплатно')+'</label>'); });
+    h.push('</div>');
+  }
+  h.push('<div class="vp-total" aria-live="polite"><span>Ориентир по выбранным позициям</span><b id="vp-total">выберите позиции</b><small id="vp-total-n"></small></div>');
+  h.push('<div class="vp-exp"><span class="vp-lbl">Ваши ожидания — заполните, если знаете</span><div class="vp-exp-g">');
+  h.push('<label>Бюджет проекта<select id="vp-budget"><option value="">— не указан —</option>');
+  D.budgets.forEach(function(b){ h.push('<option>'+esc(b)+'</option>'); });
+  h.push('</select></label><label>Когда нужно (месяц сдачи/открытия)<input type="month" id="vp-when"></label>');
+  h.push('<label class="vp-wide">Что нужно и что важно<textarea id="vp-what" maxlength="500" rows="2" placeholder="'+esc(D.whatHint)+'"></textarea></label></div></div>');
+  h.push('<p class="vp-note">'+esc(D.disclaimer)+'</p>');
+  h.push('<a class="btn btn-primary" href="#lead" id="vp-go">Добавить расчёт в заявку</a>');
+  root.innerHTML = h.join('');
+
+  // ---------- расчёт ----------
+  function ladder(unit, q){ var L = D.ladders[unit] || D.ladders['*'], d = 0; L.forEach(function(s){ if (q >= s.from) d = s.d; }); return d; }
+  function line(it, row){
+    var on = row.querySelector('[data-k=on]').checked, q;
+    if (it.dims){
+      var w = num(row.querySelector('[data-k=w]').value), hh = num(row.querySelector('[data-k=h]').value), n = Math.max(1, Math.round(num(row.querySelector('[data-k=n]').value)) || 1);
+      q = w/100 * hh/100 * n;
+    } else q = num(row.querySelector('[data-k=q]').value);
+    var mult = 1, addW = 0, dOpt = 0, names = [];
+    (it.opts||[]).forEach(function(o){ var c = row.querySelector('[data-o="'+o.id+'"]'); if (c && c.checked){ mult *= (o.mult||1); addW += (o.addW||0); dOpt += (o.d||0); names.push(o.name); } });
+    var f = 1 + D.dClient[S.client] + D.dUrg[S.urg] + ladder(it.ladder, q) + dOpt;
+    f = Math.min(f, it.capF || D.capF);
+    // нижняя граница цены (решение компании, напр. изголовья от 15 000 ₽/м²) — база, к ней применяются те же надбавки
+    var lo = (it.p0[0]*mult + addW) * f, hi = (it.p0[1]*mult + addW) * f;
+    if (it.floor){ var ff = it.floor * mult * (1 + (f - 1) * (it.fs || 1)); lo = Math.max(lo, ff); hi = Math.max(hi, ff); }
+    lo = r100(lo); hi = r100(hi);
+    return { on:on, q:q, lo:lo, hi:hi, opts:names };
+  }
+  function fmtQ(q){ return (Math.round(q*100)/100).toLocaleString('ru-RU'); }
+  var LAST = null;
+  function calc(){
+    S.client = (root.querySelector('input[name=vp-client]:checked')||{}).value || 'object';
+    S.urg = (root.querySelector('input[name=vp-urg]:checked')||{}).value || 'standard';
+    var tot = [0,0], lines = [], cnt = 0;
+    D.items.forEach(function(it){
+      var row = root.querySelector('.vp-row[data-id="'+it.id+'"]'), L = line(it, row);
+      row.classList.toggle('is-on', L.on);
+      row.querySelector('[data-k=unit]').textContent = rng(L.lo, L.hi) + ' / ' + it.unit;
+      var s = row.querySelector('[data-k=sum]');
+      if (L.on && L.q > 0){
+        var a = L.lo*L.q, b = L.hi*L.q; tot[0] += a; tot[1] += b; cnt++;
+        s.textContent = rng(r100(a), r100(b));
+        lines.push(it.name + (it.dims ? ' — ' + row.querySelector('[data-k=w]').value + '×' + row.querySelector('[data-k=h]').value + ' см × ' + row.querySelector('[data-k=n]').value + ' шт = ' + fmtQ(L.q) + ' ' + it.unit : ' — ' + fmtQ(L.q) + ' ' + it.unit) +
+          (L.opts.length ? ' · ' + L.opts.join(', ') : '') + ' · ' + rng(L.lo, L.hi) + ' за ' + it.unit + ' · итого ' + rng(r100(a), r100(b)));
+      } else s.textContent = L.on ? 'укажите количество' : '';
+    });
+    var svc = [];
+    D.services.forEach(function(sv){ var c = root.querySelector('[data-s="'+sv.id+'"]'); if (c && c.checked) svc.push(sv.name + (sv.price ? ' — от ' + rub(sv.price) + (sv.unit ? '/' + sv.unit : '') : ' — бесплатно')); });
+    var T = document.getElementById('vp-total');
+    T.textContent = cnt ? rng(Math.round(tot[0]/1000)*1000, Math.round(tot[1]/1000)*1000) : 'выберите позиции';
+    document.getElementById('vp-total-n').textContent = cnt ? ('позиций: ' + cnt + (svc.length ? '; услуги — по тарифам, отдельно' : '') + '; с НДС') : '';
+    var exp = { budget: document.getElementById('vp-budget').value, when: document.getElementById('vp-when').value, what: document.getElementById('vp-what').value.trim() };
+    LAST = { lines:lines, svc:svc, tot:tot, cnt:cnt, exp:exp };
+    mini();
+    if (!used && (cnt || exp.budget || exp.when || exp.what)){ used = true; goal('w1_price_calc_used'); }
+  }
+  function mini(){
+    var f = document.getElementById('leadForm'); if (!f) return;
+    var m = document.getElementById('vpMini');
+    if (!m){
+      m = document.createElement('div'); m.id = 'vpMini'; m.className = 'vp-mini';
+      var btn = f.querySelector('button[type=submit],input[type=submit]');
+      if (btn && btn.parentNode) btn.parentNode.insertBefore(m, btn); else f.appendChild(m);
+    }
+    var e = LAST && LAST.exp, has = LAST && (LAST.cnt || LAST.svc.length || e.budget || e.when || e.what);
+    m.innerHTML = has ? ('<span>Предварительный расчёт добавлен в заявку</span><b>' + (LAST.cnt ? esc(document.getElementById('vp-total').textContent) + ' · позиций: ' + LAST.cnt : 'ожидания по бюджету и срокам') + '</b><a href="#vpcalc">изменить</a>')
+                     : '<span>Предварительный расчёт</span><b>не заполнен</b><a href="#vpcalc">посчитать</a>';
+  }
+  window.vpCalcText = function(){
+    if (!LAST) return '';
+    var e = LAST.exp, out = [];
+    if (LAST.cnt || LAST.svc.length){
+      out.push('', '--- Предварительный расчёт с сайта (ориентир с НДС, не оферта) ---');
+      out.push('Тип клиента: ' + D.clients.filter(function(c){ return c.id===S.client; })[0].name + '; срок: ' + D.urgency.filter(function(c){ return c.id===S.urg; })[0].name);
+      LAST.lines.forEach(function(l, i){ out.push((i+1) + ') ' + l); });
+      if (LAST.svc.length) out.push('Услуги: ' + LAST.svc.join('; '));
+      if (LAST.cnt) out.push('ИТОГО ориентир: ' + rng(Math.round(LAST.tot[0]/1000)*1000, Math.round(LAST.tot[1]/1000)*1000));
+    }
+    if (e.budget || e.when || e.what){
+      out.push('', '--- Ожидания заказчика ---');
+      if (e.budget) out.push('Бюджет: ' + e.budget);
+      if (e.when) out.push('Срок (месяц): ' + e.when.split('-').reverse().join('.'));
+      if (e.what) out.push('Содержание: ' + e.what);
+    }
+    return out.length ? out.join('\n') : '';
+  };
+  root.addEventListener('input', calc); root.addEventListener('change', calc);
+  root.querySelectorAll('.vp-row').forEach(function(r){
+    r.querySelectorAll('input:not([data-k=on])').forEach(function(i){ i.addEventListener('input', function(){ var c = r.querySelector('[data-k=on]'); if (!c.checked && i.type !== 'checkbox'){ c.checked = true; calc(); } }); });
+  });
+  document.getElementById('vp-go').addEventListener('click', function(){ calc(); goal('w1_price_calc_to_form'); });
+  calc(); used = false;
+})();
+</script>
+</body>
+</html>
