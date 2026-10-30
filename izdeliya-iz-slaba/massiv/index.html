@@ -128,6 +128,10 @@ p{margin:0 0 12px; max-width:66ch}
 .cat .cta-row{margin-top:auto; display:flex; gap:8px; flex-wrap:wrap}
 @media (max-width:1000px){.cats{grid-template-columns:repeat(2,1fr)}}
 @media (max-width:560px){.cats{grid-template-columns:1fr}}
+.prodgrid{display:grid; grid-template-columns:repeat(4,1fr); gap:12px}
+.prodgrid figure{margin:0; border-radius:var(--r-card); overflow:hidden; background:var(--g100)}
+.prodgrid img{width:100%; height:auto; aspect-ratio:3/4; object-fit:cover; display:block}
+@media (max-width:700px){.prodgrid{grid-template-columns:repeat(2,1fr)}}
 .segs{display:grid; grid-template-columns:repeat(4,1fr); gap:16px}
 .segs3{grid-template-columns:repeat(3,1fr)}
 @media (max-width:1100px){ .segs{grid-template-columns:1fr 1fr} }
@@ -399,7 +403,7 @@ section.grey .vp-row{background:var(--g100,#F0F3F4)}
  <nav class="wrap menu" aria-label="Разделы">
  <a href="../#catalog">Каталог</a><a href="../#solutions">Применение</a>
  <a href="../#partners">Дизайнерам и подрядчикам</a>
- <a href="../#about">Исполнение</a>
+ <a href="../#about">Исполнение</a><a href="#production">Производство</a>
  <a href="#price">Цены</a>
  <a href="../#service">Сервис</a>
  <a href="../#process">Как работаем</a>
@@ -415,7 +419,7 @@ section.grey .vp-row{background:var(--g100,#F0F3F4)}
  <div class="prod">
   <div>
    <div class="gal-main"><img id="galMain" src="../../img/ai-slab-massiv-640.jpg" srcset="../../img/ai-slab-massiv-640.jpg 640w, ../../img/ai-slab-massiv.jpg 1200w" sizes="(max-width: 700px) 100vw, 50vw" width="1200" height="896" alt="Столешница из массива дуба на заказ — визуализация" fetchpriority="high"><span class="viz">Визуализация</span></div>
-   <div class="thumbs"></div>
+   <div class="thumbs"><button type="button" class="on" data-src="../../img/ai-slab-massiv.jpg" aria-label="Фото 1"><img src="../../img/ai-slab-massiv-640.jpg" srcset="../../img/ai-slab-massiv-640.jpg 640w, ../../img/ai-slab-massiv.jpg 1200w" sizes="(max-width: 700px) 100vw, 50vw" alt="" width="1200" height="896" loading="lazy"></button><button type="button" data-src="../../img/ai-slab-massiv-2.jpg" aria-label="Фото 2"><img src="../../img/ai-slab-massiv-2-640.jpg" srcset="../../img/ai-slab-massiv-2-640.jpg 640w, ../../img/ai-slab-massiv-2.jpg 1200w" sizes="(max-width: 700px) 100vw, 50vw" alt="" width="1200" height="896" loading="lazy"></button><button type="button" data-src="../../img/ai-slab-massiv-3.jpg" aria-label="Фото 3"><img src="../../img/ai-slab-massiv-3-640.jpg" srcset="../../img/ai-slab-massiv-3-640.jpg 640w, ../../img/ai-slab-massiv-3.jpg 1200w" sizes="(max-width: 700px) 100vw, 50vw" alt="" width="1200" height="896" loading="lazy"></button><button type="button" data-src="../../img/ai-slab-massiv-4.jpg" aria-label="Фото 4"><img src="../../img/ai-slab-massiv-4-640.jpg" srcset="../../img/ai-slab-massiv-4-640.jpg 640w, ../../img/ai-slab-massiv-4.jpg 1200w" sizes="(max-width: 700px) 100vw, 50vw" alt="" width="1200" height="896" loading="lazy"></button></div>
   </div>
   <div class="pinfo">
    <h1>Столешница из массива дуба на заказ</h1>
@@ -432,6 +436,13 @@ section.grey .vp-row{background:var(--g100,#F0F3F4)}
 </section>
 
 
+
+<!-- 4a. Производство -->
+<section class="block" id="production">
+ <div class="head-row"><div><h2>Производство</h2><p class="lede">Сушка, распил, заливка смолы и шлифовка — так изделия делают на партнёрском производстве.</p></div></div>
+ <div class="prodgrid"><figure><img src="../../img/prod-slab-1.jpg" srcset="../../img/prod-slab-1-480.jpg 480w, ../../img/prod-slab-1.jpg 900w" sizes="(max-width: 700px) 50vw, 25vw" width="900" height="1200" alt="Производство партнёра — изделия из слэба на заказ" loading="lazy"></figure><figure><img src="../../img/prod-slab-2.jpg" srcset="../../img/prod-slab-2-480.jpg 480w, ../../img/prod-slab-2.jpg 900w" sizes="(max-width: 700px) 50vw, 25vw" width="900" height="1200" alt="Производство партнёра — изделия из слэба на заказ" loading="lazy"></figure><figure><img src="../../img/prod-slab-3.jpg" srcset="../../img/prod-slab-3-480.jpg 480w, ../../img/prod-slab-3.jpg 900w" sizes="(max-width: 700px) 50vw, 25vw" width="900" height="1200" alt="Производство партнёра — изделия из слэба на заказ" loading="lazy"></figure><figure><img src="../../img/prod-slab-4.jpg" srcset="../../img/prod-slab-4-480.jpg 480w, ../../img/prod-slab-4.jpg 900w" sizes="(max-width: 700px) 50vw, 25vw" width="900" height="1200" alt="Производство партнёра — изделия из слэба на заказ" loading="lazy"></figure><figure><img src="../../img/prod-slab-5.jpg" srcset="../../img/prod-slab-5-480.jpg 480w, ../../img/prod-slab-5.jpg 900w" sizes="(max-width: 700px) 50vw, 25vw" width="900" height="1200" alt="Производство партнёра — изделия из слэба на заказ" loading="lazy"></figure><figure><img src="../../img/prod-slab-6.jpg" srcset="../../img/prod-slab-6-480.jpg 480w, ../../img/prod-slab-6.jpg 900w" sizes="(max-width: 700px) 50vw, 25vw" width="900" height="1200" alt="Производство партнёра — изделия из слэба на заказ" loading="lazy"></figure><figure><img src="../../img/prod-slab-7.jpg" srcset="../../img/prod-slab-7-480.jpg 480w, ../../img/prod-slab-7.jpg 900w" sizes="(max-width: 700px) 50vw, 25vw" width="900" height="1200" alt="Производство партнёра — изделия из слэба на заказ" loading="lazy"></figure></div>
+ <p class="note" style="margin-top:12px">Фото с производства партнёра, с разрешения; лёгкая ретушь цвета и резкости.</p>
+</section>
 
 <!-- 6'. Как считаем стоимость (калькулятора и прайса нет) -->
 <section class="block" id="price">

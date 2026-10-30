@@ -132,6 +132,10 @@ p{margin:0 0 12px; max-width:66ch}
 .cat .cta-row{margin-top:auto; display:flex; gap:8px; flex-wrap:wrap}
 @media (max-width:1000px){.cats{grid-template-columns:repeat(2,1fr)}}
 @media (max-width:560px){.cats{grid-template-columns:1fr}}
+.prodgrid{display:grid; grid-template-columns:repeat(4,1fr); gap:12px}
+.prodgrid figure{margin:0; border-radius:var(--r-card); overflow:hidden; background:var(--g100)}
+.prodgrid img{width:100%; height:auto; aspect-ratio:3/4; object-fit:cover; display:block}
+@media (max-width:700px){.prodgrid{grid-template-columns:repeat(2,1fr)}}
 .segs{display:grid; grid-template-columns:repeat(4,1fr); gap:16px}
 .segs3{grid-template-columns:repeat(3,1fr)}
 @media (max-width:1100px){ .segs{grid-template-columns:1fr 1fr} }
@@ -382,7 +386,7 @@ section.grey .vp-row{background:var(--g100,#F0F3F4)}
  <nav class="wrap menu" aria-label="Разделы">
  <a href="#catalog">Каталог</a><a href="#solutions">Применение</a>
  <a href="#partners">Дизайнерам и подрядчикам</a>
- <a href="#about">Исполнение</a>
+ <a href="#about">Исполнение</a><a href="#production">Производство</a>
  <a href="#price">Цены</a>
  <a href="#service">Сервис</a>
  <a href="#process">Как работаем</a>
@@ -538,6 +542,13 @@ section.grey .vp-row{background:var(--g100,#F0F3F4)}
       <p>Изготавливаем на партнёрских производствах под брендом «Вельвет-ПРО».</p></div>
   </div>
   <p class="note" style="margin-top:12px">Изображения — визуализации, не фотографии выполненных объектов.</p>
+</section>
+
+<!-- 4a. Производство -->
+<section class="block" id="production">
+ <div class="head-row"><div><h2>Производство</h2><p class="lede">Распил блоков, резка слэбов и обработка камня — так изделия делают на партнёрском производстве.</p></div></div>
+ <div class="prodgrid"><figure><img src="../img/prod-kn-1.jpg" srcset="../img/prod-kn-1-480.jpg 480w, ../img/prod-kn-1.jpg 900w" sizes="(max-width: 700px) 50vw, 25vw" width="900" height="1200" alt="Производство партнёра — изделия из натурального камня на заказ" loading="lazy"></figure><figure><img src="../img/prod-kn-3.jpg" srcset="../img/prod-kn-3-480.jpg 480w, ../img/prod-kn-3.jpg 900w" sizes="(max-width: 700px) 50vw, 25vw" width="900" height="1200" alt="Производство партнёра — изделия из натурального камня на заказ" loading="lazy"></figure><figure><img src="../img/prod-kn-4.jpg" srcset="../img/prod-kn-4-480.jpg 480w, ../img/prod-kn-4.jpg 900w" sizes="(max-width: 700px) 50vw, 25vw" width="900" height="1200" alt="Производство партнёра — изделия из натурального камня на заказ" loading="lazy"></figure><figure><img src="../img/prod-kn-5.jpg" srcset="../img/prod-kn-5-480.jpg 480w, ../img/prod-kn-5.jpg 900w" sizes="(max-width: 700px) 50vw, 25vw" width="900" height="1200" alt="Производство партнёра — изделия из натурального камня на заказ" loading="lazy"></figure><figure><img src="../img/prod-kn-6.jpg" srcset="../img/prod-kn-6-480.jpg 480w, ../img/prod-kn-6.jpg 900w" sizes="(max-width: 700px) 50vw, 25vw" width="900" height="1200" alt="Производство партнёра — изделия из натурального камня на заказ" loading="lazy"></figure></div>
+ <p class="note" style="margin-top:12px">Фото с производства партнёра, с разрешения; лёгкая ретушь цвета и резкости.</p>
 </section>
 
 <!-- 6'. Как считаем стоимость (калькулятора и прайса нет) -->
