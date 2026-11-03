@@ -389,7 +389,7 @@ section.grey .vp-row{background:var(--g100,#F0F3F4)}
 
 <header class="top">
  <div class="wrap top-row">
- <a class="brand" href="https://velvet-pro.ru/" target="_blank" rel="noopener" aria-label="Вельвет-ПРО — на главную">
+ <a class="brand" href="../" aria-label="Вельвет-ПРО — на главную">
  <img src="../../img/logo.svg" alt="Вельвет" width="40" height="40" onerror="this.remove()" loading="lazy">
  <span class="word">Вельвет-ПРО<small>изделия из натурального камня</small></span>
  </a>
@@ -439,9 +439,9 @@ section.grey .vp-row{background:var(--g100,#F0F3F4)}
 
 <!-- 4a. Производство -->
 <section class="block" id="production">
- <div class="head-row"><div><h2>Производство</h2><p class="lede">Распил блоков, резка слэбов и обработка камня — так изделия делают на партнёрском производстве.</p></div></div>
- <div class="prodgrid"><figure><img src="../../img/prod-kn-1.jpg" srcset="../../img/prod-kn-1-480.jpg 480w, ../../img/prod-kn-1.jpg 900w" sizes="(max-width: 700px) 50vw, 25vw" width="900" height="1200" alt="Производство партнёра — изделия из натурального камня на заказ" loading="lazy"></figure><figure><img src="../../img/prod-kn-3.jpg" srcset="../../img/prod-kn-3-480.jpg 480w, ../../img/prod-kn-3.jpg 900w" sizes="(max-width: 700px) 50vw, 25vw" width="900" height="1200" alt="Производство партнёра — изделия из натурального камня на заказ" loading="lazy"></figure><figure><img src="../../img/prod-kn-4.jpg" srcset="../../img/prod-kn-4-480.jpg 480w, ../../img/prod-kn-4.jpg 900w" sizes="(max-width: 700px) 50vw, 25vw" width="900" height="1200" alt="Производство партнёра — изделия из натурального камня на заказ" loading="lazy"></figure><figure><img src="../../img/prod-kn-5.jpg" srcset="../../img/prod-kn-5-480.jpg 480w, ../../img/prod-kn-5.jpg 900w" sizes="(max-width: 700px) 50vw, 25vw" width="900" height="1200" alt="Производство партнёра — изделия из натурального камня на заказ" loading="lazy"></figure><figure><img src="../../img/prod-kn-6.jpg" srcset="../../img/prod-kn-6-480.jpg 480w, ../../img/prod-kn-6.jpg 900w" sizes="(max-width: 700px) 50vw, 25vw" width="900" height="1200" alt="Производство партнёра — изделия из натурального камня на заказ" loading="lazy"></figure></div>
- <p class="note" style="margin-top:12px">Фото с производства партнёра, с разрешения; лёгкая ретушь цвета и резкости.</p>
+ <div class="head-row"><div><h2>Производство</h2><p class="lede">Распил блоков, резка слэбов и обработка камня — так делают наши изделия.</p></div></div>
+ <div class="prodgrid"><figure><img src="../../img/prod-kn-3.jpg" srcset="../../img/prod-kn-3-480.jpg 480w, ../../img/prod-kn-3.jpg 900w" sizes="(max-width: 700px) 50vw, 25vw" width="900" height="1200" alt="Производство партнёра — изделия из натурального камня на заказ" loading="lazy"></figure><figure><img src="../../img/prod-kn-4.jpg" srcset="../../img/prod-kn-4-480.jpg 480w, ../../img/prod-kn-4.jpg 900w" sizes="(max-width: 700px) 50vw, 25vw" width="900" height="1200" alt="Производство партнёра — изделия из натурального камня на заказ" loading="lazy"></figure><figure><img src="../../img/prod-kn-5.jpg" srcset="../../img/prod-kn-5-480.jpg 480w, ../../img/prod-kn-5.jpg 900w" sizes="(max-width: 700px) 50vw, 25vw" width="900" height="1200" alt="Производство партнёра — изделия из натурального камня на заказ" loading="lazy"></figure><figure><img src="../../img/prod-kn-6.jpg" srcset="../../img/prod-kn-6-480.jpg 480w, ../../img/prod-kn-6.jpg 900w" sizes="(max-width: 700px) 50vw, 25vw" width="900" height="1200" alt="Производство партнёра — изделия из натурального камня на заказ" loading="lazy"></figure></div>
+ <p class="note" style="margin-top:12px">Фото с производства; лёгкая ретушь цвета и резкости.</p>
 </section>
 
 <!-- 6'. Как считаем стоимость (калькулятора и прайса нет) -->
@@ -840,6 +840,26 @@ section.grey .vp-row{background:var(--g100,#F0F3F4)}
   calc(); used = false;
 })();
 </script>
+<style id="vp-lb-css">.lb{position:fixed;inset:0;z-index:1000;background:rgba(10,10,12,.92);display:none;align-items:center;justify-content:center}
+.lb.on{display:flex}.lb img{max-width:92vw;max-height:86vh;object-fit:contain;border-radius:8px;box-shadow:0 10px 40px rgba(0,0,0,.5)}
+.lb button{position:absolute;background:rgba(255,255,255,.12);color:#fff;border:0;width:48px;height:48px;border-radius:50%;font-size:26px;line-height:48px;cursor:pointer}
+.lb button:hover{background:rgba(255,255,255,.25)}.lb .x{top:16px;right:16px}.lb .pv{left:16px;top:50%;margin-top:-24px}.lb .nx{right:16px;top:50%;margin-top:-24px}
+.lb .ct{position:absolute;bottom:16px;left:0;right:0;text-align:center;color:#ddd;font-size:14px}
+.gal-main img,#production img{cursor:zoom-in}</style>
+<div class="lb" id="vpLb" role="dialog" aria-modal="true" aria-label="Просмотр фото"><img alt="Фото крупно" loading="lazy"><button class="x" type="button" aria-label="Закрыть">×</button><button class="pv" type="button" aria-label="Предыдущее">‹</button><button class="nx" type="button" aria-label="Следующее">›</button><div class="ct"></div></div>
+<script id="vp-lb-js">(function(){var lb=document.getElementById('vpLb');if(!lb)return;var im=lb.querySelector('img'),ct=lb.querySelector('.ct'),L=[],k=0;
+function show(){im.src=L[k];ct.textContent=(k+1)+' / '+L.length;lb.querySelector('.pv').style.display=lb.querySelector('.nx').style.display=L.length>1?'':'none';}
+function open(list,i){L=list;k=i;show();lb.classList.add('on');document.body.style.overflow='hidden';}
+function close(){lb.classList.remove('on');document.body.style.overflow='';im.src='';}
+function go(d){k=(k+d+L.length)%L.length;show();}
+lb.querySelector('.x').onclick=close;lb.querySelector('.pv').onclick=function(){go(-1)};lb.querySelector('.nx').onclick=function(){go(1)};
+lb.addEventListener('click',function(e){if(e.target===lb)close();});
+document.addEventListener('keydown',function(e){if(!lb.classList.contains('on'))return;if(e.key==='Escape')close();if(e.key==='ArrowLeft')go(-1);if(e.key==='ArrowRight')go(1);});
+var sx=null;lb.addEventListener('touchstart',function(e){sx=e.touches[0].clientX},{passive:true});lb.addEventListener('touchend',function(e){if(sx===null)return;var d=e.changedTouches[0].clientX-sx;if(Math.abs(d)>40)go(d<0?1:-1);sx=null;});
+var P=[].slice.call(document.querySelectorAll('#production img'));P.forEach(function(x,i){x.addEventListener('click',function(){open(P.map(function(y){return y.getAttribute('src')}),i)});});
+var gm=document.getElementById('galMain');if(gm)gm.addEventListener('click',function(){var B=[].slice.call(document.querySelectorAll('.thumbs button[data-src]'));
+ if(!B.length){open([gm.getAttribute('src')],0);return;}var i=Math.max(0,B.findIndex(function(b){return b.classList.contains('on')}));open(B.map(function(b){return b.getAttribute('data-src')}),i);});
+})();</script>
 <script>document.addEventListener('click',function(ev){var a=ev.target.closest&&ev.target.closest('[data-product]');if(!a)return;var f=document.getElementById('f-product');if(!f)return;var v=a.getAttribute('data-product');if(f.tagName==='SELECT'&&![].some.call(f.options,function(o){return o.text===v;})){var o=document.createElement('option');o.text=v;f.add(o);}f.value=v;});</script>
 <script>
 (function(){

@@ -385,7 +385,7 @@ section.grey .vp-row{background:var(--g100,#F0F3F4)}
 
 <header class="top">
  <div class="wrap top-row">
- <a class="brand" href="https://velvet-pro.ru/" target="_blank" rel="noopener" aria-label="Вельвет-ПРО — на главную">
+ <a class="brand" href="../" aria-label="Вельвет-ПРО — на главную">
  <img src="../../img/logo.svg" alt="Вельвет" width="40" height="40" onerror="this.remove()" loading="lazy">
  <span class="word">Вельвет-ПРО<small>изделия из латуни на заказ</small></span>
  </a>
@@ -428,7 +428,7 @@ section.grey .vp-row{background:var(--g100,#F0F3F4)}
   </div>
  </div>
  <p class="note" style="margin-top:12px">Изображения — визуализации, не фотографии выполненных объектов.</p>
- <div style="margin-top:24px"><b>Другие изделия</b><div class="others"><a class="btn btn-light btn-sm" href="../mebelnye-ruchki/">Мебельные ручки из латуни</a><a class="btn btn-light btn-sm" href="../dvernye-ruchki/">Дверные ручки из латуни</a><a class="btn btn-light btn-sm" href="../polosy-profili/">Полосы, профили, молдинги</a><a class="btn btn-light btn-sm" href="../ventreshetki/">Вентиляционные и декоративные решётки</a><a class="btn btn-light btn-sm" href="../ograzhdeniya/">Ограждения и перила из латуни</a><a class="btn btn-light btn-sm" href="../mebel/">Мебель и консоли из латуни</a><a class="btn btn-light btn-sm" href="../kaminy/">Каминные аксессуары и порталы</a><a class="btn btn-light btn-sm" href="../nozhki-nakonechniki/">Наконечники на ножки мебели</a></div></div>
+ <div style="margin-top:24px"><b>Другие изделия</b><div class="others"><a class="btn btn-light btn-sm" href="../mebelnye-ruchki/">Мебельные ручки из латуни</a><a class="btn btn-light btn-sm" href="../ventreshetki/">Вентиляционные и декоративные решётки</a><a class="btn btn-light btn-sm" href="../polosy-profili/">Полосы, профили, молдинги</a><a class="btn btn-light btn-sm" href="../dvernye-ruchki/">Дверные ручки из латуни</a><a class="btn btn-light btn-sm" href="../kovroderzhateli/">Ковродержатели из латуни</a><a class="btn btn-light btn-sm" href="../ograzhdeniya/">Ограждения и перила из латуни</a><a class="btn btn-light btn-sm" href="../mebel/">Мебель и консоли из латуни</a><a class="btn btn-light btn-sm" href="../kaminy/">Каминные аксессуары и порталы</a><a class="btn btn-light btn-sm" href="../nozhki-nakonechniki/">Наконечники на ножки мебели</a></div></div>
 </section>
 
 
@@ -500,7 +500,7 @@ section.grey .vp-row{background:var(--g100,#F0F3F4)}
  <div class="field"><label for="f-name">Имя</label><input id="f-name" name="name" type="text" autocomplete="name" class="ym-disable-keys" required></div>
  <div class="field"><label for="f-contact">Телефон, e-mail или мессенджер</label><input id="f-contact" name="contact" type="text" autocomplete="tel" class="ym-disable-keys" required></div>
  </div>
- <div class="field"><label for="f-product">Изделие</label><select id="f-product" name="product"><option value="">— выберите или опишите в комментарии</option><option>Мебельные ручки из латуни</option><option>Дверные ручки из латуни</option><option>Полосы, профили, молдинги</option><option>Вентиляционные и декоративные решётки</option><option selected>Зеркала в латунных рамах</option><option>Ограждения и перила из латуни</option><option>Мебель и консоли из латуни</option><option>Каминные аксессуары и порталы</option><option>Наконечники на ножки мебели</option></select></div>
+ <div class="field"><label for="f-product">Изделие</label><select id="f-product" name="product"><option value="">— выберите или опишите в комментарии</option><option>Мебельные ручки из латуни</option><option>Вентиляционные и декоративные решётки</option><option selected>Зеркала в латунных рамах</option><option>Полосы, профили, молдинги</option><option>Дверные ручки из латуни</option><option>Ковродержатели из латуни</option><option>Ограждения и перила из латуни</option><option>Мебель и консоли из латуни</option><option>Каминные аксессуары и порталы</option><option>Наконечники на ножки мебели</option></select></div>
  <div class="field"><label for="f-qty">Размеры и количество</label><input id="f-qty" name="qty" type="text" placeholder="например, 2 шт., 180×90 см"></div>
  <div class="field"><label for="f-msg">Комментарий (необязательно)</label><textarea id="f-msg" name="message" rows="3" maxlength="1000" class="ym-disable-keys" placeholder="город, срок, ссылка на проект или фото"></textarea></div>
  <div hidden><input type="checkbox" id="f-com"><input type="checkbox" id="f-pack"><input type="checkbox" id="f-samples"><div id="addrField" hidden><input id="f-addr"></div></div>
@@ -829,6 +829,26 @@ section.grey .vp-row{background:var(--g100,#F0F3F4)}
   calc(); used = false;
 })();
 </script>
+<style id="vp-lb-css">.lb{position:fixed;inset:0;z-index:1000;background:rgba(10,10,12,.92);display:none;align-items:center;justify-content:center}
+.lb.on{display:flex}.lb img{max-width:92vw;max-height:86vh;object-fit:contain;border-radius:8px;box-shadow:0 10px 40px rgba(0,0,0,.5)}
+.lb button{position:absolute;background:rgba(255,255,255,.12);color:#fff;border:0;width:48px;height:48px;border-radius:50%;font-size:26px;line-height:48px;cursor:pointer}
+.lb button:hover{background:rgba(255,255,255,.25)}.lb .x{top:16px;right:16px}.lb .pv{left:16px;top:50%;margin-top:-24px}.lb .nx{right:16px;top:50%;margin-top:-24px}
+.lb .ct{position:absolute;bottom:16px;left:0;right:0;text-align:center;color:#ddd;font-size:14px}
+.gal-main img,#production img{cursor:zoom-in}</style>
+<div class="lb" id="vpLb" role="dialog" aria-modal="true" aria-label="Просмотр фото"><img alt="Фото крупно" loading="lazy"><button class="x" type="button" aria-label="Закрыть">×</button><button class="pv" type="button" aria-label="Предыдущее">‹</button><button class="nx" type="button" aria-label="Следующее">›</button><div class="ct"></div></div>
+<script id="vp-lb-js">(function(){var lb=document.getElementById('vpLb');if(!lb)return;var im=lb.querySelector('img'),ct=lb.querySelector('.ct'),L=[],k=0;
+function show(){im.src=L[k];ct.textContent=(k+1)+' / '+L.length;lb.querySelector('.pv').style.display=lb.querySelector('.nx').style.display=L.length>1?'':'none';}
+function open(list,i){L=list;k=i;show();lb.classList.add('on');document.body.style.overflow='hidden';}
+function close(){lb.classList.remove('on');document.body.style.overflow='';im.src='';}
+function go(d){k=(k+d+L.length)%L.length;show();}
+lb.querySelector('.x').onclick=close;lb.querySelector('.pv').onclick=function(){go(-1)};lb.querySelector('.nx').onclick=function(){go(1)};
+lb.addEventListener('click',function(e){if(e.target===lb)close();});
+document.addEventListener('keydown',function(e){if(!lb.classList.contains('on'))return;if(e.key==='Escape')close();if(e.key==='ArrowLeft')go(-1);if(e.key==='ArrowRight')go(1);});
+var sx=null;lb.addEventListener('touchstart',function(e){sx=e.touches[0].clientX},{passive:true});lb.addEventListener('touchend',function(e){if(sx===null)return;var d=e.changedTouches[0].clientX-sx;if(Math.abs(d)>40)go(d<0?1:-1);sx=null;});
+var P=[].slice.call(document.querySelectorAll('#production img'));P.forEach(function(x,i){x.addEventListener('click',function(){open(P.map(function(y){return y.getAttribute('src')}),i)});});
+var gm=document.getElementById('galMain');if(gm)gm.addEventListener('click',function(){var B=[].slice.call(document.querySelectorAll('.thumbs button[data-src]'));
+ if(!B.length){open([gm.getAttribute('src')],0);return;}var i=Math.max(0,B.findIndex(function(b){return b.classList.contains('on')}));open(B.map(function(b){return b.getAttribute('data-src')}),i);});
+})();</script>
 <script>document.addEventListener('click',function(ev){var a=ev.target.closest&&ev.target.closest('[data-product]');if(!a)return;var f=document.getElementById('f-product');if(!f)return;var v=a.getAttribute('data-product');if(f.tagName==='SELECT'&&![].some.call(f.options,function(o){return o.text===v;})){var o=document.createElement('option');o.text=v;f.add(o);}f.value=v;});</script>
 <script>
 (function(){
